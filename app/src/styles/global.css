@@ -1,0 +1,82 @@
+/*
+ * Global stylesheet.
+ * Ports the <helmet> base reset from the design-tool export and adds a small
+ * set of reusable ":hover" utility classes that stand in for the export's
+ * non-standard `style-hover="..."` attribute (there is no runtime mechanism
+ * for that attribute in plain HTML/CSS, so every occurrence in the source is
+ * translated to one of the classes below, applied consistently site-wide).
+ */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #faf9f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: oklch(0.48 0.09 250);
+  text-decoration-color: oklch(0.82 0.04 250);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: oklch(0.38 0.1 250);
+  text-decoration-color: currentColor;
+}
+
+::selection {
+  background: oklch(0.9 0.05 250);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid oklch(0.55 0.12 250);
+  outline-offset: 3px;
+}
+
+/* --- style-hover translations ------------------------------------------ */
+
+/* Solid dark CTA buttons: background:#1c1b19 -> #33302a on hover */
+.hover-dark:hover {
+  background: #33302a !important;
+}
+
+/* Outlined buttons / cards whose border lightens to full ink on hover */
+.hover-border-ink:hover {
+  border-color: #1c1b19 !important;
+}
+
+/* Outlined cards that use a softer highlight border on hover */
+.hover-border-soft:hover {
+  border-color: #c9c4b6 !important;
+}
+
+/* Quiet text links (breadcrumbs, footer, github pill) that darken to ink */
+.hover-text-ink:hover {
+  color: #1c1b19 !important;
+}
+
+/* Numbered part-list rows that fade slightly on hover */
+.hover-fade:hover {
+  opacity: 0.65;
+}
+
+/* Full-row list buttons that get a wash of background on hover */
+.hover-bg-wash:hover {
+  background: #f4f2ec !important;
+}
+
+/* Reset for native button elements used as layout containers */
+button.unstyled {
+  font: inherit;
+  color: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+}

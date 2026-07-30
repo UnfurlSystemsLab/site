@@ -1,0 +1,564 @@
+import { useNavigate } from 'react-router-dom'
+
+/*
+ * Home — landing page ("isHome" block in the source export).
+ * Sections: hero + status card, three pillar cards (Research/Labs/
+ * Community), DCP Journey teaser, Labs teaser, open invitation.
+ */
+export default function Home() {
+  const navigate = useNavigate()
+
+  return (
+    <div>
+      <section style={{ borderBottom: '1px solid #e5e2da' }}>
+        <div
+          style={{
+            maxWidth: 1160,
+            margin: '0 auto',
+            padding: '76px 24px 64px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))',
+            gap: '48px 64px',
+            alignItems: 'start',
+          }}
+        >
+          <div>
+            <p
+              style={{
+                font: "500 11px/1 'IBM Plex Mono',monospace",
+                letterSpacing: '.14em',
+                textTransform: 'uppercase',
+                color: '#8a877f',
+                margin: '0 0 22px',
+              }}
+            >
+              Independent research group · Working in the open
+            </p>
+            <h1
+              style={{
+                font: "300 clamp(32px,4.6vw,52px)/1.1 'Source Serif 4',serif",
+                letterSpacing: '-0.02em',
+                color: '#1c1b19',
+                margin: '0 0 24px',
+                textWrap: 'pretty',
+              }}
+            >
+              Building the human and AI harness for intelligent systems.
+            </h1>
+            <p
+              style={{
+                font: "400 18px/1.6 'Source Serif 4',serif",
+                color: '#4a473f',
+                margin: '0 0 32px',
+                maxWidth: '52ch',
+                textWrap: 'pretty',
+              }}
+            >
+              We are studying how software components can describe themselves, compose safely under contract, and
+              stay understandable to the people accountable for them. The work is early: some of it is a draft
+              specification, some of it is running code, and much of it is still an open question.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+              <button
+                type="button"
+                onClick={() => navigate('/research')}
+                className="hover-dark"
+                style={{
+                  background: '#1c1b19',
+                  color: '#faf9f5',
+                  border: '1px solid #1c1b19',
+                  borderRadius: 3,
+                  padding: '12px 18px',
+                  font: "500 14px/1 'IBM Plex Sans',sans-serif",
+                  cursor: 'pointer',
+                }}
+              >
+                Explore the research
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate('/labs')}
+                className="hover-border-ink"
+                style={{
+                  background: 'none',
+                  color: '#1c1b19',
+                  border: '1px solid #d9d5ca',
+                  borderRadius: 3,
+                  padding: '12px 18px',
+                  font: "500 14px/1 'IBM Plex Sans',sans-serif",
+                  cursor: 'pointer',
+                }}
+              >
+                View the Labs
+              </button>
+            </div>
+          </div>
+          <div style={{ border: '1px solid #e5e2da', background: '#fff', borderRadius: 3, padding: '22px 22px 18px' }}>
+            <p
+              style={{
+                font: "500 10px/1 'IBM Plex Mono',monospace",
+                letterSpacing: '.14em',
+                textTransform: 'uppercase',
+                color: '#8a877f',
+                margin: '0 0 16px',
+              }}
+            >
+              Where the work stands
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+              <StatusRow name="dcp" color="oklch(0.68 0.14 75)" label="Draft spec" border />
+              <StatusRow name="unfurl-fabric" color="oklch(0.6 0.12 155)" label="Active development" border />
+              <StatusRow name="unfurl-ui" color="oklch(0.6 0.12 275)" label="Prototype" />
+            </div>
+            <p style={{ font: "400 12px/1.5 'IBM Plex Sans',sans-serif", color: '#8a877f', margin: '16px 0 0' }}>
+              Nothing here is production-ready. Status labels are the same on the site and in each repository.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ borderBottom: '1px solid #e5e2da' }}>
+        <div
+          style={{
+            maxWidth: 1160,
+            margin: '0 auto',
+            padding: '56px 24px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))',
+            gap: 24,
+          }}
+        >
+          <PillarCard
+            onClick={() => navigate('/research')}
+            eyebrow="01 · Research"
+            title="The ideas and the reasoning"
+            body="Problem framing, design philosophy, and the seven-part DCP Journey written for a broad technical audience."
+            cta="Read the research →"
+          />
+          <PillarCard
+            onClick={() => navigate('/labs')}
+            eyebrow="02 · Labs"
+            title="What exists today"
+            body="Research specs and implementation Labs with current scope, status, and public repositories."
+            cta="Inspect the Labs →"
+          />
+          <PillarCard
+            onClick={() => navigate('/community')}
+            eyebrow="03 · Community"
+            title="Open questions"
+            body="Where to disagree, bring a domain example, report a gap in the model, or contribute an implementation."
+            cta="Take part →"
+          />
+        </div>
+      </section>
+
+      <section style={{ borderBottom: '1px solid #e5e2da', background: '#f4f2ec' }}>
+        <div style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 24px' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              alignItems: 'baseline',
+              gap: 12,
+              marginBottom: 28,
+            }}
+          >
+            <div>
+              <p
+                style={{
+                  font: "500 11px/1 'IBM Plex Mono',monospace",
+                  letterSpacing: '.14em',
+                  textTransform: 'uppercase',
+                  color: '#8a877f',
+                  margin: '0 0 12px',
+                }}
+              >
+                Current research
+              </p>
+              <h2 style={{ font: "400 30px/1.2 'Source Serif 4',serif", color: '#1c1b19', margin: 0 }}>
+                The DCP Journey
+              </h2>
+            </div>
+            <button
+              type="button"
+              onClick={() => navigate('/research/dcp')}
+              className="hover-border-ink"
+              style={{
+                background: 'none',
+                border: '1px solid #d9d5ca',
+                borderRadius: 3,
+                padding: '10px 14px',
+                font: "500 13px/1 'IBM Plex Sans',sans-serif",
+                color: '#1c1b19',
+                cursor: 'pointer',
+              }}
+            >
+              Series overview
+            </button>
+          </div>
+          <p
+            style={{
+              font: "400 17px/1.65 'Source Serif 4',serif",
+              color: '#4a473f',
+              margin: '0 0 32px',
+              maxWidth: '62ch',
+            }}
+          >
+            A connected seven-part argument: why component assembly currently has no harness, what a capability
+            contract would need to say, and what a human review layer looks like once machines do most of the
+            assembly. All seven parts are published.
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 24, flexWrap: 'wrap' }}>
+            {Array.from({ length: 7 }).map((_, i) => (
+              <span
+                key={i}
+                style={{ flex: 1, minWidth: 24, height: 3, background: '#1c1b19', marginLeft: i ? 4 : 0 }}
+              />
+            ))}
+            <span
+              style={{
+                font: "500 10px/1 'IBM Plex Mono',monospace",
+                letterSpacing: '.1em',
+                textTransform: 'uppercase',
+                color: '#8a877f',
+                marginLeft: 14,
+              }}
+            >
+              7 of 7 published
+            </span>
+          </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))',
+              gap: 20,
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => navigate('/research/dcp/part-7')}
+              className="hover-border-ink"
+              style={{
+                textAlign: 'left',
+                gridColumn: 'span 1',
+                border: '1px solid #ddd9ce',
+                background: '#fff',
+                borderRadius: 3,
+                padding: 24,
+                cursor: 'pointer',
+                fontFamily: "'IBM Plex Sans',sans-serif",
+              }}
+            >
+              <p
+                style={{
+                  font: "500 10px/1 'IBM Plex Mono',monospace",
+                  letterSpacing: '.12em',
+                  textTransform: 'uppercase',
+                  color: 'oklch(0.48 0.09 250)',
+                  margin: '0 0 12px',
+                }}
+              >
+                Latest · Part 7
+              </p>
+              <h3 style={{ font: "400 21px/1.3 'Source Serif 4',serif", color: '#1c1b19', margin: '0 0 10px' }}>
+                The Living Assembly
+              </h3>
+              <p style={{ font: "400 15px/1.6 'Source Serif 4',serif", color: '#5c594f', margin: '0 0 16px' }}>
+                A system is not complete when it is assembled. It becomes real when humans can load it, observe it,
+                stress it, trace it, and safely evolve it.
+              </p>
+              <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#8a877f' }}>12 min read</span>
+            </button>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 0,
+                border: '1px solid #ddd9ce',
+                background: '#fff',
+                borderRadius: 3,
+                padding: '8px 24px',
+              }}
+            >
+              {[
+                ['01', 'The Missing Harness', 1],
+                ['02', 'The Baseline Shift', 2],
+                ['03', 'The Capability Contract', 3],
+                ['04', 'Draft Spec and Discussion', 4],
+                ['05', 'The Human Harness', 5],
+                ['06', 'Aggregation Is Abstraction', 6],
+              ].map(([num, title, part], i, arr) => (
+                <button
+                  key={part as number}
+                  type="button"
+                  onClick={() => navigate(`/research/dcp/part-${part}`)}
+                  className="hover-fade"
+                  style={{
+                    textAlign: 'left',
+                    background: 'none',
+                    border: 0,
+                    borderBottom: i < arr.length - 1 ? '1px solid #efece4' : undefined,
+                    padding: '12px 0',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    gap: 14,
+                    alignItems: 'baseline',
+                  }}
+                >
+                  <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#8a877f' }}>{num}</span>
+                  <span style={{ font: "400 16px/1.4 'Source Serif 4',serif", color: '#1c1b19' }}>{title}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ borderBottom: '1px solid #e5e2da' }}>
+        <div style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 24px' }}>
+          <p
+            style={{
+              font: "500 11px/1 'IBM Plex Mono',monospace",
+              letterSpacing: '.14em',
+              textTransform: 'uppercase',
+              color: '#8a877f',
+              margin: '0 0 12px',
+            }}
+          >
+            Labs
+          </p>
+          <h2 style={{ font: "400 30px/1.2 'Source Serif 4',serif", color: '#1c1b19', margin: '0 0 12px' }}>
+            Research specs and implementation Labs
+          </h2>
+          <p
+            style={{
+              font: "400 17px/1.65 'Source Serif 4',serif",
+              color: '#4a473f',
+              margin: '0 0 32px',
+              maxWidth: '62ch',
+            }}
+          >
+            Each Lab is a place where an idea from the research is being made concrete enough to be wrong in public.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(250px,1fr))', gap: 20 }}>
+            <LabCard
+              onClick={() => navigate('/labs/dcp')}
+              color="oklch(0.68 0.14 75)"
+              status="Draft spec"
+              title="Domain Claim Protocol"
+              body="How a component states what it can do, what it needs, and under what conditions it may be used."
+              repo="UnfurlSystemsLab/dcp"
+            />
+            <LabCard
+              onClick={() => navigate('/labs/fabric')}
+              color="oklch(0.6 0.12 155)"
+              status="Active development"
+              title="Unfurl Fabric"
+              body="A design-time compiler that matches needs to claims, validates the result, and produces a signed composition."
+              repo="UnfurlSystemsLab/unfurl-fabric"
+            />
+            <LabCard
+              onClick={() => navigate('/labs/studio')}
+              color="oklch(0.6 0.12 275)"
+              status="Prototype"
+              title="Unfurl Studio"
+              body="The human harness: a way to see, question, and govern an assembly that a machine proposed."
+              repo="UnfurlSystemsLab/unfurl-ui"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div style={{ maxWidth: 760, margin: '0 auto', padding: '64px 24px 72px', textAlign: 'center' }}>
+          <p
+            style={{
+              font: "500 11px/1 'IBM Plex Mono',monospace",
+              letterSpacing: '.14em',
+              textTransform: 'uppercase',
+              color: '#8a877f',
+              margin: '0 0 18px',
+            }}
+          >
+            Open invitation
+          </p>
+          <p
+            style={{
+              font: "300 26px/1.4 'Source Serif 4',serif",
+              color: '#1c1b19',
+              margin: '0 0 26px',
+              textWrap: 'pretty',
+            }}
+          >
+            This work is evolving. Challenge the model, bring a domain example, or help implement it.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
+            <button
+              type="button"
+              onClick={() => navigate('/community')}
+              className="hover-dark"
+              style={{
+                background: '#1c1b19',
+                color: '#faf9f5',
+                border: '1px solid #1c1b19',
+                borderRadius: 3,
+                padding: '12px 18px',
+                font: "500 14px/1 'IBM Plex Sans',sans-serif",
+                cursor: 'pointer',
+              }}
+            >
+              Ways to take part
+            </button>
+            <a
+              href="https://github.com/UnfurlSystemsLab"
+              className="hover-border-ink"
+              style={{
+                background: 'none',
+                color: '#1c1b19',
+                border: '1px solid #d9d5ca',
+                borderRadius: 3,
+                padding: '12px 18px',
+                font: "500 14px/1 'IBM Plex Sans',sans-serif",
+                textDecoration: 'none',
+              }}
+            >
+              Open the repositories
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+function StatusRow({ name, color, label, border }: { name: string; color: string; label: string; border?: boolean }) {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        gap: 16,
+        padding: '11px 0',
+        borderBottom: border ? '1px solid #efece4' : undefined,
+      }}
+    >
+      <span style={{ font: "500 13px/1.3 'IBM Plex Mono',monospace", color: '#1c1b19' }}>{name}</span>
+      <span
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 7,
+          font: "500 10px/1 'IBM Plex Mono',monospace",
+          letterSpacing: '.1em',
+          textTransform: 'uppercase',
+          color: '#5c594f',
+        }}
+      >
+        <span style={{ width: 6, height: 6, borderRadius: '50%', background: color }} />
+        {label}
+      </span>
+    </div>
+  )
+}
+
+function PillarCard({
+  onClick,
+  eyebrow,
+  title,
+  body,
+  cta,
+}: {
+  onClick: () => void
+  eyebrow: string
+  title: string
+  body: string
+  cta: string
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="hover-border-soft"
+      style={{
+        textAlign: 'left',
+        border: '1px solid #e5e2da',
+        background: '#fff',
+        borderRadius: 3,
+        padding: '26px 24px',
+        cursor: 'pointer',
+        fontFamily: "'IBM Plex Sans',sans-serif",
+      }}
+    >
+      <p
+        style={{
+          font: "500 10px/1 'IBM Plex Mono',monospace",
+          letterSpacing: '.14em',
+          textTransform: 'uppercase',
+          color: '#8a877f',
+          margin: '0 0 14px',
+        }}
+      >
+        {eyebrow}
+      </p>
+      <h2 style={{ font: "400 22px/1.25 'Source Serif 4',serif", color: '#1c1b19', margin: '0 0 10px' }}>{title}</h2>
+      <p style={{ font: "400 15px/1.6 'Source Serif 4',serif", color: '#5c594f', margin: '0 0 16px' }}>{body}</p>
+      <span style={{ font: "500 13px/1 'IBM Plex Sans',sans-serif", color: 'oklch(0.48 0.09 250)' }}>{cta}</span>
+    </button>
+  )
+}
+
+function LabCard({
+  onClick,
+  color,
+  status,
+  title,
+  body,
+  repo,
+}: {
+  onClick: () => void
+  color: string
+  status: string
+  title: string
+  body: string
+  repo: string
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="hover-border-soft"
+      style={{
+        textAlign: 'left',
+        border: '1px solid #e5e2da',
+        background: '#fff',
+        borderRadius: 3,
+        padding: 22,
+        cursor: 'pointer',
+        fontFamily: "'IBM Plex Sans',sans-serif",
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 12,
+      }}
+    >
+      <span
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 7,
+          font: "500 10px/1 'IBM Plex Mono',monospace",
+          letterSpacing: '.1em',
+          textTransform: 'uppercase',
+          color: '#5c594f',
+        }}
+      >
+        <span style={{ width: 6, height: 6, borderRadius: '50%', background: color }} />
+        {status}
+      </span>
+      <h3 style={{ font: "400 20px/1.25 'Source Serif 4',serif", color: '#1c1b19', margin: 0 }}>{title}</h3>
+      <p style={{ font: "400 14px/1.6 'Source Serif 4',serif", color: '#5c594f', margin: 0, flex: 1 }}>{body}</p>
+      <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#8a877f' }}>{repo}</span>
+    </button>
+  )
+}

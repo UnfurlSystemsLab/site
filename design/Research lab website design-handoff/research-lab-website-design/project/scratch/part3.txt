@@ -1,0 +1,103 @@
+DOMAIN CLAIM PROTOCOL SERIES | PART 3
+The Capability Contract for an AI-Native World
+Vinay Verma
+Public review draft | July 2026
+Executive summary
+Part 1 named the missing harness: AI cannot safely govern a connected world if every component describes itself in a different way, or worse, does not describe itself at all.
+Part 2 reframed the anxiety inside software development: the baseline is shifting from writing isolated components to assembling, governing, validating, and operating systems of capabilities.
+Part 3 introduces DCP - the Domain Claim Protocol - as the capability contract layer for that world. DCP gives components a way to describe their domain, boundaries, needs, offers, conflicts, operational ports, and faults.
+DCP is not a replacement for APIs or MCP. APIs expose callable interfaces. MCP lets an LLM invoke tools at runtime. DCP sits at the assembly layer: it helps intelligent agents decide which capabilities should compose, under what contract, before runtime begins.
+Core ideaThe future does not need every object to become a chatbot. It needs every capable object to explain itself well enough that agents can compose it safely.
+Contents
+1. From missing harness to explicit protocol
+2. What DCP is
+3. The claim: a component speaks for itself
+4. The most important part: what it refuses
+5. Composition is not runtime improvisation
+6. The three planes of DCP
+7. A concrete example: the smart room
+8. DCP, APIs, and MCP: different altitudes
+9. What changes for software engineers
+10. What DCP changes in an interconnected world
+11. Closing: from invention to discipline
+1. From missing harness to explicit protocol
+The first essay asked a simple question: if the GUI was the harness that made computing understandable to ordinary humans, what is the equivalent harness for AI?
+The second essay moved that question into the software industry itself. It argued that software work is not disappearing. The baseline is moving upward. As generation gets cheaper, the hard work shifts toward assembling capabilities, governing them, validating them, and making them safe to operate across domains.
+This third essay gives that missing harness a name: DCP, the Domain Claim Protocol.
+DCP is the idea that every meaningful component in an AI-native world should carry a self-description that is useful not only to humans, but also to agents. Not a brochure. Not a README. Not a loose API document. A structured claim about what the component is, what it owns, what it refuses, what it needs, what it offers, and how it can safely compose with other components.
+2. What DCP is
+DCP is a protocol for components to describe themselves, negotiate how they compose, and then invoke one another against a frozen agreement. It is meant for a world where independent capabilities must become peers rather than hard-wired subordinates.
+The most useful way to understand DCP is this: it turns enterprise architecture from a fixed topology into a dynamically governable composition graph.
+In the old model, the application knows its integrations because developers wired them into the application. In the emerging model, components may be discovered, selected, validated, and bound based on tenant needs, deployment environment, policy, cost, residency, capability version, or runtime context. That cannot be left to guesswork. It needs a contract layer.
+DCP calls this late-bound enterprise composition. Instead of making every relationship permanent in code, DCP lets composition be resolved through claims, requirements, policies, and bindings.
+3. The claim: a component speaks for itself
+The first building block of DCP is the claim. A claim is a component's self-description. It is published per component version and is the source of truth for what that component owns, exposes, needs, and refuses.
+This is the leap beyond conventional API thinking. An API can tell an agent that a capability exists. A DCP claim tells the agent whether that capability belongs in a particular composition at all.
+A useful claim says: here is my identity, here is my domain, here are the concerns I own, here is the state I control, here are the decisions I make, here are the capabilities I offer, here are my dependencies, here is where I overlap with others, here is how to resolve those overlaps, here are my integration ports, and here are the faults I may emit.
+That may sound formal, but the formality is the point. In a small system, a human can keep these boundaries in their head. In an interconnected world, the system has to carry the boundaries with it.
+Figure 1. A DCP claim makes ownership, boundaries, dependencies, offers, integration ports, and faults explicit.
+4. The most important part: what it refuses
+The surprisingly powerful part of DCP is not only what a component claims to do. It is what it explicitly refuses to own.
+Refusal is how a component becomes trustworthy. A component that says "I can do everything" is not powerful; it is dangerous. A component that says "I own identity verification, but I do not own authorization decisions; those belong to a policy engine" gives the system a boundary it can reason about.
+This matters because most failures in large systems are not caused by lack of capability. They are caused by confused ownership. Who owns the decision? Who owns the state? Who owns the failure? Who is allowed to remediate it? DCP makes those questions first-class.
+For AI agents, this is even more important. Agents are very good at stitching fragments together. Without boundaries, that stitching becomes improvisation. DCP is a way to make the stitching accountable.
+5. Composition is not runtime improvisation
+Once components have claims, DCP does not jump directly into execution. It introduces a second step: negotiation.
+Negotiation is the act of taking two claims, plus context, and deciding whether and how they compose. Does one component need something the other offers? Are their versions compatible? Is there an exclusive ownership conflict? Does a refused concern point to another component that must be added? Are the right credentials, telemetry, audit, and failure responsibilities present?
+The output of negotiation is not a prompt. It is not an opinion. It is a frozen composition contract.
+That contract states the parties, the binding between consumer need and provider capability, data mappings, transport, expectations, provenance, version pins, trust tier, and invalidation behavior. Once produced, it travels with the deployment and becomes the canonical execution artifact.
+This is the key safety move. Intelligence can help assemble the system, but runtime should not reinterpret the system on every call.
+Design postureDCP uses intelligence where judgment is useful - during description and negotiation - and keeps invocation deterministic where speed, auditability, and residency matter.
+6. The three planes of DCP
+DCP separates the lifecycle into three planes.
+Plane 1 is Description. A component publishes a claim. This should be cheap, cacheable, and stable per version.
+Plane 2 is Negotiation. Claims and context are evaluated to produce a frozen composition contract. This is the only plane where intelligence should be needed.
+Plane 3 is Invocation. Components call one another against the frozen contract. This is the hot path, so it must be fast, deterministic, and free from runtime reasoning.
+This separation prevents a common AI architecture mistake: putting the reasoning layer into the path of every request. If every operation requires an agent to rethink the contract, the system becomes slow, hard to audit, and difficult to deploy inside customer boundaries.
+Figure 2. DCP separates description, negotiation, and invocation so intelligence does not sit in the hot path.
+7. A concrete example: the smart room
+Consider a connected room: air-conditioner, curtains, access control, occupancy sensor, lighting, energy policy, and a human operator. In today's world, each device may expose an API, and some may even be marketed as smart. But the room as a whole is rarely intelligent in a compositional sense.
+An AI agent can turn on the AC. That is useful, but it is not the big picture.
+The bigger question is: should it turn on the AC? At what temperature? For which occupant? Under which energy policy? With what safety constraints? What happens if the occupancy sensor is degraded? What if the curtain system can reduce heat load more efficiently than the AC? What if access control says the person is a visitor and building policy forbids changing room settings?
+Those questions cannot be answered by a command interface alone. They require each component to declare its domain and boundaries.
+In a DCP-style world, the AC does not merely say "set_temperature is available." It says: I own thermal comfort execution for this room, I can cool or heat within these limits, I depend on electricity and a room sensor, I expose temperature-setting and status capabilities, I refuse access-control decisions, I refuse energy-budget authority, and I emit these faults when compressor, sensor, or policy constraints block operation.
+Now the AI agent is no longer guessing. It is composing against declared claims.
+Figure 3. A smart room becomes governable when each participant carries a self-description and composes through frozen contracts.
+8. DCP, APIs, and MCP: different altitudes
+DCP is easiest to misunderstand if it is placed at the wrong altitude.
+An API answers: how can software call this capability? It describes endpoints, functions, events, schemas, or SDK methods.
+MCP answers: how can an LLM invoke this tool at runtime? It is valuable because it gives models a practical tool interface.
+DCP answers a different question: should this component compose with that component, under what ownership boundaries, with which dependency satisfaction, through which contract, and with what runtime binding?
+That is why DCP is complementary to MCP. A component may expose runtime tools through MCP and still carry a DCP claim for design-time composition. MCP is about invocation in the moment. DCP is about assembly before the moment.
+Figure 4. DCP governs assembly; MCP and APIs expose runtime invocation surfaces.
+9. What changes for software engineers
+This brings us back to the software-development panic from Part 2. If AI can generate more code and stitch more tools together, what remains for engineers?
+DCP suggests a very different answer from the usual fear narrative. The work does not disappear; it moves to a higher baseline.
+Engineers will increasingly design capability boundaries, not only capability implementations. They will specify claims, refusals, dependency models, compatibility rules, fault propagation, trust policies, versioning behavior, runtime bindings, and validation pipelines.
+This is not less engineering. It is more architectural engineering. It is the difference between building individual parts and making sure many independently built parts can become a safe system.
+The craftsmanship shifts from "can I create this component?" to "can this component describe itself well enough to be discovered, selected, validated, bound, audited, and operated by others?"
+Old baseline
+AI-native baseline
+Write the component
+Define the component and its claim
+Document the API
+Declare domain, offers, dependencies, and refusals
+Manually wire integrations
+Validate and bind capabilities through contracts
+Debug failures from logs
+Propagate typed faults with declared blast radius
+Treat docs as external prose
+Generate docs from accepted, bound capabilities
+Runtime improvisation by agents
+Design-time negotiation, runtime execution
+10. What DCP changes in an interconnected world
+DCP changes the default assumption from hidden integration to declared composition.
+In a DCP-oriented system, a component is not merely something that can be called. It is something that can be understood at the boundary. It carries a domain, owns decisions, refuses non-owned responsibilities, exposes versioned capabilities, declares dependencies, identifies conflicts, and emits meaningful faults.
+That shift is what makes the interconnected world realistic. Doors, windows, curtains, ACs, policy engines, identity providers, workflow systems, storage systems, and AI services do not become governable merely because they have APIs. They become governable when they can participate in a shared composition language.
+The most important result is not automation. The most important result is accountability. When something composes, we can ask why. When it refuses, we can ask what should own the concern instead. When it fails, we can trace what was affected. When it changes version, we can invalidate the right contract. When policy differs by tenant, environment, or region, we can resolve a different valid composition without rewriting application code.
+11. Closing: from invention to discipline
+The first age of software rewarded the ability to create programs. The cloud age rewarded the ability to operate services. The API age rewarded the ability to expose capabilities. The AI-native age will reward the ability to make capabilities self-describing, composable, governable, and safe.
+That is the role DCP is meant to play.
+It is not another wrapper around a tool. It is not a runtime trick. It is not asking every device to become intelligent in the theatrical sense. It is asking every meaningful capability to carry enough structured self-knowledge that intelligence can compose it without guessing.
+In that sense, DCP is the missing harness made concrete: a capability contract for an AI-native world.
+Next essay bridgePart 4 can go one level deeper: DCP vs MCP vs APIs with concrete examples, and how a DCP claim becomes a contract and runtime binding in practice.

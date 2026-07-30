@@ -1,0 +1,111 @@
+DOMAIN CLAIM PROTOCOL SERIES | PART 6
+Aggregation Is Abstraction
+How intelligent systems scale across homes, colonies, cities, and software assemblies
+Vinay VermaPublic review draft | July 2026
+Aggregation is not the act of piling capabilities together. It is the act of giving a collection a new, meaningful surface.
+Figure 1. Semantic zoom: each level exposes different meaning, not just more or fewer objects.
+In this part
+Bridge from the human harness: why visual projection needs levels.
+Why aggregation is not mere compilation of capabilities.
+The Google Maps analogy: zoom out for meaning, zoom in for diagnosis.
+House, colony, and city as recursive intelligent surfaces.
+How DCP represents aggregation through containment, projections, contracts, and bindings.
+What this changes for engineers, operators, and product builders.
+Bridge to Part 7: runtime observation, faults, traceability, and load simulation.
+Executive summary
+In Part 5, we introduced the human harness: the visual and interactive layer that lets people inspect, review, and govern what AI and DCP assemble. That harness only works if it can show the right level of detail at the right time. A user should not be forced to inspect every sensor, tap, geyser, AC mode, identity provider, storage connector, and runtime binding just to understand whether a house, colony, workflow, or city is healthy enough to reason about.
+Part 6 argues that aggregation is the scaling principle. An aggregate is not merely a bag of child components. A house is not just AC plus geyser plus taps plus doors plus curtains. At the level of the house, it exposes higher-level capabilities: comfort, security, energy posture, water readiness, automation level. The underlying components remain there, but they are not the first thing every agent or human needs to see.
+This is why aggregation matters for AI-native systems. Intelligence cannot reason over every leaf node all the time. It needs semantic zoom, just like a map. Zoomed out, a map shows continents, cities, roads, and neighborhoods. Zoomed in, it shows lanes, buildings, entrances, and points of interest. DCP aggregation applies the same idea to capabilities.
+Source note: The source documents ground this framing in DCP containment and recursive projection: DCP projection walks claim graphs through CONTAINS relationships and exposes depth, parent links, offers, edges, and deterministic ordering; nesting appears only when claims declare containment metadata.
+From the human harness to semantic zoom
+The previous essay introduced the human harness: the layer through which people can understand and govern AI-created assemblies. We looked at fields like shape, fallback form, visual ports, connector shapes, and interaction handles. Those fields are not decorative. They exist because DCP is not only meant to be read by AI. It is also meant to be projected into a human interface.
+But once we accept that, a deeper question appears. What should the human actually see?
+A raw DCP universe can become enormous. A smart home may contain climate devices, entry systems, water systems, sensors, lighting, appliances, identity policies, telemetry, storage, and AI assistants. A colony may contain hundreds of such homes, plus shared infrastructure. A city may contain colonies, public systems, transit, hospitals, energy grids, and emergency services. Showing everything at once is not transparency. It is noise with a nicer font.
+So the next problem is not only visualization. The next problem is aggregation.
+Aggregation is not compilation
+It is tempting to define aggregation as a compiled list of child capabilities. A house contains an AC, a geyser, a few automatic taps, smart curtains, door locks, windows, lights, sensors, and maybe a small local AI. Therefore, the house aggregate is simply the union of those capabilities.
+That definition is technically convenient and conceptually weak.
+A house does not become useful to an AI because the AI can see ten thousand tiny capabilities. It becomes useful because those capabilities can be summarized into the few higher-level meanings that matter at the house level. Is the house climate-controllable? Is water available? Is entry secure? Is it safe to leave unattended? Is automation partial or complete? Can it coordinate with the colony during peak energy hours?
+The aggregate must expose a new surface. It should hide internal complexity by default, but preserve drill-down when a decision requires it. That is the difference between a pile and a system.
+Figure 2. The map analogy: different zoom levels expose different meaning.
+The map analogy
+Google Maps does not show every house, window, tap, switch, cable, and pipe when you are looking at a city. At the city level, it shows city-level meaning. At the neighborhood level, it shows neighborhoods. At the street level, it shows streets, buildings, entrances, and traffic. The details have not disappeared. They are simply not projected at the wrong level.
+AI-native systems need the same discipline. A city-level agent should not reason directly over every geyser in every house. It should reason over abstractions like water demand, energy flexibility, automation coverage, infrastructure risk, and service availability. A house-level agent can then reason over rooms and devices. A device-level agent can reason over modes, thresholds, faults, and dependencies.
+Aggregation is the protocol-level foundation for that zoom behavior. It gives every level a claim of its own.
+A house is an aggregate, not a folder
+Consider a house. It may contain an AI-enabled air conditioner, automatic taps, an automatic geyser, smart windows, curtains, doors, motion sensors, occupancy sensors, energy meters, solar inputs, and perhaps a local home assistant. Each component has detailed capabilities and constraints.
+At the house level, the aggregate should not flatten all of that into one giant capability spreadsheet. It should expose house-level capabilities such as comfort management, water readiness, energy posture, security state, privacy boundary, and automation coverage.
+The AC still has its own detailed claim. The geyser still has its own safety limits. The tap still has its own flow and leak behavior. But the house aggregate provides a more useful surface for most decisions. A human can ask: is this house fully automated, mostly automated, or partially automated? An AI can ask: can this house reduce energy demand for the next hour without violating comfort or safety?
+That is aggregation doing real work.
+Example: abstraction levels for a house
+Level
+What it exposes
+What it hides by default
+When to drill down
+Fully automated house
+Comfort, security, water, energy, automation policy
+Individual device modes and sensor chatter
+Fault, override, audit, or optimization decision
+Mostly automated house
+Automated zones plus manual dependencies
+Partial manual controls and device details
+When an automation request touches a manual boundary
+Partially automated house
+Limited smart capabilities and unsupported areas
+Non-addressable devices
+When a capability is missing or needs human action
+Manual house
+Known boundaries and human-owned decisions
+Device-level automation because it does not exist
+When onboarding or upgrading components
+Figure 3. An aggregate claim exposes a higher-level surface while keeping children inspectable.
+From houses to colonies to cities
+Once the house becomes an aggregate, the next level becomes possible. A colony is not just a list of houses. It is a new abstraction that can expose shared utilities, entry and visitor flow, maintenance posture, energy coordination, water availability, waste management, and emergency readiness.
+A colony might know that 30 percent of its homes are fully automated, 50 percent are partially automated, and 20 percent are mostly manual. That is not a trivial statistic. It changes what an AI can coordinate. During peak demand, fully automated homes may be able to participate in load shaping. Manual homes may require human notification. Partially automated homes may need narrower control.
+At the city level
+The same pattern repeats. A city is not a dumping ground for every house-level claim. It is an aggregate that exposes city-scale meaning: smart coverage, infrastructure readiness, risk concentration, service reachability, and coordination boundaries.
+Terms like fully smart city, partially smart city, or assisted city should not be marketing labels. They should become meaningful abstractions grounded in lower-level claims. What percentage of the city can be addressed by AI? Which capabilities are automated? Which remain human-led? Which systems expose DCP claims? Which are still opaque?
+A mature aggregation model lets those labels become inspectable, not decorative.
+How DCP supports aggregation
+At the protocol level, aggregation should not be treated as a UI trick. The containment relationship must be part of the DCP model. An aggregate claim should be able to say: I contain these child claims. A projection tool should be able to walk that graph recursively. A human harness should be able to show the graph as a semantic zoom navigator. An AI should be able to reason at the right depth.
+This matters because nested assemblies are not always clean hierarchies. A city may contain colonies, but a workflow may contain nodes, a node may invoke an agent, an agent may contain phases, and a phase may reference tools, prompts, RAG sources, skills, and models. Aggregation is not only for physical systems. It is also for software and AI systems.
+Containment is different from compatibility
+One important distinction: containment is not the same as compatibility. A child is inside an aggregate because the aggregate contains it. A replacement candidate is compatible because it can satisfy a role. Those are different relationships, and they should not be blurred.
+This distinction is subtle, but it prevents a lot of confusion. A colony contains houses. That does not mean every house is a replacement for every other house. A Foundry agent contains phases and tools. That does not mean every tool is a compatible replacement for every other tool. The containment graph tells us what exists inside. The compatibility graph tells us what can replace or connect.
+Source note: The recursive projection build spec separates containment from replacement compatibility: compatible descendants must not be populated from descendant claim URIs because descendant claim URIs represent containment.
+Figure 4. Aggregation should travel through claim trees, contract trees, and runtime binding trees.
+Aggregate contracts and runtime bindings
+The same idea should continue after design-time description. A deployable multi-component assembly should not exist only as private planner metadata. If the assembly is an aggregate, its contracts should preserve that structure. A parent contract can reference child contracts; each child remains a normal contract with its own parties, binding, transport, expectations, provenance, trust, and invalidation rules.
+Runtime bindings should follow the same principle. A parent runtime binding can reference child runtime bindings. Each child binding still pins its own contract and environment-specific wiring. That gives us a runtime structure that can be observed, audited, explained, and regenerated without inventing a parallel wiring format.
+Why this changes engineering work
+In Part 2, we argued that the software baseline is shifting from writing isolated components to assembling and governing systems. Aggregation is where that shift becomes concrete. Engineers will still build components, but the higher-value work moves toward defining clean aggregate surfaces, stable boundaries, meaningful summaries, and safe drill-down paths.
+This is not just architecture. It is product thinking. What should a house claim about itself? What should a colony expose? What should a workflow hide until inspection? What should a user see first? What should an AI reason about by default? These become design questions, not merely implementation details.
+Why this changes the human harness
+For Unfurl Studio, aggregation means the UI should not be a static diagram. It should be a semantic zoom surface. A user should be able to start from a city, zoom into a colony, then into a house, then into a room, then into a component. At each level, the UI should change vocabulary, not only scale the picture.
+At the city level, the UI might show automation coverage and infrastructure readiness. At the house level, it might show comfort, water, energy, and security. At the device level, it might show ports, dependencies, refusals, faults, and bindings. The same source of truth produces different projections at different levels.
+Design principles for aggregation
+Principle
+Meaning
+Failure mode it prevents
+Expose a new surface
+The aggregate must claim higher-level meaning, not only union child capabilities.
+Capability sprawl
+Preserve drill-down
+Details remain reachable when faults, audits, or decisions require them.
+Opaque black boxes
+Separate containment from compatibility
+Contained children are not automatically replacements.
+Bad substitutions
+Carry aggregation through runtime
+Claims, contracts, and bindings should all preserve aggregate structure.
+Hidden planner metadata
+Use semantic zoom
+Each level should use its own vocabulary and metrics.
+One giant diagram
+The real promise
+The real promise of aggregation is that AI can operate at many scales without drowning in detail. A city-level agent can coordinate with colony-level aggregates. A colony-level agent can coordinate with house-level aggregates. A house-level agent can coordinate with room and device aggregates. Humans can enter the same model through Unfurl Studio and choose the right level of inspection.
+This is how an interconnected world remains understandable. Not by showing everything. Not by hiding everything. By exposing the right abstraction at the right level, while preserving the ability to zoom in when truth demands it.
+Bridge to Part 7
+Aggregation also sets up the next problem: runtime life. Once an assembly is created and loaded, how do humans observe it? How do they see which component is unhealthy? How does a fault propagate from a device to a house, from a house to a colony, or from a workflow node to an agent? How do we test scale by increasing users, sessions, traffic, or load from the same human harness?
+That is where Part 7 goes next: from designing assemblies to observing living systems.
+Without aggregation, intelligence drowns in detail. With aggregation, intelligence can reason at the right scale.

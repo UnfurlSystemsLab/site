@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail" data-bg-color="#faf9f5">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#faf9f5"/>
+    <rect x="150" y="150" width="900" height="4" fill="#1c1b19"/>
+    <rect x="150" y="150" width="4" height="500" fill="#1c1b19"/>
+    <text x="200" y="330" font-family="Georgia,serif" font-size="90" fill="#1c1b19">Unfurl</text>
+    <text x="200" y="430" font-family="Georgia,serif" font-size="90" fill="#1c1b19">Systems</text>
+    <circle cx="220" cy="500" r="10" fill="#9a978d"/>
+    <circle cx="270" cy="500" r="10" fill="#d99b3f"/>
+    <circle cx="320" cy="500" r="10" fill="#5b8f6a"/>
+  </svg>
+</template>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #faf9f5; }
+  * { box-sizing: border-box; }
+  a { color: oklch(0.48 0.09 250); text-decoration-color: oklch(0.82 0.04 250); text-underline-offset: 3px; }
+  a:hover { color: oklch(0.38 0.1 250); text-decoration-color: currentColor; }
+  ::selection { background: oklch(0.9 0.05 250); }
+  button:focus-visible, a:focus-visible { outline: 2px solid oklch(0.55 0.12 250); outline-offset: 3px; }
+</style>
+</helmet>
+<div style="min-height:100vh;background:#faf9f5;color:#1c1b19;font-family:'IBM Plex Sans',system-ui,sans-serif;display:flex;flex-direction:column">
+
+  <header style="position:sticky;top:0;z-index:30;background:rgba(250,249,245,0.94);backdrop-filter:blur(8px);border-bottom:1px solid #e5e2da">
+    <div style="max-width:1160px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px;min-height:62px">
+      <button type="button" onClick="{{ go.home }}" style="display:flex;align-items:center;gap:10px;background:none;border:0;padding:0;cursor:pointer;margin-right:auto">
+        <span style="width:14px;height:14px;background:#1c1b19;display:block;transform:rotate(45deg)"></span>
+        <span style="font:600 15px/1 'IBM Plex Sans',sans-serif;letter-spacing:-0.01em;color:#1c1b19">Unfurl Systems</span>
+      </button>
+      <nav aria-label="Primary" style="display:flex;flex-wrap:wrap;align-items:center;gap:4px">
+        <button type="button" onClick="{{ go.research }}" style="position:relative;background:none;border:0;cursor:pointer;padding:10px 12px;font:500 14px/1 'IBM Plex Sans',sans-serif;color:#3a382f">Research<sc-if value="{{ atResearch }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:#1c1b19"></span></sc-if></button>
+        <button type="button" onClick="{{ go.labs }}" style="position:relative;background:none;border:0;cursor:pointer;padding:10px 12px;font:500 14px/1 'IBM Plex Sans',sans-serif;color:#3a382f">Labs<sc-if value="{{ atLabs }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:#1c1b19"></span></sc-if></button>
+        <button type="button" onClick="{{ go.community }}" style="position:relative;background:none;border:0;cursor:pointer;padding:10px 12px;font:500 14px/1 'IBM Plex Sans',sans-serif;color:#3a382f">Community<sc-if value="{{ atCommunity }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:#1c1b19"></span></sc-if></button>
+        <button type="button" onClick="{{ go.about }}" style="position:relative;background:none;border:0;cursor:pointer;padding:10px 12px;font:500 14px/1 'IBM Plex Sans',sans-serif;color:#3a382f">About<sc-if value="{{ atAbout }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:#1c1b19"></span></sc-if></button>
+        <a href="https://github.com/UnfurlSystemsLab" style="margin-left:8px;display:inline-flex;align-items:center;gap:7px;border:1px solid #d9d5ca;border-radius:3px;padding:7px 11px;font:500 12px/1 'IBM Plex Mono',monospace;color:#3a382f;text-decoration:none" style-hover="border-color:#1c1b19;color:#1c1b19">UnfurlSystemsLab <span style="color:#8a877f">&#8599;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="flex:1">
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:76px 24px 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px 64px;align-items:start">
+        <div>
+          <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Independent research group &#183; Working in the open</p>
+          <h1 style="font:300 clamp(32px,4.6vw,52px)/1.1 'Source Serif 4',serif;letter-spacing:-0.02em;color:#1c1b19;margin:0 0 24px;text-wrap:pretty">Building the human and AI harness for intelligent systems.</h1>
+          <p style="font:400 18px/1.6 'Source Serif 4',serif;color:#4a473f;margin:0 0 32px;max-width:52ch;text-wrap:pretty">We are studying how software components can describe themselves, compose safely under contract, and stay understandable to the people accountable for them. The work is early: some of it is a draft specification, some of it is running code, and much of it is still an open question.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
+            <button type="button" onClick="{{ go.research }}" style="background:#1c1b19;color:#faf9f5;border:1px solid #1c1b19;border-radius:3px;padding:12px 18px;font:500 14px/1 'IBM Plex Sans',sans-serif;cursor:pointer" style-hover="background:#33302a">Explore the research</button>
+            <button type="button" onClick="{{ go.labs }}" style="background:none;color:#1c1b19;border:1px solid #d9d5ca;border-radius:3px;padding:12px 18px;font:500 14px/1 'IBM Plex Sans',sans-serif;cursor:pointer" style-hover="border-color:#1c1b19">View the Labs</button>
+          </div>
+        </div>
+        <div style="border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:22px 22px 18px">
+          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 16px">Where the work stands</p>
+          <div style="display:flex;flex-direction:column;gap:0">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:11px 0;border-bottom:1px solid #efece4"><span style="font:500 13px/1.3 'IBM Plex Mono',monospace;color:#1c1b19">dcp</span><span style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.68 0.14 75)"></span>Draft spec</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:11px 0;border-bottom:1px solid #efece4"><span style="font:500 13px/1.3 'IBM Plex Mono',monospace;color:#1c1b19">unfurl-fabric</span><span style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.6 0.12 155)"></span>Active development</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:11px 0;padding:11px 0"><span style="font:500 13px/1.3 'IBM Plex Mono',monospace;color:#1c1b19">unfurl-studio</span><span style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.6 0.12 275)"></span>Prototype</span></div>
+          </div>
+          <p style="font:400 12px/1.5 'IBM Plex Sans',sans-serif;color:#8a877f;margin:16px 0 0">Nothing here is production-ready. Status labels are the same on the site and in each repository.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+        <button type="button" onClick="{{ go.research }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:26px 24px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif" style-hover="border-color:#c9c4b6">
+          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 14px">01 &#183; Research</p>
+          <h2 style="font:400 22px/1.25 'Source Serif 4',serif;color:#1c1b19;margin:0 0 10px">The ideas and the reasoning</h2>
+          <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 16px">Problem framing, design philosophy, and the seven-part DCP Journey written for a broad technical audience.</p>
+          <span style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Read the research &#8594;</span>
+        </button>
+        <button type="button" onClick="{{ go.labs }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:26px 24px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif" style-hover="border-color:#c9c4b6">
+          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 14px">02 &#183; Labs</p>
+          <h2 style="font:400 22px/1.25 'Source Serif 4',serif;color:#1c1b19;margin:0 0 10px">What exists today</h2>
+          <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 16px">Four research implementations with current scope, specification links, and their public repositories.</p>
+          <span style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Inspect the Labs &#8594;</span>
+        </button>
+        <button type="button" onClick="{{ go.community }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:26px 24px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif" style-hover="border-color:#c9c4b6">
+          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 14px">03 &#183; Community</p>
+          <h2 style="font:400 22px/1.25 'Source Serif 4',serif;color:#1c1b19;margin:0 0 10px">Open questions</h2>
+          <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 16px">Where to disagree, bring a domain example, report a gap in the model, or contribute an implementation.</p>
+          <span style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Take part &#8594;</span>
+        </button>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:1160px;margin:0 auto;padding:56px 24px">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:28px">
+          <div>
+            <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 12px">Current research</p>
+            <h2 style="font:400 30px/1.2 'Source Serif 4',serif;color:#1c1b19;margin:0">The DCP Journey</h2>
+          </div>
+          <button type="button" onClick="{{ go.dcp }}" style="background:none;border:1px solid #d9d5ca;border-radius:3px;padding:10px 14px;font:500 13px/1 'IBM Plex Sans',sans-serif;color:#1c1b19;cursor:pointer" style-hover="border-color:#1c1b19">Series overview</button>
+        </div>
+        <p style="font:400 17px/1.65 'Source Serif 4',serif;color:#4a473f;margin:0 0 32px;max-width:62ch">A connected seven-part argument: why component assembly currently has no harness, what a capability contract would need to say, and what a human review layer looks like once machines do most of the assembly. All seven parts are published.</p>
+        <div style="display:flex;align-items:center;gap:0;margin-bottom:24px;flex-wrap:wrap">
+          <span style="flex:1;min-width:24px;height:3px;background:#1c1b19"></span><span style="flex:1;min-width:24px;height:3px;background:#1c1b19;margin-left:4px"></span><span style="flex:1;min-width:24px;height:3px;background:#1c1b19;margin-left:4px"></span><span style="flex:1;min-width:24px;height:3px;background:#1c1b19;margin-left:4px"></span><span style="flex:1;min-width:24px;height:3px;background:#1c1b19;margin-left:4px"></span><span style="flex:1;min-width:24px;height:3px;background:#1c1b19;margin-left:4px"></span><span style="flex:1;min-width:24px;height:3px;background:#1c1b19;margin-left:4px"></span>
+          <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin-left:14px">7 of 7 published</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+          <button type="button" onClick="{{ go.part7 }}" style="text-align:left;grid-column:span 1;border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:24px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif" style-hover="border-color:#1c1b19">
+            <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.48 0.09 250);margin:0 0 12px">Latest &#183; Part 7</p>
+            <h3 style="font:400 21px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 10px">The Living Assembly</h3>
+            <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 16px">A system is not complete when it is assembled. It becomes real when humans can load it, observe it, stress it, trace it, and safely evolve it.</p>
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">12 min read</span>
+          </button>
+          <div style="display:flex;flex-direction:column;gap:0;border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:8px 24px">
+            <button type="button" onClick="{{ go.part1 }}" style="text-align:left;background:none;border:0;border-bottom:1px solid #efece4;padding:12px 0;cursor:pointer;display:flex;gap:14px;align-items:baseline" style-hover="opacity:0.65"><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">01</span><span style="font:400 16px/1.4 'Source Serif 4',serif;color:#1c1b19">The Missing Harness</span></button>
+            <button type="button" onClick="{{ go.part2 }}" style="text-align:left;background:none;border:0;border-bottom:1px solid #efece4;padding:12px 0;cursor:pointer;display:flex;gap:14px;align-items:baseline" style-hover="opacity:0.65"><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">02</span><span style="font:400 16px/1.4 'Source Serif 4',serif;color:#1c1b19">The Baseline Shift</span></button>
+            <button type="button" onClick="{{ go.part3 }}" style="text-align:left;background:none;border:0;border-bottom:1px solid #efece4;padding:12px 0;cursor:pointer;display:flex;gap:14px;align-items:baseline" style-hover="opacity:0.65"><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">03</span><span style="font:400 16px/1.4 'Source Serif 4',serif;color:#1c1b19">The Capability Contract</span></button>
+            <button type="button" onClick="{{ go.part4 }}" style="text-align:left;background:none;border:0;border-bottom:1px solid #efece4;padding:12px 0;cursor:pointer;display:flex;gap:14px;align-items:baseline" style-hover="opacity:0.65"><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">04</span><span style="font:400 16px/1.4 'Source Serif 4',serif;color:#1c1b19">Draft Spec and Discussion</span></button>
+            <button type="button" onClick="{{ go.part5 }}" style="text-align:left;background:none;border:0;border-bottom:1px solid #efece4;padding:12px 0;cursor:pointer;display:flex;gap:14px;align-items:baseline" style-hover="opacity:0.65"><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">05</span><span style="font:400 16px/1.4 'Source Serif 4',serif;color:#1c1b19">The Human Harness</span></button>
+            <button type="button" onClick="{{ go.part6 }}" style="text-align:left;background:none;border:0;padding:12px 0;cursor:pointer;display:flex;gap:14px;align-items:baseline" style-hover="opacity:0.65"><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">06</span><span style="font:400 16px/1.4 'Source Serif 4',serif;color:#1c1b19">Aggregation Is Abstraction</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:56px 24px">
+        <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 12px">Labs</p>
+        <h2 style="font:400 30px/1.2 'Source Serif 4',serif;color:#1c1b19;margin:0 0 12px">Four research implementations</h2>
+        <p style="font:400 17px/1.65 'Source Serif 4',serif;color:#4a473f;margin:0 0 32px;max-width:62ch">Each Lab is a place where an idea from the research is being made concrete enough to be wrong in public.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px">
+          <button type="button" onClick="{{ go.lab }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:22px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#c9c4b6">
+            <span style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.68 0.14 75)"></span>Draft spec</span>
+            <h3 style="font:400 20px/1.25 'Source Serif 4',serif;color:#1c1b19;margin:0">Domain Claim Protocol</h3>
+            <p style="font:400 14px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0;flex:1">How a component states what it can do, what it needs, and under what conditions it may be used.</p>
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">UnfurlSystemsLab/dcp</span>
+          </button>
+          <button type="button" onClick="{{ go.lab }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:22px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#c9c4b6">
+            <span style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.6 0.12 155)"></span>Active development</span>
+            <h3 style="font:400 20px/1.25 'Source Serif 4',serif;color:#1c1b19;margin:0">Unfurl Fabric</h3>
+            <p style="font:400 14px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0;flex:1">A design-time compiler that matches needs to claims, validates the result, and produces a signed composition.</p>
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">UnfurlSystemsLab/unfurl-fabric</span>
+          </button>
+          <button type="button" onClick="{{ go.lab }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:22px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#c9c4b6">
+            <span style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.6 0.12 275)"></span>Prototype</span>
+            <h3 style="font:400 20px/1.25 'Source Serif 4',serif;color:#1c1b19;margin:0">Unfurl Studio</h3>
+            <p style="font:400 14px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0;flex:1">The human harness: a way to see, question, and govern an assembly that a machine proposed.</p>
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">UnfurlSystemsLab/unfurl-studio</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="max-width:760px;margin:0 auto;padding:64px 24px 72px;text-align:center">
+        <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 18px">Open invitation</p>
+        <p style="font:300 26px/1.4 'Source Serif 4',serif;color:#1c1b19;margin:0 0 26px;text-wrap:pretty">This work is evolving. Challenge the model, bring a domain example, or help implement it.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+          <button type="button" onClick="{{ go.community }}" style="background:#1c1b19;color:#faf9f5;border:1px solid #1c1b19;border-radius:3px;padding:12px 18px;font:500 14px/1 'IBM Plex Sans',sans-serif;cursor:pointer" style-hover="background:#33302a">Ways to take part</button>
+          <a href="https://github.com/UnfurlSystemsLab" style="background:none;color:#1c1b19;border:1px solid #d9d5ca;border-radius:3px;padding:12px 18px;font:500 14px/1 'IBM Plex Sans',sans-serif;text-decoration:none" style-hover="border-color:#1c1b19">Open the repositories</a>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isResearch }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:56px 24px 44px">
+        <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 18px">Research</p>
+        <h1 style="font:300 clamp(30px,4vw,44px)/1.15 'Source Serif 4',serif;letter-spacing:-0.02em;color:#1c1b19;margin:0 0 20px;max-width:20ch;text-wrap:pretty">Thinking in public, before it is settled.</h1>
+        <p style="font:400 18px/1.65 'Source Serif 4',serif;color:#4a473f;margin:0;max-width:64ch;text-wrap:pretty">Two tracks. The DCP Journey is a single connected argument, published in order. The blog is everything else: notes from implementation, dead ends, and short essays that do not belong to the series.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+        <button type="button" onClick="{{ go.dcp }}" style="text-align:left;border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:28px 26px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif" style-hover="border-color:#1c1b19">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px">
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">Track 01 &#183; Series</span>
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">7 / 7 published</span>
+          </div>
+          <h2 style="font:400 26px/1.2 'Source Serif 4',serif;color:#1c1b19;margin:0 0 12px">The DCP Journey</h2>
+          <p style="font:400 16px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 20px">Seven parts, read in order: from the missing harness, through the capability contract and its draft specification, to human review and runtime observation of a living assembly.</p>
+          <div style="display:flex;align-items:center;gap:4px;margin-bottom:18px">
+            <span style="flex:1;height:3px;background:#1c1b19"></span><span style="flex:1;height:3px;background:#1c1b19"></span><span style="flex:1;height:3px;background:#1c1b19"></span><span style="flex:1;height:3px;background:#1c1b19"></span><span style="flex:1;height:3px;background:#1c1b19"></span><span style="flex:1;height:3px;background:#1c1b19"></span><span style="flex:1;height:3px;background:#1c1b19"></span>
+          </div>
+          <span style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Start at Part 1 &#8594;</span>
+        </button>
+        <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:28px 26px;font-family:'IBM Plex Sans',sans-serif">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px">
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">Track 02 &#183; Notes</span>
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">Irregular</span>
+          </div>
+          <h2 style="font:400 26px/1.2 'Source Serif 4',serif;color:#1c1b19;margin:0 0 12px">Blog</h2>
+          <p style="font:400 16px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 20px">Standalone essays, experiment write-ups, and project updates. Shorter, rougher, and not required reading for the series.</p>
+          <button type="button" onClick="{{ go.article }}" style="background:none;border:0;padding:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Browse the blog &#8594;</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:52px 24px">
+        <h2 style="font:500 13px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f;margin:0 0 26px">Recent writing</h2>
+        <div style="display:flex;flex-direction:column">
+          <button type="button" onClick="{{ go.part7 }}" style="text-align:left;background:none;border:0;border-top:1px solid #e5e2da;padding:24px 0;cursor:pointer;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 32px;align-items:baseline" style-hover="background:#f4f2ec">
+            <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">DCP Journey &#183; Part 7</span><h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">The Living Assembly</h3></div>
+            <div><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">Loading, monitoring, and evolving AI-native systems once the assembly is running.</p><p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">30 July 2026 &#183; 12 min</p></div>
+          </button>
+          <button type="button" onClick="{{ go.part6 }}" style="text-align:left;background:none;border:0;border-top:1px solid #e5e2da;padding:24px 0;cursor:pointer;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 32px;align-items:baseline" style-hover="background:#f4f2ec">
+            <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">DCP Journey &#183; Part 6</span><h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">Aggregation Is Abstraction</h3></div>
+            <div><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">How intelligent systems scale across homes, colonies, cities, and software assemblies.</p><p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">26 July 2026 &#183; 12 min</p></div>
+          </button>
+          <button type="button" onClick="{{ go.part5 }}" style="text-align:left;background:none;border:0;border-top:1px solid #e5e2da;padding:24px 0;cursor:pointer;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 32px;align-items:baseline" style-hover="background:#f4f2ec">
+            <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">DCP Journey &#183; Part 5</span><h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">The Human Harness</h3></div>
+            <div><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">Why AI-native systems still need a UI that humans can reason through.</p><p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">19 July 2026 &#183; 10 min</p></div>
+          </button>
+          <button type="button" onClick="{{ go.part4 }}" style="text-align:left;background:none;border:0;border-top:1px solid #e5e2da;padding:24px 0;cursor:pointer;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 32px;align-items:baseline" style-hover="background:#f4f2ec">
+            <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">DCP Journey &#183; Part 4</span><h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">Draft Spec and Discussion</h3></div>
+            <div><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">The working shape of the draft, put on the table before the discussion.</p><p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">12 July 2026 &#183; 14 min</p></div>
+          </button>
+          <button type="button" onClick="{{ go.part3 }}" style="text-align:left;background:none;border:0;border-top:1px solid #e5e2da;padding:24px 0;cursor:pointer;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 32px;align-items:baseline" style-hover="background:#f4f2ec">
+            <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">DCP Journey &#183; Part 3</span><h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">The Capability Contract</h3></div>
+            <div><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">Claims, refusals, negotiation, and the three planes that keep intelligence out of the hot path.</p><p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">28 June 2026 &#183; 11 min</p></div>
+          </button>
+          <button type="button" onClick="{{ go.article }}" style="text-align:left;background:none;border:0;border-top:1px solid #e5e2da;padding:24px 0;cursor:pointer;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 32px;align-items:baseline" style-hover="background:#f4f2ec">
+            <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">Blog</span><h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">What the matcher gets wrong on real catalogues</h3></div>
+            <div><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">Running Fabric against 300 hand-written claims, and the three failure shapes that kept appearing.</p><p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">9 June 2026 &#183; 7 min</p></div>
+          </button>
+          <button type="button" onClick="{{ go.part2 }}" style="text-align:left;background:none;border:0;border-top:1px solid #e5e2da;border-bottom:1px solid #e5e2da;padding:24px 0;cursor:pointer;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 32px;align-items:baseline" style-hover="background:#f4f2ec">
+            <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">DCP Journey &#183; Part 2</span><h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">The Baseline Shift</h3></div>
+            <div><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">If construction gets cheap, the scarce work moves to governed assembly.</p><p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">21 May 2026 &#183; 9 min</p></div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px 64px">
+        <div style="border:1px solid #e5e2da;background:#f4f2ec;border-radius:3px;padding:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;align-items:center">
+          <div>
+            <h2 style="font:400 21px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">Disagree with something here?</h2>
+            <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0;max-width:52ch">Written arguments are easier to correct than shipped systems. Open a discussion thread or bring a domain example that breaks the model.</p>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end">
+            <button type="button" onClick="{{ go.community }}" style="background:#1c1b19;color:#faf9f5;border:1px solid #1c1b19;border-radius:3px;padding:11px 16px;font:500 13px/1 'IBM Plex Sans',sans-serif;cursor:pointer">Community</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isDcp }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:36px 24px 48px">
+        <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:8px;margin-bottom:28px">
+          <button type="button" onClick="{{ go.research }}" style="background:none;border:0;padding:0;cursor:pointer;font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f" style-hover="color:#1c1b19">Research</button>
+          <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#c2beb2">/</span>
+          <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#3a382f">DCP Journey</span>
+        </nav>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:40px">
+          <div>
+            <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 18px">Seven parts &#183; read in order</p>
+            <h1 style="font:300 clamp(30px,4vw,46px)/1.13 'Source Serif 4',serif;letter-spacing:-0.02em;color:#1c1b19;margin:0 0 20px;text-wrap:pretty">The DCP Journey</h1>
+            <p style="font:400 18px/1.65 'Source Serif 4',serif;color:#4a473f;margin:0 0 24px;max-width:56ch;text-wrap:pretty">One argument in seven moves. It starts with a problem &#8212; we assemble software out of components we cannot interrogate &#8212; and ends with what it would take to observe, test, and evolve an assembly while it is running.</p>
+            <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#6f6c62;margin:0;max-width:56ch">You can read a part on its own, but the parts build. If you only read two, read Part 1 and Part 3.</p>
+          </div>
+          <div style="border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:22px">
+            <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 16px">Series at a glance</p>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <div style="display:flex;justify-content:space-between;gap:12px"><span style="font:400 13px/1.4 'IBM Plex Sans',sans-serif;color:#5c594f">Published</span><span style="font:500 13px/1.4 'IBM Plex Mono',monospace;color:#1c1b19">7 of 7</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px"><span style="font:400 13px/1.4 'IBM Plex Sans',sans-serif;color:#5c594f">Full series reading time</span><span style="font:500 13px/1.4 'IBM Plex Mono',monospace;color:#1c1b19">~78 min</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px"><span style="font:400 13px/1.4 'IBM Plex Sans',sans-serif;color:#5c594f">Labs referenced</span><span style="font:500 13px/1.4 'IBM Plex Mono',monospace;color:#1c1b19">DCP, Studio</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px"><span style="font:400 13px/1.4 'IBM Plex Sans',sans-serif;color:#5c594f">Last updated</span><span style="font:500 13px/1.4 'IBM Plex Mono',monospace;color:#1c1b19">30 Jul 2026</span></div>
+            </div>
+            <button type="button" onClick="{{ go.part1 }}" style="margin-top:20px;width:100%;background:#1c1b19;color:#faf9f5;border:1px solid #1c1b19;border-radius:3px;padding:11px 16px;font:500 13px/1 'IBM Plex Sans',sans-serif;cursor:pointer">Start at Part 1</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:1160px;margin:0 auto;padding:48px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 30px">The sequence</h2>
+        <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;position:relative">
+          <li style="display:grid;grid-template-columns:64px 1fr;gap:20px;padding:0 0 26px;border-left:1px solid #ddd9ce;margin-left:20px;padding-left:28px">
+            <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px;align-items:start">
+              <div>
+                <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">Part 1</span>
+                <h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">The Missing Harness</h3>
+                <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">Published 1 Aug 2026 &#183; 10 min</p>
+              </div>
+              <div>
+                <p style="font:400 15px/1.65 'Source Serif 4',serif;color:#5c594f;margin:0 0 12px">Problem framing. Every era had a harness; AI is becoming a new kind of consumer of capabilities, and the harness we give it today is still fragmented.</p>
+                <button type="button" onClick="{{ go.part1 }}" style="background:none;border:0;padding:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Read Part 1 &#8594;</button>
+              </div>
+            </div>
+          </li>
+          <li style="display:grid;grid-template-columns:64px 1fr;gap:20px;padding:0 0 26px;border-left:1px solid #ddd9ce;margin-left:20px;padding-left:28px">
+            <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px;align-items:start">
+              <div>
+                <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">Part 2</span>
+                <h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">The Baseline Shift</h3>
+                <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">Published 21 May 2026 &#183; 9 min</p>
+              </div>
+              <div>
+                <p style="font:400 15px/1.65 'Source Serif 4',serif;color:#5c594f;margin:0 0 12px">The panic is not that AI can write code. Software work is moving from building isolated components to assembling governable systems.</p>
+                <button type="button" onClick="{{ go.part2 }}" style="background:none;border:0;padding:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Read Part 2 &#8594;</button>
+              </div>
+            </div>
+          </li>
+          <li style="display:grid;grid-template-columns:64px 1fr;gap:20px;padding:0 0 26px;border-left:1px solid #ddd9ce;margin-left:20px;padding-left:28px">
+            <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px;align-items:start">
+              <div>
+                <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">Part 3</span>
+                <h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">The Capability Contract</h3>
+                <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">Published 28 Jun 2026 &#183; 11 min</p>
+                <span style="display:inline-flex;align-items:center;gap:7px;margin-top:12px;border:1px solid #ddd9ce;background:#fff;padding:4px 8px;border-radius:2px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.68 0.14 75)"></span>Leads to DCP Lab</span>
+              </div>
+              <div>
+                <p style="font:400 15px/1.65 'Source Serif 4',serif;color:#5c594f;margin:0 0 12px">DCP named: claims, refusals, negotiation, and the three planes of description, negotiation, and invocation.</p>
+                <button type="button" onClick="{{ go.part3 }}" style="background:none;border:0;padding:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Read Part 3 &#8594;</button>
+              </div>
+            </div>
+          </li>
+          <li style="display:grid;grid-template-columns:64px 1fr;gap:20px;padding:0 0 26px;border-left:1px solid #ddd9ce;margin-left:20px;padding-left:28px">
+            <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px;align-items:start">
+              <div>
+                <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">Part 4</span>
+                <h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">Draft Spec and Discussion</h3>
+                <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">Published 12 Jul 2026 &#183; 14 min</p>
+              </div>
+              <div>
+                <p style="font:400 15px/1.65 'Source Serif 4',serif;color:#5c594f;margin:0 0 12px">The working shape of the draft: core primitives, an illustrative claim fragment, aggregation, and questions for readers.</p>
+                <button type="button" onClick="{{ go.part4 }}" style="background:none;border:0;padding:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Read Part 4 &#8594;</button>
+              </div>
+            </div>
+          </li>
+          <li style="display:grid;grid-template-columns:64px 1fr;gap:20px;padding:0 0 26px;border-left:1px solid #ddd9ce;margin-left:20px;padding-left:28px">
+            <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px;align-items:start">
+              <div>
+                <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">Part 5</span>
+                <h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">The Human Harness</h3>
+                <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">Published 19 Jul 2026 &#183; 10 min</p>
+                <span style="display:inline-flex;align-items:center;gap:7px;margin-top:12px;border:1px solid #ddd9ce;background:#fff;padding:4px 8px;border-radius:2px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.6 0.12 275)"></span>Leads to Studio Lab</span>
+              </div>
+              <div>
+                <p style="font:400 15px/1.65 'Source Serif 4',serif;color:#5c594f;margin:0 0 12px">Why AI-native systems still need a UI humans can reason through. Introduces Unfurl Studio: the AI proposes, the human disposes, Fabric validates.</p>
+                <button type="button" onClick="{{ go.part5 }}" style="background:none;border:0;padding:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Read Part 5 &#8594;</button>
+              </div>
+            </div>
+          </li>
+          <li style="display:grid;grid-template-columns:64px 1fr;gap:20px;padding:0 0 26px;border-left:1px solid #ddd9ce;margin-left:20px;padding-left:28px">
+            <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px;align-items:start">
+              <div>
+                <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f">Part 6</span>
+                <h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">Aggregation Is Abstraction</h3>
+                <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">Published 26 Jul 2026 &#183; 12 min</p>
+              </div>
+              <div>
+                <p style="font:400 15px/1.65 'Source Serif 4',serif;color:#5c594f;margin:0 0 12px">Semantic zoom and aggregate capabilities, from a single component up through houses, colonies, and cities. Containment is not compatibility.</p>
+                <button type="button" onClick="{{ go.part6 }}" style="background:none;border:0;padding:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Read Part 6 &#8594;</button>
+              </div>
+            </div>
+          </li>
+          <li style="display:grid;grid-template-columns:64px 1fr;gap:20px;padding:0;border-left:1px solid transparent;margin-left:20px;padding-left:28px">
+            <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px;align-items:start">
+              <div>
+                <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.48 0.09 250)">Part 7 &#183; Latest</span>
+                <h3 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:8px 0 0">The Living Assembly</h3>
+                <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:10px 0 0">Published 30 Jul 2026 &#183; 12 min</p>
+              </div>
+              <div>
+                <p style="font:400 15px/1.65 'Source Serif 4',serif;color:#5c594f;margin:0 0 12px">Loading, monitoring, and evolving AI-native systems: contract hydration, faults as semantic events, and the accelerator pedal for systems.</p>
+                <button type="button" onClick="{{ go.part7 }}" style="background:none;border:0;padding:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Read Part 7 &#8594;</button>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:48px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 10px">Where the series lands</h2>
+        <p style="font:400 16px/1.65 'Source Serif 4',serif;color:#5c594f;margin:0 0 28px;max-width:60ch">Each part points at the Lab where the idea is being made concrete. The Labs carry the current technical shape; the articles carry the reasoning.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
+          <button type="button" onClick="{{ go.lab }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:20px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif" style-hover="border-color:#c9c4b6">
+            <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 10px">Parts 3&#8211;4 &#8594;</p>
+            <h3 style="font:400 18px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">DCP Lab</h3>
+            <p style="font:400 14px/1.55 'Source Serif 4',serif;color:#5c594f;margin:0">Draft specification, schema overview, examples.</p>
+          </button>
+          <button type="button" onClick="{{ go.lab }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:20px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif" style-hover="border-color:#c9c4b6">
+            <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 10px">Parts 5, 7 &#8594;</p>
+            <h3 style="font:400 18px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">Studio Lab</h3>
+            <p style="font:400 14px/1.55 'Source Serif 4',serif;color:#5c594f;margin:0">The human review and governance prototype.</p>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isArticle }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <article>
+      <header style="border-bottom:1px solid #e5e2da">
+        <div style="max-width:760px;margin:0 auto;padding:36px 24px 44px">
+          <nav aria-label="Breadcrumb" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:32px">
+            <button type="button" onClick="{{ go.research }}" style="background:none;border:0;padding:0;cursor:pointer;font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f" style-hover="color:#1c1b19">Research</button>
+            <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#c2beb2">/</span>
+            <button type="button" onClick="{{ go.dcp }}" style="background:none;border:0;padding:0;cursor:pointer;font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f" style-hover="color:#1c1b19">DCP Journey</button>
+            <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#c2beb2">/</span>
+            <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#3a382f">Part {{ articlePart }}</span>
+          </nav>
+          <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 18px">Part {{ articlePart }} of 7</p>
+          <h1 style="font:300 clamp(30px,4.2vw,44px)/1.15 'Source Serif 4',serif;letter-spacing:-0.02em;color:#1c1b19;margin:0 0 18px;text-wrap:pretty">{{ articleTitle }}</h1>
+          <p style="font:400 20px/1.55 'Source Serif 4',serif;color:#5c594f;margin:0 0 28px;text-wrap:pretty">{{ articleSubtitle }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;padding-top:22px;border-top:1px solid #e5e2da">
+            <span style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f">Vinay Verma</span>
+            <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f">{{ articleDate }}</span>
+            <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f">{{ articleReadTime }} read</span>
+            <span style="display:inline-flex;align-items:center;gap:7px;border:1px solid #e5e2da;background:#fff;padding:4px 9px;border-radius:2px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:#9a978d"></span>Research</span>
+          </div>
+        </div>
+      </header>
+
+      <sc-if value="{{ isPart1 }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:44px 24px 8px">
+        <div style="border:1px solid #e5e2da;background:#f4f2ec;border-radius:3px;padding:20px 22px;margin:0 0 32px">
+          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f;margin:0 0 10px">Core question</p>
+          <p style="font:400 16px/1.65 'Source Serif 4',serif;color:#3a382f;margin:0">If AI is going to govern an interconnected world, where is the universal harness that tells it what everything is, what it can do, what it depends on, and what rules it must obey?</p>
+        </div>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Every major computing shift has created a new harness: a layer that makes raw capability understandable, usable, and governable by its primary consumer. The command line exposed computation to technical users. The graphical user interface made computing legible to everyday humans. APIs, SDKs, cloud platforms, and orchestration systems made software capabilities callable by other software.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">AI is now becoming a new kind of consumer. It does not merely click buttons or call APIs. Increasingly, it is expected to reason across tools, devices, services, environments, and decisions. Yet the harness we give AI today is still fragmented. We describe tools. We expose endpoints. We register actions. But we rarely provide a universal, domain-aware contract that tells AI what an entity is, what it can do, what it requires, what it affects, and what governs its use.</p>
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Every era had a harness</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">A harness is an enabling layer. It takes something powerful but difficult to use and makes it accessible to its intended consumer. The GUI was not just decoration: it translated machine capability into a form humans could understand, providing affordances, constraints, feedback, and a mental model. In that sense it was not merely a user interface. It was a capability harness for human cognition.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Now AI is creating the next shift. The primary consumer is no longer only a human, and not only another deterministic software program. The consumer is an intelligent agent expected to reason, choose, compose, and act. That agent needs a new kind of harness.</p>
+        <blockquote style="margin:36px 0;padding:0 0 0 24px;border-left:2px solid #1c1b19"><p style="font:300 23px/1.5 'Source Serif 4',serif;color:#1c1b19;margin:0;text-wrap:pretty">The connected world does not fail because a device lacks an API. It fails when intelligence cannot understand what the device is, what it means, and what rules govern its use.</p></blockquote>
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">The air-conditioner test</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Consider a simple air-conditioner. An AI system may be able to turn it on, set a temperature, or change a mode. That is useful, but it is not enough for intelligent governance. To govern even this ordinary device well, AI may need a richer self-description.</p>
+        <div style="border:1px solid #e5e2da;background:#fff;border-radius:3px;margin:0 0 12px;overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;font-family:'IBM Plex Sans',sans-serif">
+            <thead><tr><th style="text-align:left;font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;padding:14px 18px;border-bottom:1px solid #e5e2da">Question AI must answer</th><th style="text-align:left;font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;padding:14px 18px;border-bottom:1px solid #e5e2da">Example answer from the entity itself</th></tr></thead>
+            <tbody>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">What domain does this entity serve?</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">HVAC / climate control</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">What capabilities does it offer?</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Cool, heat, dehumidify, fan, sleep mode</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">What are its operating constraints?</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">1.5 ton, specific voltage range, safe temperature limits</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">What does it depend on?</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Power supply, thermostat, network connectivity, room sensor</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">What policies govern it?</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Energy limits, occupancy rules, user permissions, safety limits</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px">What relationships does it have?</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px">Serves Room 204, belongs to Floor 2, part of Building A climate system</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">If this information is unavailable or inconsistent, AI must infer. Inference may work in a demo. It is not enough for a world where AI is expected to operate across real systems, real constraints, and real consequences.</p>
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Toward Domain Claim Protocol</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">A Domain Claim Protocol can be thought of as a structured claim that an entity makes about itself: its domain, capabilities, requirements, constraints, policies, relationships, and activation rules. In that framing, DCP becomes a candidate for the missing harness: a capability contract that AI can read before it acts.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">The important point is not to start with the protocol. The important point is to recognize the architectural gap. The GUI helped humans use computers because it translated machine capability into human-understandable form. The next harness must help AI govern the connected world by translating domain capability into AI-understandable form.</p>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ isPart2 }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:44px 24px 8px">
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">There is a strange anxiety running through the software industry right now. It shows up in different words &#8212; productivity, automation, agents, copilots, replacement &#8212; but underneath, the question is almost always the same: if AI can write more and more code, what happens to software development?</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">The deeper shift is not that software developers are becoming unnecessary. The deeper shift is that the baseline of software work is moving. Higher-level languages lifted us above raw instructions. Operating systems lifted us above hardware. GUIs lifted ordinary users above command lines. Cloud platforms lifted teams above physical infrastructure. Now AI is pushing the baseline again.</p>
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Connected is not the same as composable</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">A device can be online and still be opaque. It can be controllable and still be semantically weak. It can expose commands and still fail to explain its domain. An AI trying to manage a building needs more than commands: it needs capacity, energy characteristics, supported modes, operational constraints, sensor dependencies, maintenance state, safety boundaries, cost implications, and the relationship to occupancy, access control, energy pricing, and building policy.</p>
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">The new unit of software value</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">The new unit of value is not just a component. It is a governable component. A governable component is not merely callable. It is understandable. It declares its boundaries instead of letting integrators discover them through production incidents. It identifies dependencies before deployment, not after failure. It makes conflict visible when two systems claim authority over the same decision. It treats faults as part of the contract rather than as vague log noise.</p>
+        <blockquote style="margin:36px 0;padding:0 0 0 24px;border-left:2px solid #1c1b19"><p style="font:300 23px/1.5 'Source Serif 4',serif;color:#1c1b19;margin:0;text-wrap:pretty">The developer of the next era will not be valued only for typing implementation faster than a model. They will be valued for shaping systems that models can safely assemble.</p></blockquote>
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Intelligence during assembly, determinism during execution</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Tool access answers only one class of question: how can I invoke this? The bigger connected-world question is different. Should this be composed here at all? What does this component claim to own? Which policy applies? Which component has authority when two claims overlap? Those are not runtime invocation questions. They are assembly questions.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">An interconnected world needs a design-time composition layer, where intelligence can reason slowly, structurally, and safely before runtime. Once composition is settled, runtime should be fast, deterministic, and governed by frozen decisions &#8212; not reinterpreted on every call by a model.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">That shift is why the first essay asked for a missing harness. The missing harness is not simply about connecting tools. It is about giving every meaningful component a way to describe itself as part of a larger composition. That is where Part 3 begins.</p>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ isPart3 }}" hint-placeholder-val="{{ true }}">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:44px 24px 8px">
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Part 1 named the missing harness: AI cannot safely govern a connected world if every component describes itself in a different way, or worse, does not describe itself at all. Part 2 reframed the anxiety inside software development: the baseline is shifting from writing isolated components to assembling, governing, validating, and operating systems of capabilities.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">This third essay gives that missing harness a name: DCP, the Domain Claim Protocol. DCP is the idea that every meaningful component in an AI-native world should carry a self-description that is useful not only to humans, but also to agents. Not a brochure. Not a README. Not a loose API document. A structured claim about what the component is, what it owns, what it refuses, what it needs, what it offers, and how it can safely compose with other components.</p>
+        <div style="border:1px solid #e5e2da;background:#f4f2ec;border-radius:3px;padding:20px 22px;margin:0 0 32px">
+          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f;margin:0 0 10px">Core idea</p>
+          <p style="font:400 16px/1.65 'Source Serif 4',serif;color:#3a382f;margin:0">The future does not need every object to become a chatbot. It needs every capable object to explain itself well enough that agents can compose it safely.</p>
+        </div>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">The most important part: what it refuses</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">The surprisingly powerful part of DCP is not only what a component claims to do. It is what it explicitly refuses to own. Refusal is how a component becomes trustworthy. A component that says &#8220;I own identity verification, but I do not own authorization decisions; those belong to a policy engine&#8221; gives the system a boundary it can reason about.</p>
+        <blockquote style="margin:36px 0;padding:0 0 0 24px;border-left:2px solid #1c1b19">
+          <p style="font:300 23px/1.5 'Source Serif 4',serif;color:#1c1b19;margin:0;text-wrap:pretty">A component that says &#8220;I can do everything&#8221; is not powerful; it is dangerous.</p>
+        </blockquote>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Most failures in large systems are not caused by lack of capability. They are caused by confused ownership. Who owns the decision? Who owns the state? Who owns the failure? Who is allowed to remediate it? DCP makes those questions first-class. Agents are very good at stitching fragments together; without boundaries, that stitching becomes improvisation. DCP is a way to make the stitching accountable.</p>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">The three planes of DCP</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Once components have claims, DCP does not jump directly into execution. It introduces negotiation: taking two claims, plus context, and deciding whether and how they compose. The output of negotiation is not a prompt. It is not an opinion. It is a frozen composition contract.</p>
+
+        <figure style="margin:36px 0;padding:0">
+          <div style="border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:28px 22px">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:stretch">
+              <div style="border:1px solid #ddd9ce;border-radius:3px;padding:14px 12px;background:#faf9f5">
+                <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 8px">Plane 1</p>
+                <p style="font:500 14px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0 0 6px">Description</p>
+                <p style="font:400 12px/1.5 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:0">A component publishes a claim. Cheap, cacheable, stable per version.</p>
+              </div>
+              <div style="border:1px solid #1c1b19;border-radius:3px;padding:14px 12px;background:#f4f2ec">
+                <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 8px">Plane 2</p>
+                <p style="font:500 14px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0 0 6px">Negotiation</p>
+                <p style="font:400 12px/1.5 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:0">Claims and context produce a frozen composition contract. The only plane where intelligence is needed.</p>
+              </div>
+              <div style="border:1px solid #ddd9ce;border-radius:3px;padding:14px 12px;background:#faf9f5">
+                <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 8px">Plane 3</p>
+                <p style="font:500 14px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0 0 6px">Invocation</p>
+                <p style="font:400 12px/1.5 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:0">Components call one another against the frozen contract. Fast, deterministic, no runtime reasoning.</p>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid #efece4">
+              <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">design time</span>
+              <span style="flex:1;height:1px;background:#ddd9ce"></span>
+              <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">runtime</span>
+            </div>
+          </div>
+          <sc-if value="{{ showAlt }}" hint-placeholder-val="{{ true }}">
+          <figcaption style="font:400 13px/1.6 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:12px 0 0">Figure 1. DCP separates description, negotiation, and invocation so intelligence does not sit in the hot path.</figcaption>
+          </sc-if>
+        </figure>
+
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">This separation prevents a common AI architecture mistake: putting the reasoning layer into the path of every request. If every operation requires an agent to rethink the contract, the system becomes slow, hard to audit, and difficult to deploy inside customer boundaries.</p>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">A concrete example: the smart room</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">An AI agent can turn on the AC. That is useful, but it is not the big picture. The bigger question is: should it turn on the AC? At what temperature? For which occupant? Under which energy policy? What if the curtain system can reduce heat load more efficiently? What if access control says the person is a visitor and building policy forbids changing room settings?</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">In a DCP-style world, the AC does not merely say &#8220;set_temperature is available.&#8221; It says: I own thermal comfort execution for this room, I can cool or heat within these limits, I depend on electricity and a room sensor, I refuse access-control decisions, I refuse energy-budget authority, and I emit these faults when compressor, sensor, or policy constraints block operation. Now the agent is no longer guessing. It is composing against declared claims.</p>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">DCP, APIs, and MCP: different altitudes</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">An API answers: how can software call this capability? MCP answers: how can an LLM invoke this tool at runtime? DCP answers a different question: should this component compose with that component, under what ownership boundaries, with which dependency satisfaction, through which contract, and with what runtime binding? MCP is about invocation in the moment. DCP is about assembly before the moment.</p>
+        <div style="border:1px solid #e5e2da;background:#fff;border-radius:3px;margin:0 0 32px;overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse">
+            <thead><tr><th style="text-align:left;font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;padding:14px 18px;border-bottom:1px solid #e5e2da">Old baseline</th><th style="text-align:left;font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;padding:14px 18px;border-bottom:1px solid #e5e2da">AI-native baseline</th></tr></thead>
+            <tbody>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">Write the component</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Define the component and its claim</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">Document the API</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Declare domain, offers, dependencies, and refusals</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">Manually wire integrations</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Validate and bind capabilities through contracts</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">Debug failures from logs</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Propagate typed faults with declared blast radius</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px">Runtime improvisation by agents</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px">Design-time negotiation, runtime execution</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">The most important result is not automation. The most important result is accountability. When something composes, we can ask why. When it refuses, we can ask what should own the concern instead. When it fails, we can trace what was affected. In that sense, DCP is the missing harness made concrete: a capability contract for an AI-native world.</p>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ isPart4 }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:44px 24px 8px">
+        <div style="border:1px solid #e5e2da;background:#f4f2ec;border-radius:3px;padding:20px 22px;margin:0 0 32px">
+          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f;margin:0 0 10px">Discussion draft posture</p>
+          <p style="font:400 16px/1.65 'Source Serif 4',serif;color:#3a382f;margin:0">This part intentionally starts with the current draft shape of DCP. The explanation and the invitation to contribute come after the reader has seen what is being proposed.</p>
+        </div>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">In the earlier parts of this series, we moved from the missing harness to the software baseline shift, and then to DCP as a capability contract for an AI-native world. Part 4 should do something slightly different. It should not begin by asking people to comment on an abstract idea. It should first show the current draft: the shape of the protocol, the main primitives, the guardrails, and the questions it is trying to answer.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">The following is not a final standard. It is a public-facing working shape of the current DCP draft: enough structure to make the proposal concrete, while still leaving room for domain feedback and design correction. DCP is designed for late-bound enterprise composition. Instead of hardcoding every application topology, components publish claims, and those claims are resolved through requirements, policies, context, and bindings.</p>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Core primitives in the draft</h2>
+        <div style="border:1px solid #e5e2da;background:#fff;border-radius:3px;margin:0 0 32px;overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse">
+            <thead><tr><th style="text-align:left;font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;padding:14px 18px;border-bottom:1px solid #e5e2da">Primitive</th><th style="text-align:left;font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;padding:14px 18px;border-bottom:1px solid #e5e2da">What it answers</th></tr></thead>
+            <tbody>
+              <tr><td style="font:500 13px/1.5 'IBM Plex Mono',monospace;color:#1c1b19;padding:12px 18px;border-bottom:1px solid #efece4">Claim</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">What is this component, what domain does it own, and what does it refuse?</td></tr>
+              <tr><td style="font:500 13px/1.5 'IBM Plex Mono',monospace;color:#1c1b19;padding:12px 18px;border-bottom:1px solid #efece4">Negotiation</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Can two claims compose under this context, policy, tenant, and environment?</td></tr>
+              <tr><td style="font:500 13px/1.5 'IBM Plex Mono',monospace;color:#1c1b19;padding:12px 18px;border-bottom:1px solid #efece4">Composition contract</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">What exact need binds to what exact offer, with what transport, mapping, expectations, provenance, trust, and invalidation rules?</td></tr>
+              <tr><td style="font:500 13px/1.5 'IBM Plex Mono',monospace;color:#1c1b19;padding:12px 18px;border-bottom:1px solid #efece4">Runtime binding</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Where and how is the frozen contract wired in a specific environment or tenant?</td></tr>
+              <tr><td style="font:500 13px/1.5 'IBM Plex Mono',monospace;color:#1c1b19;padding:12px 18px;border-bottom:1px solid #efece4">Aggregate component</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">How can a parent capability contain and govern child components, contracts, and bindings?</td></tr>
+              <tr><td style="font:500 13px/1.5 'IBM Plex Mono',monospace;color:#1c1b19;padding:12px 18px">Fault vocabulary</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px">How can a component fail, what does the failure affect, and when may it propagate?</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Illustrative claim fragment</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">A claim is the component self-description. It is static, published per component version, and treated as the source of truth for what the component owns and refuses. The full schema is larger, but even a small fragment shows the shape DCP wants to make explicit.</p>
+        <div style="border:1px solid #e5e2da;background:#1c1b19;border-radius:3px;padding:20px 22px;margin:0 0 12px;overflow-x:auto">
+          <pre style="margin:0;font:400 13px/1.7 'IBM Plex Mono',monospace;color:#e8e5dd"><code>identity:
+  uri: dcp://components/smart-room/hvac
+  name: Room HVAC Adapter
+  kind: component
+  version: 1.0.0
+domain:
+  concerns:
+    - concern: room-climate-control
+      scope_notes: Owns local temperature execution, not building-wide energy policy.
+  boundary_principles:
+    - Comfort decisions may be constrained by safety, occupancy, and energy policy.
+refusals:
+  - concern: building-wide-energy-policy
+    owned_by: energy-optimization-system
+offers:
+  - capability: room.climate.setpoint
+dependencies:
+  required:
+    - need: occupancy-signal
+faults:
+  emitted:
+    - code: hvac.sensor_stale
+      severity: degraded</code></pre>
+        </div>
+        <p style="font:400 13px/1.6 'IBM Plex Sans',sans-serif;color:#8a877f;margin:0 0 32px">Claim sections in the draft: <code style="font:400 12px/1 'IBM Plex Mono',monospace;background:#f4f2ec;padding:2px 5px;border-radius:2px;color:#3a382f">identity</code>, <code style="font:400 12px/1 'IBM Plex Mono',monospace;background:#f4f2ec;padding:2px 5px;border-radius:2px;color:#3a382f">domain</code>, <code style="font:400 12px/1 'IBM Plex Mono',monospace;background:#f4f2ec;padding:2px 5px;border-radius:2px;color:#3a382f">refusals</code>, <code style="font:400 12px/1 'IBM Plex Mono',monospace;background:#f4f2ec;padding:2px 5px;border-radius:2px;color:#3a382f">dependencies</code>, <code style="font:400 12px/1 'IBM Plex Mono',monospace;background:#f4f2ec;padding:2px 5px;border-radius:2px;color:#3a382f">offers</code>, <code style="font:400 12px/1 'IBM Plex Mono',monospace;background:#f4f2ec;padding:2px 5px;border-radius:2px;color:#3a382f">conflict_resolution</code>, <code style="font:400 12px/1 'IBM Plex Mono',monospace;background:#f4f2ec;padding:2px 5px;border-radius:2px;color:#3a382f">negotiation_surface</code>, <code style="font:400 12px/1 'IBM Plex Mono',monospace;background:#f4f2ec;padding:2px 5px;border-radius:2px;color:#3a382f">integration_ports</code>, <code style="font:400 12px/1 'IBM Plex Mono',monospace;background:#f4f2ec;padding:2px 5px;border-radius:2px;color:#3a382f">faults</code>, and <code style="font:400 12px/1 'IBM Plex Mono',monospace;background:#f4f2ec;padding:2px 5px;border-radius:2px;color:#3a382f">metadata</code>.</p>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Aggregation is not an optional extension</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Aggregation is how DCP represents a larger capability made from smaller capabilities. A smart room, workflow, module, product surface, or enterprise domain can behave as an aggregate component while still preserving the claims, contracts, and runtime bindings of its children. In the draft shape it appears at three levels: a parent claim references child claims, a parent contract references child contracts, and a parent runtime binding references child bindings.</p>
+        <div style="border:1px solid #e5e2da;background:#f4f2ec;border-radius:3px;padding:20px 22px;margin:0 0 32px">
+          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f;margin:0 0 10px">Public draft note</p>
+          <p style="font:400 16px/1.65 'Source Serif 4',serif;color:#3a382f;margin:0">If aggregation is missing, the spec collapses back into pairwise integration. For an interconnected world, the parent/child composition graph must be part of the protocol surface itself.</p>
+        </div>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Now open it for discussion</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Once the draft shape is visible, the invitation becomes more precise. The question is no longer, &#8220;Do you like DCP?&#8221; The better question is: can this draft describe the components, devices, services, workflows, and policies from your domain without lying, oversimplifying, or hiding risk?</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 16px;text-align:justify;hyphens:auto">Questions for readers:</p>
+        <ul style="margin:0 0 32px;padding-left:22px;font:400 17px/1.7 'Source Serif 4',serif;color:#2c2a25;text-align:justify;hyphens:auto">
+          <li>Can this draft describe physical-world devices without pretending they are ordinary APIs?</li>
+          <li>Can it describe aggregates such as smart rooms, workflows, product modules, or enterprise domains without hiding child components?</li>
+          <li>Are the boundary and refusal concepts strong enough for regulated domains?</li>
+          <li>Does the fault vocabulary capture the failures that operators actually care about?</li>
+          <li>Where should the draft force human escalation rather than allow automated negotiation?</li>
+          <li>What should be standardized, and what should remain policy-specific?</li>
+        </ul>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">The most valuable contribution is a concrete case. Pick one component from your world and try to describe it through the draft spec. Then identify where the draft works, where it feels awkward, and where it fails.</p>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ isPart5 }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:44px 24px 8px">
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">In the earlier parts of this series, we started with a missing layer: a harness that allows AI to understand what components are, what they can do, what they refuse to do, and how they can be safely composed. Part 4 moved that idea closer to a draft protocol.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Part 5 completes another side of the story. If DCP is the AI harness, then there must also be a human harness. Not because humans need to micromanage every AI decision, but because every meaningful system still needs human review, human intent, human accountability, and human imagination. The human harness is not merely a dashboard. It is the surface through which people can inspect, manipulate, validate, and govern AI-native assemblies without losing the underlying truth.</p>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">The clue was already in the schema</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Some fields in the DCP-facing material do not look like they are meant only for AI. Shape, fallback form, visual category, port anchors, connector shapes, interaction handles: these are not fields an AI needs in order to reason about capability compatibility. They are fields a human needs in order to see capability compatibility.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">A component should carry one source of truth, with multiple projections. One projection makes it legible to AI. Another makes it legible to humans. This is why the human harness should not be bolted on after the protocol is finished. It is already implied by the protocol.</p>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Unfurl Studio: the human harness</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Unfurl Studio is the design-time surface where operators can compose intelligent components visually, inspect the DCP facts behind them, and export the same signed contract that the non-visual pipeline would produce. It is one product expression of this pattern, not a requirement of DCP itself: another authoring surface can project the same claims, contracts, runtime bindings, faults, and review questions if it preserves DCP as the source of truth.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">The important part is what Studio is not. It is not a free-form diagramming canvas. It is not a place where moving shapes magically creates a contract. It is not a shortcut around DCP, Fabric, trust policy, or compatibility validation. The human moves shapes, connects ports, or reviews a suggested change. But Fabric validates the intent, DCP decides compatibility, and the signed contract comes from the compiler.</p>
+        <blockquote style="margin:36px 0;padding:0 0 0 24px;border-left:2px solid #1c1b19">
+          <p style="font:300 23px/1.5 'Source Serif 4',serif;color:#1c1b19;margin:0;text-wrap:pretty">The AI should propose; the human should dispose; Fabric should validate.</p>
+        </blockquote>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">A practical review grammar</h2>
+        <div style="border:1px solid #e5e2da;background:#fff;border-radius:3px;margin:0 0 32px;overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse">
+            <thead><tr><th style="text-align:left;font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;padding:14px 18px;border-bottom:1px solid #e5e2da">Question for the human</th><th style="text-align:left;font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;padding:14px 18px;border-bottom:1px solid #e5e2da">Visible surface</th><th style="text-align:left;font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;padding:14px 18px;border-bottom:1px solid #e5e2da">Source of truth</th></tr></thead>
+            <tbody>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">What is this component?</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Component shape, label, inspector</td><td style="font:400 13px/1.5 'IBM Plex Mono',monospace;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">DCP claim identity and domain</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">What can it do?</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Offer ports and capability list</td><td style="font:400 13px/1.5 'IBM Plex Mono',monospace;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">DCP offers</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">What does it need?</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Required sockets, substrate pipes</td><td style="font:400 13px/1.5 'IBM Plex Mono',monospace;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">DCP dependencies and substrate profile</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px;border-bottom:1px solid #efece4">What does it refuse?</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Capped or redirected handles, warnings</td><td style="font:400 13px/1.5 'IBM Plex Mono',monospace;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">DCP refusals</td></tr>
+              <tr><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#3a382f;padding:12px 18px">Can I export it?</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px">Compile and export panel</td><td style="font:400 13px/1.5 'IBM Plex Mono',monospace;color:#5c594f;padding:12px 18px">Validated candidate and signed contract</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Visual does not mean vague</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Many technical people distrust visual tools because visual tools often become informal. Boxes and arrows drift away from what actually runs. The human harness has to avoid that failure. Every handle maps to a declared capability, dependency, substrate dependency, or refusal. Every semantic action becomes an intent. Every export comes from the compiler.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">That is the difference between a diagramming surface and a governed composition surface. A diagram lets a human describe what they hope is true. A human harness lets a human manipulate what the system knows is true. Part 6 explains why that harness must also support aggregation and semantic zoom.</p>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ isPart6 }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:44px 24px 8px">
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">In Part 5, we introduced the human harness: the visual and interactive layer that lets people inspect, review, and govern what AI and DCP assemble. That harness only works if it can show the right level of detail at the right time. A user should not be forced to inspect every sensor, tap, geyser, AC mode, identity provider, storage connector, and runtime binding just to understand whether a house, colony, workflow, or city is healthy enough to reason about.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Part 6 argues that aggregation is the scaling principle. An aggregate is not merely a bag of child components. A house is not just AC plus geyser plus taps plus doors plus curtains. At the level of the house, it exposes higher-level capabilities: comfort, security, energy posture, water readiness, automation level. The underlying components remain there, but they are not the first thing every agent or human needs to see.</p>
+        <blockquote style="margin:36px 0;padding:0 0 0 24px;border-left:2px solid #1c1b19">
+          <p style="font:300 23px/1.5 'Source Serif 4',serif;color:#1c1b19;margin:0;text-wrap:pretty">Aggregation is not the act of piling capabilities together. It is the act of giving a collection a new, meaningful surface.</p>
+        </blockquote>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">The map analogy</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">A map does not show every house, window, tap, switch, cable, and pipe when you are looking at a city. At the city level, it shows city-level meaning. At the street level, it shows streets, buildings, entrances, and traffic. The details have not disappeared. They are simply not projected at the wrong level.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">AI-native systems need the same discipline. A city-level agent should not reason directly over every geyser in every house. It should reason over abstractions like water demand, energy flexibility, automation coverage, infrastructure risk, and service availability. Showing everything at once is not transparency. It is noise with a nicer font.</p>
+        <figure style="margin:36px 0;padding:0">
+          <div style="border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:26px 22px">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">
+              <div style="border:1px solid #ddd9ce;border-radius:3px;padding:14px 12px;background:#faf9f5"><p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 8px">City</p><p style="font:400 12px/1.5 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:0">Smart coverage, infrastructure readiness, risk concentration</p></div>
+              <div style="border:1px solid #ddd9ce;border-radius:3px;padding:14px 12px;background:#faf9f5"><p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 8px">Colony</p><p style="font:400 12px/1.5 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:0">Shared utilities, energy coordination, emergency readiness</p></div>
+              <div style="border:1px solid #1c1b19;border-radius:3px;padding:14px 12px;background:#f4f2ec"><p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 8px">House</p><p style="font:400 12px/1.5 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:0">Comfort, water readiness, energy posture, security state</p></div>
+              <div style="border:1px solid #ddd9ce;border-radius:3px;padding:14px 12px;background:#faf9f5"><p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 8px">Component</p><p style="font:400 12px/1.5 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:0">Ports, dependencies, refusals, faults, bindings</p></div>
+            </div>
+          </div>
+          <sc-if value="{{ showAlt }}" hint-placeholder-val="{{ true }}">
+          <figcaption style="font:400 13px/1.6 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:12px 0 0">Figure 1. Semantic zoom: each level exposes different meaning, not just more or fewer objects. The same source of truth produces different projections at different levels.</figcaption>
+          </sc-if>
+        </figure>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Containment is different from compatibility</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">A child is inside an aggregate because the aggregate contains it. A replacement candidate is compatible because it can satisfy a role. Those are different relationships, and they should not be blurred. A colony contains houses. That does not mean every house is a replacement for every other house. The containment graph tells us what exists inside. The compatibility graph tells us what can replace or connect.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">The same idea continues after design-time description. A parent contract can reference child contracts; each child remains a normal contract with its own parties, binding, transport, expectations, provenance, trust, and invalidation rules. Runtime bindings follow the same principle, which gives us a runtime structure that can be observed, audited, explained, and regenerated without inventing a parallel wiring format.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Without aggregation, intelligence drowns in detail. With aggregation, intelligence can reason at the right scale. Part 7 turns to the next problem: runtime life.</p>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ isPart7 }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:44px 24px 8px">
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Part 6 introduced aggregation as abstraction. Part 7 moves from design-time assembly to runtime life. Once an assembly is created, loaded, and bound to a real environment, the human harness must remain useful. It should not become a pretty design tool that disappears when the system starts running. It should become the operator surface for loading, monitoring, stress testing, tracing, auditing, and evolving the assembly.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">The key idea is simple: monitoring should be projected onto the assembly humans understand. Logs, metrics, traces, and dashboards are necessary, but they are not enough. A DCP-grounded system knows the claims, contracts, runtime bindings, faults, dependencies, and aggregation levels that give those signals meaning.</p>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Loading an assembly is contract hydration</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">A traditional deployment asks a narrow question: can we put this software somewhere and start it? An AI-native assembly asks a richer question: can we load this signed composition into a real environment without losing the meaning of the contract? Loading should mean projecting a frozen design-time agreement into a live environment while preserving the semantic relationship between each component and the resources it uses.</p>
+        <div style="border:1px solid #e5e2da;background:#fff;border-radius:3px;margin:0 0 32px;overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse">
+            <thead><tr><th style="text-align:left;font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;padding:14px 18px;border-bottom:1px solid #e5e2da">Runtime layer</th><th style="text-align:left;font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;padding:14px 18px;border-bottom:1px solid #e5e2da">Question it answers</th></tr></thead>
+            <tbody>
+              <tr><td style="font:500 13px/1.5 'IBM Plex Mono',monospace;color:#1c1b19;padding:12px 18px;border-bottom:1px solid #efece4">Composition contract</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">What is valid?</td></tr>
+              <tr><td style="font:500 13px/1.5 'IBM Plex Mono',monospace;color:#1c1b19;padding:12px 18px;border-bottom:1px solid #efece4">Runtime binding</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">Where is it wired?</td></tr>
+              <tr><td style="font:500 13px/1.5 'IBM Plex Mono',monospace;color:#1c1b19;padding:12px 18px;border-bottom:1px solid #efece4">Substrate profile</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">What runtime surface is allowed?</td></tr>
+              <tr><td style="font:500 13px/1.5 'IBM Plex Mono',monospace;color:#1c1b19;padding:12px 18px;border-bottom:1px solid #efece4">Fault vocabulary</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px;border-bottom:1px solid #efece4">What failures are meaningful?</td></tr>
+              <tr><td style="font:500 13px/1.5 'IBM Plex Mono',monospace;color:#1c1b19;padding:12px 18px">Audit and provenance</td><td style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:#5c594f;padding:12px 18px">Why is this running?</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">Faults as semantic events</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">A failure is not automatically a fault. A log line might say that an API timed out. DCP asks a more structured question: is this a declared fault? What capability does it affect? Does it impact a parent claim? What evidence justifies it? What remediation is allowed?</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">That distinction matters because runtime systems need restraint. A child component failure should not automatically become a city-level incident. A temporary sensor blip should not automatically disable a house. A refused action should not be treated as a bug if the component explicitly refuses ownership of that concern. In a DCP-shaped runtime view, faults carry a code, category, severity, affected needs, affected offers, evidence references, correlation identifiers, and propagation rules.</p>
+
+        <h2 style="font:400 26px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:44px 0 16px;text-wrap:pretty">The accelerator pedal for systems</h2>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">Runtime observation is not only about waiting for failures. The operator should be able to select stress parameters and watch how the assembly behaves. Increase users. Increase sessions. Increase model calls. Tighten policies. Add regional constraints. Then watch which capabilities degrade first, which faults propagate, which contracts hold, and which assumptions break.</p>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">The result is not just a graph of CPU and memory. The result is an operational story: at this load, this capability degrades; this dependency saturates; this fault propagates to the parent; this remediation remains allowed; this human approval is required before the system can proceed.</p>
+        <blockquote style="margin:36px 0;padding:0 0 0 24px;border-left:2px solid #1c1b19">
+          <p style="font:300 23px/1.5 'Source Serif 4',serif;color:#1c1b19;margin:0;text-wrap:pretty">A system is not complete when it is described, assembled, or even deployed. It becomes a usable intelligent system when humans can understand it while it runs.</p>
+        </blockquote>
+        <p style="font:400 19px/1.75 'Source Serif 4',serif;color:#2c2a25;margin:0 0 24px;text-align:justify;hyphens:auto">A living assembly must be allowed to evolve, but evolution must not become silent mutation. If a component is replaced, the replacement should still satisfy the parent need. If a claim version changes, the relevant contract should be reviewed or renegotiated. If a human overrides the default path, the decision should be recorded. That is the line between safe evolution and hidden drift.</p>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ hasRelatedLab }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:24px 24px 0">
+        <div style="border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;align-items:center">
+          <div>
+            <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f;margin:0 0 10px">Related Lab</p>
+            <h3 style="font:400 19px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">Domain Claim Protocol</h3>
+            <p style="font:400 14px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">The current technical shape: schema, validation rules, worked examples, and what is still unspecified.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+            <span style="display:inline-flex;align-items:center;gap:7px;border:1px solid #e5e2da;padding:4px 9px;border-radius:2px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.68 0.14 75)"></span>Draft spec</span>
+            <button type="button" onClick="{{ go.lab }}" style="background:#1c1b19;color:#faf9f5;border:1px solid #1c1b19;border-radius:3px;padding:10px 15px;font:500 13px/1 'IBM Plex Sans',sans-serif;cursor:pointer">Open the DCP Lab</button>
+            <a href="https://github.com/UnfurlSystemsLab/dcp" style="font:400 12px/1 'IBM Plex Mono',monospace;color:#6f6c62;text-decoration:none" style-hover="color:#1c1b19">UnfurlSystemsLab/dcp &#8599;</a>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <nav aria-label="Series navigation" style="max-width:{{ readingWidth }};margin:0 auto;padding:24px 24px 0">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+          <sc-if value="{{ hasPrevPart }}" hint-placeholder-val="{{ false }}">
+          <button type="button" onClick="{{ goPrevPart }}" style="text-align:left;border:1px solid #e5e2da;background:none;border-radius:3px;padding:18px;cursor:pointer" style-hover="border-color:#1c1b19">
+            <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 10px">&#8592; Previous</p>
+            <p style="font:400 17px/1.35 'Source Serif 4',serif;color:#1c1b19;margin:0">{{ prevPartTitle }}</p>
+          </button>
+          </sc-if>
+          <sc-if value="{{ hasNextPart }}" hint-placeholder-val="{{ false }}">
+          <button type="button" onClick="{{ goNextPart }}" style="text-align:left;border:1px solid #e5e2da;background:none;border-radius:3px;padding:18px;cursor:pointer" style-hover="border-color:#1c1b19">
+            <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 10px">Next &#8594;</p>
+            <p style="font:400 17px/1.35 'Source Serif 4',serif;color:#1c1b19;margin:0">{{ nextPartTitle }}</p>
+          </button>
+          </sc-if>
+        </div>
+      </nav>
+
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:24px 24px 72px">
+        <div style="border-top:1px solid #e5e2da;padding-top:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+          <p style="font:400 16px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0;max-width:44ch">Found a hole in this argument, or a domain where it does not hold? That is the most useful thing you can send us.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <a href="https://github.com/UnfurlSystemsLab/dcp/discussions" style="border:1px solid #d9d5ca;border-radius:3px;padding:10px 14px;font:500 13px/1 'IBM Plex Sans',sans-serif;color:#1c1b19;text-decoration:none" style-hover="border-color:#1c1b19">Discuss this part</a>
+            <button type="button" onClick="{{ go.community }}" style="background:none;border:1px solid #d9d5ca;border-radius:3px;padding:10px 14px;font:500 13px/1 'IBM Plex Sans',sans-serif;color:#1c1b19;cursor:pointer" style-hover="border-color:#1c1b19">Community</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isLabs }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:56px 24px 44px">
+        <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 18px">Labs</p>
+        <h1 style="font:300 clamp(30px,4vw,44px)/1.15 'Source Serif 4',serif;letter-spacing:-0.02em;color:#1c1b19;margin:0 0 20px;max-width:20ch;text-wrap:pretty">Where ideas are made concrete enough to be wrong.</h1>
+        <p style="font:400 18px/1.65 'Source Serif 4',serif;color:#4a473f;margin:0 0 28px;max-width:64ch;text-wrap:pretty">A Lab is a specification, a prototype, or both. None of these are finished products. Status is shown on every card and carried through to the corresponding repository.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:20px 28px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#9a978d"></span><span style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f">Research &#8212; an idea, not yet a spec</span></div>
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.68 0.14 75)"></span><span style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f">Draft spec &#8212; written down, still moving</span></div>
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.6 0.12 275)"></span><span style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f">Prototype &#8212; runs, not hardened</span></div>
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.6 0.12 155)"></span><span style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f">Active development &#8212; changing week to week</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="max-width:1160px;margin:0 auto;padding:48px 24px 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px">
+        <button type="button" onClick="{{ go.lab }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:28px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;display:flex;flex-direction:column;gap:14px" style-hover="border-color:#c9c4b6">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <span style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.68 0.14 75)"></span>Draft spec</span>
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#a8a49a">Updated 12 Jul</span>
+          </div>
+          <h2 style="font:400 24px/1.25 'Source Serif 4',serif;color:#1c1b19;margin:0">Domain Claim Protocol</h2>
+          <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0;flex:1">How a component states what it can do, what it needs, and under what conditions it may be used or invoked.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid #efece4">
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">UnfurlSystemsLab/dcp</span>
+            <span style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Open Lab &#8594;</span>
+          </div>
+        </button>
+        <button type="button" onClick="{{ go.lab }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:28px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;display:flex;flex-direction:column;gap:14px" style-hover="border-color:#c9c4b6">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <span style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.6 0.12 155)"></span>Active development</span>
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#a8a49a">Updated 24 Jul</span>
+          </div>
+          <h2 style="font:400 24px/1.25 'Source Serif 4',serif;color:#1c1b19;margin:0">Unfurl Fabric</h2>
+          <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0;flex:1">The design-time compiler: catalog, needs, matching, validation, contract signing, and deployment planning.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid #efece4">
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">UnfurlSystemsLab/unfurl-fabric</span>
+            <span style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Open Lab &#8594;</span>
+          </div>
+        </button>
+        <button type="button" onClick="{{ go.lab }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:28px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;display:flex;flex-direction:column;gap:14px" style-hover="border-color:#c9c4b6">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <span style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.6 0.12 275)"></span>Prototype</span>
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#a8a49a">Updated 3 Jul</span>
+          </div>
+          <h2 style="font:400 24px/1.25 'Source Serif 4',serif;color:#1c1b19;margin:0">Unfurl Studio</h2>
+          <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0;flex:1">The human harness for visually inspecting and governing DCP and Fabric assemblies.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid #efece4">
+            <span style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f">UnfurlSystemsLab/unfurl-studio</span>
+            <span style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250)">Open Lab &#8594;</span>
+          </div>
+        </button>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isLab }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:36px 24px 44px">
+        <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:8px;margin-bottom:28px">
+          <button type="button" onClick="{{ go.labs }}" style="background:none;border:0;padding:0;cursor:pointer;font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f" style-hover="color:#1c1b19">Labs</button>
+          <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#c2beb2">/</span>
+          <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#3a382f">DCP</span>
+        </nav>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:20px">
+          <span style="display:inline-flex;align-items:center;gap:7px;border:1px solid #ddd9ce;background:#fff;padding:6px 10px;border-radius:2px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c594f"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.68 0.14 75)"></span>Draft specification</span>
+          <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#a8a49a">Last updated 12 July 2026</span>
+        </div>
+        <h1 style="font:300 clamp(30px,4vw,44px)/1.15 'Source Serif 4',serif;letter-spacing:-0.02em;color:#1c1b19;margin:0 0 20px;text-wrap:pretty">Domain Claim Protocol</h1>
+        <p style="font:400 20px/1.6 'Source Serif 4',serif;color:#4a473f;margin:0 0 28px;max-width:60ch;text-wrap:pretty">A way for a component to state what it can do, what it needs, and under what conditions it may be invoked &#8212; written down so an assembly can be checked rather than trusted.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="https://github.com/UnfurlSystemsLab/dcp" style="display:inline-flex;align-items:center;gap:8px;background:#1c1b19;color:#faf9f5;border:1px solid #1c1b19;border-radius:3px;padding:12px 18px;font:500 14px/1 'IBM Plex Sans',sans-serif;text-decoration:none" style-hover="background:#33302a">View the repository &#8599;</a>
+          <a href="https://github.com/UnfurlSystemsLab/dcp#spec" style="background:none;color:#1c1b19;border:1px solid #d9d5ca;border-radius:3px;padding:12px 18px;font:500 14px/1 'IBM Plex Sans',sans-serif;text-decoration:none" style-hover="border-color:#1c1b19">Read the draft spec</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 18px">The problem</h2>
+        <p style="font:400 18px/1.7 'Source Serif 4',serif;color:#3a382f;margin:0;max-width:70ch;text-wrap:pretty">Components describe their interface but not their behaviour, cost, or boundaries. A human or a model assembling several of them has to guess at what happens under conditions the interface never mentions &#8212; a missing input, a region the data cannot legally leave, a latency budget the caller actually needs. DCP is an attempt to make those guesses unnecessary by giving components a shared way to write them down.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:48px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">How it works</h2>
+        <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:start">
+          <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:26px">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px">
+              <div style="border:1px solid #e5e2da;border-radius:3px;padding:12px 10px;text-align:center"><p style="font:500 10px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 6px">A</p><p style="font:500 12px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0">Claim</p></div>
+              <div style="border:1px solid #e5e2da;border-radius:3px;padding:12px 10px;text-align:center"><p style="font:500 10px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 6px">B</p><p style="font:500 12px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0">Registry</p></div>
+              <div style="border:1px solid #e5e2da;border-radius:3px;padding:12px 10px;text-align:center"><p style="font:500 10px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 6px">C</p><p style="font:500 12px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0">Match</p></div>
+              <div style="border:1px solid #1c1b19;border-radius:3px;padding:12px 10px;text-align:center;background:#f4f2ec"><p style="font:500 10px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 6px">D</p><p style="font:500 12px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0">Contract</p></div>
+            </div>
+            <p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;text-align:center;margin:0 0 4px">&#8595; consumed by</p>
+            <div style="border:1px dashed #ddd9ce;border-radius:3px;padding:14px;text-align:center">
+              <p style="font:500 12px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0">Fabric (compiler) &#183; Studio (review)</p>
+            </div>
+          </div>
+          <div>
+            <p style="font:400 16px/1.7 'Source Serif 4',serif;color:#3a382f;margin:0 0 16px;text-wrap:pretty">A component publishes a <strong>claim</strong> into a registry. When something needs a capability, Fabric matches the need against candidate claims and produces a <strong>contract</strong> &#8212; the negotiated, signed record of what will actually be provided. Every later invocation can be checked against that contract rather than against the original, looser claim.</p>
+            <sc-if value="{{ showAlt }}" hint-placeholder-val="{{ true }}">
+            <p style="font:400 13px/1.6 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:0">Text alternative to the diagram: a claim is published to a registry, matched against a need to produce a contract, and the contract is what Fabric and Studio consume.</p>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:1160px;margin:0 auto;padding:48px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Current scope</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+          <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:18px">
+            <p style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(0.55 0.13 155);margin:0 0 12px">Implemented</p>
+            <ul style="margin:0;padding-left:18px;font:400 14px/1.6 'Source Serif 4',serif;color:#3a382f"><li>Claim schema validator (CLI)</li><li>Static claim linting</li></ul>
+          </div>
+          <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:18px">
+            <p style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(0.62 0.13 75);margin:0 0 12px">Specified</p>
+            <ul style="margin:0;padding-left:18px;font:400 14px/1.6 'Source Serif 4',serif;color:#3a382f"><li>Contract signing format</li><li>Bounds vocabulary (partial)</li></ul>
+          </div>
+          <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:18px">
+            <p style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(0.55 0.11 275);margin:0 0 12px">Experimental</p>
+            <ul style="margin:0;padding-left:18px;font:400 14px/1.6 'Source Serif 4',serif;color:#3a382f"><li>Predicate-based bounds</li><li>Multi-party negotiation</li></ul>
+          </div>
+          <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:18px">
+            <p style="display:inline-flex;align-items:center;gap:7px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 12px">Deferred</p>
+            <ul style="margin:0;padding-left:18px;font:400 14px/1.6 'Source Serif 4',serif;color:#3a382f"><li>Cross-registry federation</li><li>Formal proof of bound compliance</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:48px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Key concepts</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+          <div><h3 style="font:400 19px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">Claim</h3><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">What a component provides, what it requires, and the bounds it operates under.</p></div>
+          <div><h3 style="font:400 19px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">Bounds</h3><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">Constraints such as data residency or latency that a match must respect. Still the least settled part of the schema.</p></div>
+          <div><h3 style="font:400 19px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">Contract</h3><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">The signed, negotiated outcome of matching a need against a claim.</p></div>
+        </div>
+        <p style="font:400 14px/1.6 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:22px 0 0">Full schema reference lives in the repository README and <code style="font:400 12px/1 'IBM Plex Mono',monospace;background:#f4f2ec;padding:2px 5px;border-radius:2px;color:#3a382f">/spec</code>.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:1160px;margin:0 auto;padding:48px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Examples</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+          <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:22px">
+            <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 10px">Example 1</p>
+            <h3 style="font:400 18px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">Invoice validation, bounded to EU residency</h3>
+            <p style="font:400 14px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">A finance component claims it can validate invoices, requires tax jurisdiction data, and refuses to run outside eu-west.</p>
+          </div>
+          <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:22px">
+            <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 10px">Example 2</p>
+            <h3 style="font:400 18px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">Two claims, one need, no clean match</h3>
+            <p style="font:400 14px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">A worked failure case showing what Fabric does when no candidate claim satisfies the stated bounds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:48px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Related research</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+          <button type="button" onClick="{{ go.part3 }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:18px;cursor:pointer" style-hover="border-color:#c9c4b6"><p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 8px">DCP Journey &#183; Part 3</p><p style="font:400 17px/1.35 'Source Serif 4',serif;color:#1c1b19;margin:0">The Capability Contract</p></button>
+          <button type="button" onClick="{{ go.part4 }}" style="text-align:left;border:1px solid #e5e2da;background:#fff;border-radius:3px;padding:18px;cursor:pointer" style-hover="border-color:#c9c4b6"><p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 8px">DCP Journey &#183; Part 4</p><p style="font:400 17px/1.35 'Source Serif 4',serif;color:#1c1b19;margin:0">Draft Spec and Discussion</p></button>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#1c1b19">
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;align-items:center">
+        <div>
+          <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#a8a49a;margin:0 0 12px">Repository</p>
+          <h2 style="font:400 24px/1.3 'Source Serif 4',serif;color:#faf9f5;margin:0 0 8px">UnfurlSystemsLab/dcp</h2>
+          <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#c9c6bc;margin:0">Specification, schema, validator CLI, examples, and issue tracker.</p>
+        </div>
+        <a href="https://github.com/UnfurlSystemsLab/dcp" style="justify-self:start;display:inline-flex;align-items:center;gap:8px;background:#faf9f5;color:#1c1b19;border:1px solid #faf9f5;border-radius:3px;padding:13px 20px;font:500 14px/1 'IBM Plex Sans',sans-serif;text-decoration:none">Open on GitHub &#8599;</a>
+      </div>
+    </section>
+
+    <section>
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;align-items:center">
+        <div>
+          <h2 style="font:400 22px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">Participate</h2>
+          <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0;max-width:52ch">Report a gap in the bounds vocabulary, propose a domain example, or open a discussion about the schema.</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end">
+          <a href="https://github.com/UnfurlSystemsLab/dcp/issues" style="border:1px solid #d9d5ca;border-radius:3px;padding:11px 16px;font:500 13px/1 'IBM Plex Sans',sans-serif;color:#1c1b19;text-decoration:none" style-hover="border-color:#1c1b19">Open an issue</a>
+          <a href="https://github.com/UnfurlSystemsLab/dcp/discussions" style="border:1px solid #d9d5ca;border-radius:3px;padding:11px 16px;font:500 13px/1 'IBM Plex Sans',sans-serif;color:#1c1b19;text-decoration:none" style-hover="border-color:#1c1b19">Join the discussion</a>
+          <button type="button" onClick="{{ go.community }}" style="background:#1c1b19;color:#faf9f5;border:1px solid #1c1b19;border-radius:3px;padding:11px 16px;font:500 13px/1 'IBM Plex Sans',sans-serif;cursor:pointer">Community hub</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isCommunity }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:56px 24px 44px">
+        <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 18px">Community</p>
+        <h1 style="font:300 clamp(30px,4vw,44px)/1.15 'Source Serif 4',serif;letter-spacing:-0.02em;color:#1c1b19;margin:0 0 20px;max-width:22ch;text-wrap:pretty">Question it, break it, or help build it.</h1>
+        <p style="font:400 18px/1.65 'Source Serif 4',serif;color:#4a473f;margin:0;max-width:64ch;text-wrap:pretty">Nothing here is finished, which means the most useful contribution is often a disagreement, a domain example that breaks the model, or a gap report &#8212; not just code.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+        <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:24px">
+          <h2 style="font:400 19px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 10px">Discuss an idea</h2>
+          <p style="font:400 14px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 16px">Argue with a research article or propose a variant of the model in GitHub Discussions.</p>
+          <a href="https://github.com/orgs/UnfurlSystemsLab/discussions" style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250);text-decoration:none">Open Discussions &#8599;</a>
+        </div>
+        <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:24px">
+          <h2 style="font:400 19px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 10px">Report a gap</h2>
+          <p style="font:400 14px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 16px">Found a case the schema or a Lab doesn't cover? File it against the relevant repository.</p>
+          <a href="https://github.com/UnfurlSystemsLab/dcp/issues/new" style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250);text-decoration:none">Open an issue &#8599;</a>
+        </div>
+        <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:24px">
+          <h2 style="font:400 19px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 10px">Bring a domain example</h2>
+          <p style="font:400 14px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 16px">The model is tested by real cases. Tell us where it holds and where it doesn't.</p>
+          <a href="mailto:research@unfurl.systems?subject=Domain%20example" style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250);text-decoration:none">Send an example &#8599;</a>
+        </div>
+        <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:24px">
+          <h2 style="font:400 19px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 10px">Contribute code</h2>
+          <p style="font:400 14px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 16px">Each repository has its own contribution guide, issue templates, and code of conduct.</p>
+          <a href="https://github.com/UnfurlSystemsLab" style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:oklch(0.48 0.09 250);text-decoration:none">Browse repositories &#8599;</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:48px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Open questions right now</h2>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0">
+          <li style="border-top:1px solid #e5e2da;padding:18px 0;font:400 17px/1.55 'Source Serif 4',serif;color:#3a382f">Should DCP bounds be a closed vocabulary or arbitrary predicates? <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f">&#8212; raised in Part 3</span></li>
+          <li style="border-top:1px solid #e5e2da;padding:18px 0;font:400 17px/1.55 'Source Serif 4',serif;color:#3a382f">What does aggregate consent look like when claims compose across a whole assembly? <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f">&#8212; raised in Part 6 draft</span></li>
+          <li style="border-top:1px solid #e5e2da;border-bottom:1px solid #e5e2da;padding:18px 0;font:400 17px/1.55 'Source Serif 4',serif;color:#3a382f">How much of contract verification can happen without a live network call? <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f">&#8212; open in Fabric</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:1160px;margin:0 auto;padding:48px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Roadmap and current priorities</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+          <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:18px"><p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 10px">Now</p><p style="font:400 15px/1.55 'Source Serif 4',serif;color:#1c1b19;margin:0">Publish Parts 5&#8211;7, harden the bounds vocabulary.</p></div>
+          <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:18px"><p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 10px">Next</p><p style="font:400 15px/1.55 'Source Serif 4',serif;color:#1c1b19;margin:0">Open Studio screenshots and a walkthrough of a real assembly review.</p></div>
+          <div style="border:1px solid #ddd9ce;background:#fff;border-radius:3px;padding:18px"><p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a877f;margin:0 0 10px">Later</p><p style="font:400 15px/1.55 'Source Serif 4',serif;color:#1c1b19;margin:0">Formalize status automation between repositories and this site.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px 64px">
+        <div style="border:1px solid #e5e2da;border-radius:3px;padding:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;align-items:center">
+          <div>
+            <h2 style="font:400 20px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">Code of conduct</h2>
+            <p style="font:400 14px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">Every repository and discussion space follows the same code of conduct. Read it before your first contribution.</p>
+          </div>
+          <a href="https://github.com/UnfurlSystemsLab/.github/blob/main/CODE_OF_CONDUCT.md" style="justify-self:start;border:1px solid #d9d5ca;border-radius:3px;padding:11px 16px;font:500 13px/1 'IBM Plex Sans',sans-serif;color:#1c1b19;text-decoration:none" style-hover="border-color:#1c1b19">Read the code of conduct</a>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:56px 24px 40px">
+        <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 18px">About</p>
+        <h1 style="font:300 clamp(30px,4vw,42px)/1.18 'Source Serif 4',serif;letter-spacing:-0.02em;color:#1c1b19;margin:0 0 22px;text-wrap:pretty">A research posture, not a product roadmap.</h1>
+        <p style="font:400 19px/1.7 'Source Serif 4',serif;color:#3a382f;margin:0 0 24px;text-wrap:pretty">Unfurl Systems studies how software components can describe themselves, compose under contract, and stay legible to the people accountable for them. We publish the reasoning as we go, alongside the specifications and prototypes that reasoning produces.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:44px 24px">
+        <h2 style="font:400 24px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 16px">Research-first, not launch-first</h2>
+        <p style="font:400 17px/1.65 'Source Serif 4',serif;color:#3a382f;margin:0 0 20px;text-wrap:pretty">We would rather publish an argument with visible gaps than a polished claim we can't yet back up. Nothing on this site should be read as an announcement of a finished product. Specifications are drafts until they say otherwise; prototypes are prototypes.</p>
+        <div style="border-left:2px solid #1c1b19;padding-left:20px">
+          <p style="font:300 21px/1.5 'Source Serif 4',serif;color:#1c1b19;margin:0;text-wrap:pretty">Published specifications and prototypes on this site are not necessarily production-ready, and we say so on every page where it matters.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:44px 24px">
+        <h2 style="font:400 24px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 20px">Principles</h2>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="border-top:1px solid #e5e2da;padding:18px 0"><h3 style="font:500 16px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0 0 8px">Status is not optional</h3><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">Every idea, spec, and prototype carries a maturity label, on the site and in its repository.</p></div>
+          <div style="border-top:1px solid #e5e2da;padding:18px 0"><h3 style="font:500 16px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0 0 8px">Summarize, don't duplicate</h3><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">The website explains; the repository is the source of truth for what actually runs.</p></div>
+          <div style="border-top:1px solid #e5e2da;padding:18px 0"><h3 style="font:500 16px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0 0 8px">Disagreement is useful input</h3><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">A well-argued objection or a domain counterexample moves the work forward faster than agreement does.</p></div>
+          <div style="border-top:1px solid #e5e2da;border-bottom:1px solid #e5e2da;padding:18px 0"><h3 style="font:500 16px/1.3 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0 0 8px">Publish only what's ready to be read</h3><p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0">We would rather ship four public Labs with clear boundaries than promote every internal experiment.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:44px 24px">
+        <h2 style="font:400 24px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 18px">Maintainers</h2>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;gap:14px;align-items:baseline"><span style="font:500 15px/1.4 'IBM Plex Sans',sans-serif;color:#1c1b19;min-width:120px">Ruth Calder</span><span style="font:400 14px/1.5 'Source Serif 4',serif;color:#5c594f">DCP specification and the research writing</span></div>
+          <div style="display:flex;gap:14px;align-items:baseline"><span style="font:500 15px/1.4 'IBM Plex Sans',sans-serif;color:#1c1b19;min-width:120px">Theo Marsh</span><span style="font:400 14px/1.5 'Source Serif 4',serif;color:#5c594f">Fabric and the matching engine</span></div>
+          <div style="display:flex;gap:14px;align-items:baseline"><span style="font:500 15px/1.4 'IBM Plex Sans',sans-serif;color:#1c1b19;min-width:120px">Priya Ostrander</span><span style="font:400 14px/1.5 'Source Serif 4',serif;color:#5c594f">Studio and the human-review interface</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="max-width:{{ readingWidth }};margin:0 auto;padding:44px 24px 64px">
+        <h2 style="font:400 21px/1.3 'Source Serif 4',serif;color:#1c1b19;margin:0 0 10px">Talk to us</h2>
+        <p style="font:400 16px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 18px">Questions about the research posture, a maintainer introduction, or a collaboration idea.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="mailto:research@unfurl.systems" style="background:#1c1b19;color:#faf9f5;border:1px solid #1c1b19;border-radius:3px;padding:11px 16px;font:500 13px/1 'IBM Plex Sans',sans-serif;text-decoration:none">research@unfurl.systems</a>
+          <button type="button" onClick="{{ go.community }}" style="background:none;border:1px solid #d9d5ca;border-radius:3px;padding:11px 16px;font:500 13px/1 'IBM Plex Sans',sans-serif;color:#1c1b19;cursor:pointer" style-hover="border-color:#1c1b19">Community</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isSystem }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:56px 24px 40px">
+        <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 18px">Visual system</p>
+        <h1 style="font:300 clamp(28px,3.6vw,40px)/1.18 'Source Serif 4',serif;letter-spacing:-0.02em;color:#1c1b19;margin:0 0 18px;text-wrap:pretty">Reference for typography, color, spacing, and components.</h1>
+        <p style="font:400 17px/1.6 'Source Serif 4',serif;color:#4a473f;margin:0;max-width:64ch">Restrained, editorial, print-adjacent. The goal is a site that reads like a research journal rather than a product page &#8212; calm color, serif for reading, mono for status and metadata.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Typography</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px">
+          <div>
+            <p style="font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 10px">Source Serif 4 &#8212; reading &amp; headlines</p>
+            <p style="font:300 34px/1.2 'Source Serif 4',serif;color:#1c1b19;margin:0 0 8px">Aa Bb Cc 123</p>
+            <p style="font:400 16px/1.6 'Source Serif 4',serif;color:#3a382f;margin:0">Body copy at 16&#8211;19px, 1.6&#8211;1.75 line height, max 700px measure.</p>
+          </div>
+          <div>
+            <p style="font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 10px">IBM Plex Sans &#8212; interface</p>
+            <p style="font:500 28px/1.2 'IBM Plex Sans',sans-serif;color:#1c1b19;margin:0 0 8px">Aa Bb Cc 123</p>
+            <p style="font:400 15px/1.6 'IBM Plex Sans',sans-serif;color:#3a382f;margin:0">Buttons, nav, labels, card titles that need to sit tight.</p>
+          </div>
+          <div>
+            <p style="font:400 12px/1 'IBM Plex Mono',monospace;color:#8a877f;margin:0 0 10px">IBM Plex Mono &#8212; status &amp; metadata</p>
+            <p style="font:500 24px/1.2 'IBM Plex Mono',monospace;color:#1c1b19;margin:0 0 8px">Aa Bb Cc 123</p>
+            <p style="font:400 13px/1.6 'IBM Plex Mono',monospace;color:#3a382f;margin:0">Eyebrows, dates, status pills, code, repository paths.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Color</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px">
+          <div><div style="height:64px;border-radius:3px;background:#faf9f5;border:1px solid #e5e2da;margin-bottom:8px"></div><p style="font:500 12px/1.3 'IBM Plex Mono',monospace;color:#1c1b19;margin:0">#faf9f5</p><p style="font:400 12px/1.3 'IBM Plex Sans',sans-serif;color:#8a877f;margin:0">page background</p></div>
+          <div><div style="height:64px;border-radius:3px;background:#f4f2ec;border:1px solid #e5e2da;margin-bottom:8px"></div><p style="font:500 12px/1.3 'IBM Plex Mono',monospace;color:#1c1b19;margin:0">#f4f2ec</p><p style="font:400 12px/1.3 'IBM Plex Sans',sans-serif;color:#8a877f;margin:0">section alt</p></div>
+          <div><div style="height:64px;border-radius:3px;background:#1c1b19;margin-bottom:8px"></div><p style="font:500 12px/1.3 'IBM Plex Mono',monospace;color:#1c1b19;margin:0">#1c1b19</p><p style="font:400 12px/1.3 'IBM Plex Sans',sans-serif;color:#8a877f;margin:0">ink / primary text</p></div>
+          <div><div style="height:64px;border-radius:3px;background:oklch(0.48 0.09 250);margin-bottom:8px"></div><p style="font:500 12px/1.3 'IBM Plex Mono',monospace;color:#1c1b19;margin:0">oklch(.48 .09 250)</p><p style="font:400 12px/1.3 'IBM Plex Sans',sans-serif;color:#8a877f;margin:0">link accent</p></div>
+        </div>
+        <p style="font:400 13px/1.6 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:20px 0 0">Status hues share lightness/chroma, vary only in hue: research (neutral grey), draft spec (amber, 75&#176;), prototype (violet, 275&#176;), active development (green, 155&#176;).</p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:14px">
+          <span style="display:inline-flex;align-items:center;gap:7px;font:500 11px/1 'IBM Plex Mono',monospace;color:#5c594f"><span style="width:8px;height:8px;border-radius:50%;background:#9a978d"></span>Research</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;font:500 11px/1 'IBM Plex Mono',monospace;color:#5c594f"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.68 0.14 75)"></span>Draft spec</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;font:500 11px/1 'IBM Plex Mono',monospace;color:#5c594f"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.6 0.12 275)"></span>Prototype</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;font:500 11px/1 'IBM Plex Mono',monospace;color:#5c594f"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.6 0.12 155)"></span>Active development</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da">
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Spacing &amp; structure</h2>
+        <p style="font:400 15px/1.65 'Source Serif 4',serif;color:#3a382f;margin:0 0 14px;max-width:70ch">8px base unit. Section vertical padding 44&#8211;64px. Card padding 18&#8211;28px. Content max-width 1160px for grids, 700px for reading. 1px hairline borders (#e5e2da) separate sections instead of shadows; cards use a 1px border and 3px radius, never a drop shadow or gradient.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid #e5e2da;background:#f4f2ec">
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Mobile behavior notes</h2>
+        <ul style="margin:0;padding-left:20px;font:400 16px/1.75 'Source Serif 4',serif;color:#3a382f;max-width:72ch">
+          <li>Header nav wraps to a second row under ~560px rather than collapsing to a hamburger; four labels plus the GitHub pill fit two lines comfortably and stay keyboard/tab visible.</li>
+          <li>All grids are <code style="font:400 13px/1 'IBM Plex Mono',monospace;background:#fff;padding:2px 5px;border-radius:2px">repeat(auto-fit,minmax(...))</code>, so Lab/article/pillar cards reflow to one column with no separate mobile layout to maintain.</li>
+          <li>Reading measure caps at 700px and never needs adjustment on mobile; padding drops from 24px to 16&#8211;20px at the section level only.</li>
+          <li>Diagram figures (contract lifecycle, DCP flow) stack their steps into a single column under ~480px; the plain-text alternative under each figure is always present, not mobile-only.</li>
+          <li>Status pills and metadata rows wrap via flex-wrap rather than truncating &#8212; status must never be hidden behind a "more" affordance.</li>
+          <li>Sticky header stays but drops box-shadow-like elevation in favor of the hairline border, keeping it visually quiet on small screens.</li>
+          <li>Tap targets (nav items, card buttons, footer links) hold a minimum 44px effective height via padding even where the visible label is small.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div style="max-width:1160px;margin:0 auto;padding:44px 24px 64px">
+        <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin:0 0 22px">Components shown across the site</h2>
+        <p style="font:400 15px/1.6 'Source Serif 4',serif;color:#5c594f;margin:0 0 20px;max-width:70ch">Status strip, one-sentence definition, problem, architecture diagram + text alternative, scope table (implemented/specified/experimental/deferred), key concepts, examples, related research links, repository callout, participate block &#8212; see the DCP Lab page for the full pattern in context.</p>
+        <button type="button" onClick="{{ go.lab }}" style="background:none;border:1px solid #d9d5ca;border-radius:3px;padding:11px 16px;font:500 13px/1 'IBM Plex Sans',sans-serif;color:#1c1b19;cursor:pointer" style-hover="border-color:#1c1b19">View the Lab template &#8594;</button>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  </main>
+
+  <footer style="border-top:1px solid #e5e2da;background:#f4f2ec">
+    <div style="max-width:1160px;margin:0 auto;padding:48px 24px 36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:32px">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="width:11px;height:11px;background:#1c1b19;display:block;transform:rotate(45deg)"></span><span style="font:600 14px/1 'IBM Plex Sans',sans-serif;color:#1c1b19">Unfurl Systems</span></div>
+        <p style="font:400 13px/1.6 'IBM Plex Sans',sans-serif;color:#6f6c62;margin:0;max-width:30ch">A public research effort. Specifications and prototypes published here are not production-ready.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+        <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f;margin:0 0 2px">Site</p>
+        <button type="button" onClick="{{ go.research }}" style="background:none;border:0;padding:0;cursor:pointer;font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f" style-hover="color:#1c1b19">Research</button>
+        <button type="button" onClick="{{ go.labs }}" style="background:none;border:0;padding:0;cursor:pointer;font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f" style-hover="color:#1c1b19">Labs</button>
+        <button type="button" onClick="{{ go.community }}" style="background:none;border:0;padding:0;cursor:pointer;font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f" style-hover="color:#1c1b19">Community</button>
+        <button type="button" onClick="{{ go.about }}" style="background:none;border:0;padding:0;cursor:pointer;font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f" style-hover="color:#1c1b19">About</button>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+        <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f;margin:0 0 2px">Code</p>
+        <a href="https://github.com/UnfurlSystemsLab" style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f;text-decoration:none">GitHub organization</a>
+        <a href="https://github.com/UnfurlSystemsLab/dcp" style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f;text-decoration:none">Contribution guide</a>
+        <a href="https://github.com/UnfurlSystemsLab/dcp/issues" style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f;text-decoration:none">Issues and discussions</a>
+        <button type="button" onClick="{{ go.system }}" style="background:none;border:0;padding:0;cursor:pointer;font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f" style-hover="color:#1c1b19">Visual system</button>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+        <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8a877f;margin:0 0 2px">Contact</p>
+        <a href="mailto:research@unfurl.systems" style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:#3a382f;text-decoration:none">research@unfurl.systems</a>
+        <span style="font:400 13px/1.5 'IBM Plex Sans',sans-serif;color:#6f6c62">Privacy &#183; Licence: CC BY 4.0 for writing, Apache 2.0 for code</span>
+      </div>
+    </div>
+    <div style="max-width:1160px;margin:0 auto;padding:0 24px 40px"><p style="font:400 11px/1 'IBM Plex Mono',monospace;color:#a8a49a;margin:0">&#169; 2026 Unfurl Systems &#183; Last site update 30 July 2026</p></div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;startPage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;research&quot;,&quot;dcp&quot;,&quot;article&quot;,&quot;labs&quot;,&quot;lab&quot;,&quot;community&quot;,&quot;about&quot;,&quot;system&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;showAltText&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Accessibility&quot;},&quot;readingWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:600,&quot;max&quot;:820,&quot;step&quot;:20,&quot;default&quot;:700,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typography&quot;}}">
+const ARTICLES = {
+  1: { title: 'The Missing Harness', subtitle: 'Every major computing shift has created a new harness that makes raw capability understandable and governable. AI is becoming a new kind of consumer of capabilities, and the harness we give it today is still fragmented.', date: '1 August 2026', readTime: '10 min' },
+  2: { title: 'The Baseline Shift', subtitle: 'The panic is not that AI can write code. The real shift is that software work is moving from building isolated components to assembling governable systems.', date: '21 May 2026', readTime: '9 min' },
+  3: { title: 'The Capability Contract', subtitle: 'DCP gives components a way to describe their domain, boundaries, needs, offers, conflicts, operational ports, and faults \u2014 a capability contract for an AI-native world.', date: '28 June 2026', readTime: '11 min' },
+  4: { title: 'Draft Spec and Discussion', subtitle: 'A public-review draft for an AI-native capability contract, published first, explained next, and opened for contribution after that.', date: '12 July 2026', readTime: '14 min' },
+  5: { title: 'The Human Harness', subtitle: 'If DCP is the AI harness, there must also be a human harness \u2014 the surface through which people inspect, manipulate, validate, and govern AI-native assemblies without losing the underlying truth.', date: '19 July 2026', readTime: '10 min' },
+  6: { title: 'Aggregation Is Abstraction', subtitle: 'Aggregation is not the act of piling capabilities together. It is the act of giving a collection a new, meaningful surface \u2014 the scaling principle behind homes, colonies, and cities.', date: '26 July 2026', readTime: '12 min' },
+  7: { title: 'The Living Assembly', subtitle: 'A system is not complete when it is assembled. It becomes real when humans can load it, observe it, stress it, trace it, and safely evolve it.', date: '30 July 2026', readTime: '12 min' }
+};
+class Component extends DCLogic {
+  state = { page: null, articlePart: 1 };
+  current() { return this.state.page || this.props.startPage || 'home'; }
+  set(p, part) {
+    this.setState({ page: p, articlePart: part || this.state.articlePart });
+    try { window.scrollTo({ top: 0, behavior: 'instant' }); } catch (e) { window.scrollTo(0, 0); }
+  }
+  renderVals() {
+    const p = this.current();
+    const keys = ['home', 'research', 'dcp', 'labs', 'lab', 'community', 'about', 'system'];
+    const go = {};
+    keys.forEach(k => { go[k] = () => this.set(k); });
+    [1, 2, 3, 4, 5, 6, 7].forEach(n => { go['part' + n] = () => this.set('article', n); });
+    go.article = go.part1;
+    const part = this.state.articlePart || 1;
+    const a = ARTICLES[part];
+    return {
+      articlePart: part,
+      articleTitle: a.title,
+      articleSubtitle: a.subtitle,
+      articleDate: a.date,
+      articleReadTime: a.readTime,
+      isPart1: part === 1,
+      isPart2: part === 2,
+      isPart3: part === 3,
+      isPart4: part === 4,
+      isPart5: part === 5,
+      isPart6: part === 6,
+      isPart7: part === 7,
+      hasPrevPart: part > 1,
+      hasNextPart: part < 7,
+      prevPartTitle: part > 1 ? ARTICLES[part - 1].title : '',
+      nextPartTitle: part < 7 ? ARTICLES[part + 1].title : '',
+      hasRelatedLab: part === 3 || part === 4,
+      goPrevPart: () => this.set('article', part - 1),
+      goNextPart: () => this.set('article', part + 1),
+      go,
+      isHome: p === 'home',
+      isResearch: p === 'research',
+      isDcp: p === 'dcp',
+      isArticle: p === 'article',
+      isLabs: p === 'labs',
+      isLab: p === 'lab',
+      isCommunity: p === 'community',
+      isAbout: p === 'about',
+      isSystem: p === 'system',
+      atResearch: ['research', 'dcp', 'article'].indexOf(p) > -1,
+      atLabs: ['labs', 'lab'].indexOf(p) > -1,
+      atCommunity: p === 'community',
+      atAbout: p === 'about',
+      showAlt: this.props.showAltText ?? true,
+      readingWidth: (this.props.readingWidth ?? 700) + 'px'
+    };
+  }
+}
+</script>
+</body>
+</html>
