@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 /*
@@ -15,16 +15,44 @@ export default function Layout({ children }: { children: ReactNode }) {
   const location = useLocation()
   const navigate = useNavigate()
   const path = location.pathname
+  const [menuOpen, setMenuOpen] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
+
+  // Close the mobile menu on outside click/tap, and on Escape.
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setMenuOpen(false)
+      }
+    }
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+
+    document.addEventListener('pointerdown', handlePointerDown)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [menuOpen])
 
   const atResearch = path.startsWith('/research')
   const atLabs = path.startsWith('/labs')
   const atCommunity = path.startsWith('/community')
   const atAbout = path.startsWith('/about')
 
+  const go = (to: string) => {
+    setMenuOpen(false)
+    navigate(to)
+  }
+
   const navItem = (label: string, to: string, active: boolean) => (
     <button
       type="button"
-      onClick={() => navigate(to)}
+      onClick={() => go(to)}
       style={{
         position: 'relative',
         background: 'none',
@@ -33,6 +61,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         padding: '10px 12px',
         font: "500 14px/1 'IBM Plex Sans',sans-serif",
         color: '#3a382f',
+        textAlign: 'left',
       }}
     >
       {label}
@@ -63,6 +92,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       }}
     >
       <header
+        ref={headerRef}
         style={{
           position: 'sticky',
           top: 0,
@@ -72,8 +102,41 @@ export default function Layout({ children }: { children: ReactNode }) {
           borderBottom: '1px solid #e5e2da',
         }}
       >
+        {/*
+         * Breakpoint behavior (nav row <-> hamburger dropdown) needs a media
+         * query, which inline styles can't express — scoped via classnames
+         * below, matching the site's ≤720px mobile cutoff.
+         */}
+        <style>{`
+          .unfurl-nav-toggle { display: none; }
+          .unfurl-nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+          @media (max-width: 720px) {
+            .unfurl-nav-toggle { display: inline-flex; }
+            .unfurl-nav-links {
+              display: flex;
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 100%;
+              flex-direction: column;
+              align-items: stretch;
+              gap: 0;
+              background: #faf9f5;
+              border-bottom: ${menuOpen ? '1px' : '0px'} solid #e5e2da;
+              padding: 0 24px;
+              max-height: ${menuOpen ? '320px' : '0px'};
+              padding-top: ${menuOpen ? '8px' : '0px'};
+              padding-bottom: ${menuOpen ? '16px' : '0px'};
+              opacity: ${menuOpen ? 1 : 0};
+              overflow: hidden;
+              pointer-events: ${menuOpen ? 'auto' : 'none'};
+              transition: max-height 260ms ease, opacity 180ms ease, padding-top 260ms ease, padding-bottom 260ms ease, border-color 260ms ease;
+            }
+          }
+        `}</style>
         <div
           style={{
+            position: 'relative',
             maxWidth: 1160,
             margin: '0 auto',
             padding: '0 24px',
@@ -86,7 +149,55 @@ export default function Layout({ children }: { children: ReactNode }) {
         >
           <button
             type="button"
-            onClick={() => navigate('/')}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+            className="unfurl-nav-toggle"
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 36,
+              height: 36,
+              background: '#fff',
+              border: '1px solid #c9c4b6',
+              borderRadius: 3,
+              cursor: 'pointer',
+              padding: 0,
+              order: -1,
+            }}
+          >
+            <span style={{ position: 'relative', width: 16, height: 12, display: 'inline-block' }}>
+              {[0, 5, 10].map((top, i) => {
+                // Animates the three bars into an X: the middle bar fades
+                // out, the top/bottom bars slide to center and rotate.
+                const isMiddle = i === 1
+                const transform = menuOpen
+                  ? isMiddle
+                    ? 'translateY(5px) scaleX(0)'
+                    : `translateY(${i === 0 ? 5 : -5}px) rotate(${i === 0 ? 45 : -45}deg)`
+                  : 'translateY(0) rotate(0)'
+                return (
+                  <span
+                    key={top}
+                    style={{
+                      position: 'absolute',
+                      left: 0,
+                      top,
+                      width: 16,
+                      height: 2,
+                      background: '#1c1b19',
+                      opacity: menuOpen && isMiddle ? 0 : 1,
+                      transform,
+                      transition: 'transform 220ms ease, opacity 150ms ease',
+                    }}
+                  />
+                )
+              })}
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => go('/')}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -114,13 +225,10 @@ export default function Layout({ children }: { children: ReactNode }) {
                 color: '#1c1b19',
               }}
             >
-              Unfurl Systems
+              Unfurl Systems&trade;
             </span>
           </button>
-          <nav
-            aria-label="Primary"
-            style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 4 }}
-          >
+          <nav aria-label="Primary" className="unfurl-nav-links">
             {navItem('Research', '/research', atResearch)}
             {navItem('Labs', '/labs', atLabs)}
             {navItem('Community', '/community', atCommunity)}
@@ -165,7 +273,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               <span
                 style={{ width: 11, height: 11, background: '#1c1b19', display: 'block', transform: 'rotate(45deg)' }}
               />
-              <span style={{ font: "600 14px/1 'IBM Plex Sans',sans-serif", color: '#1c1b19' }}>Unfurl Systems</span>
+              <span style={{ font: "600 14px/1 'IBM Plex Sans',sans-serif", color: '#1c1b19' }}>Unfurl Systems&trade;</span>
             </div>
             <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: 0, maxWidth: '30ch' }}>
               A public research effort. Specifications and prototypes published here are not production-ready.

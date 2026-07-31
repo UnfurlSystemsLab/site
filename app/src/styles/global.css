@@ -48,7 +48,15 @@ a:focus-visible {
   background: #33302a !important;
 }
 
-/* Outlined buttons / cards whose border lightens to full ink on hover */
+/* Outlined buttons / cards whose border lightens to full ink on hover.
+   Given a solid white fill and a darker border by default (rather than
+   transparent + a near-invisible light tan border) so they read clearly as
+   buttons against the paper/tint page backgrounds they sit on. */
+.hover-border-ink {
+  background: #fff !important;
+  border-color: #c9c4b6 !important;
+}
+
 .hover-border-ink:hover {
   border-color: #1c1b19 !important;
 }
