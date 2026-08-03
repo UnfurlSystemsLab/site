@@ -10,12 +10,12 @@ export default function Part5() {
     font: "500 10px/1.4 'IBM Plex Mono',monospace",
     letterSpacing: '.1em',
     textTransform: 'uppercase',
-    color: '#8a877f',
+    color: '#64748b',
     padding: '14px 18px',
-    borderBottom: '1px solid #e5e2da',
+    borderBottom: '1px solid #e1e5ec',
   }
-  const monoTd: CSSProperties = { font: "400 13px/1.5 'IBM Plex Mono',monospace", color: '#5c594f', padding: '12px 18px', borderBottom: '1px solid #efece4' }
-  const monoTdLast: CSSProperties = { font: "400 13px/1.5 'IBM Plex Mono',monospace", color: '#5c594f', padding: '12px 18px' }
+  const monoTd: CSSProperties = { font: "400 13px/1.5 'IBM Plex Mono',monospace", color: '#475569', padding: '12px 18px', borderBottom: '1px solid #eef0f3' }
+  const monoTdLast: CSSProperties = { font: "400 13px/1.5 'IBM Plex Mono',monospace", color: '#475569', padding: '12px 18px' }
 
   return (
     <>
@@ -146,37 +146,37 @@ export default function Part5() {
           <tbody>
             <tr>
               <td style={td}>What is this component?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Component shape, label, inspector</td>
+              <td style={{ ...td, color: '#475569' }}>Component shape, label, inspector</td>
               <td style={monoTd}>DCP claim identity and domain</td>
               <td style={monoTd}>Fabric/DCP</td>
             </tr>
             <tr>
               <td style={td}>What can it do?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Offer ports and capability list</td>
+              <td style={{ ...td, color: '#475569' }}>Offer ports and capability list</td>
               <td style={monoTd}>DCP offers</td>
               <td style={monoTd}>Fabric/DCP matcher</td>
             </tr>
             <tr>
               <td style={td}>What does it need?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Required sockets, substrate pipes</td>
+              <td style={{ ...td, color: '#475569' }}>Required sockets, substrate pipes</td>
               <td style={monoTd}>DCP dependencies and substrate profile</td>
               <td style={monoTd}>Fabric deployment resolver</td>
             </tr>
             <tr>
               <td style={td}>What does it refuse?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Capped or redirected handles, warnings</td>
+              <td style={{ ...td, color: '#475569' }}>Capped or redirected handles, warnings</td>
               <td style={monoTd}>DCP refusals</td>
               <td style={monoTd}>DCP claim validation</td>
             </tr>
             <tr>
               <td style={td}>Can this connection exist?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Pipe preview, compatibility glow, rejection reason</td>
+              <td style={{ ...td, color: '#475569' }}>Pipe preview, compatibility glow, rejection reason</td>
               <td style={monoTd}>Claims, versions, trust policy</td>
               <td style={monoTd}>Fabric validation</td>
             </tr>
             <tr>
               <td style={tdLast}>Can I export it?</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Compile/export panel</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Compile/export panel</td>
               <td style={monoTdLast}>Validated candidate and signed contract</td>
               <td style={monoTdLast}>Fabric compiler and signer</td>
             </tr>

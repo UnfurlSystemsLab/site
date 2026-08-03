@@ -79,29 +79,29 @@ export default function Part7() {
           </thead>
           <tbody>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Composition contract</td>
-              <td style={{ ...td, color: '#5c594f' }}>What is valid?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Shows the agreement the system is supposed to obey.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Composition contract</td>
+              <td style={{ ...td, color: '#475569' }}>What is valid?</td>
+              <td style={{ ...td, color: '#475569' }}>Shows the agreement the system is supposed to obey.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Runtime binding</td>
-              <td style={{ ...td, color: '#5c594f' }}>Where is it wired?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Shows the environment, provider instance, endpoint references, policy, telemetry namespace, and activation state.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Runtime binding</td>
+              <td style={{ ...td, color: '#475569' }}>Where is it wired?</td>
+              <td style={{ ...td, color: '#475569' }}>Shows the environment, provider instance, endpoint references, policy, telemetry namespace, and activation state.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Substrate profile</td>
-              <td style={{ ...td, color: '#5c594f' }}>What runtime surface is allowed?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Shows what support capabilities are required and which ports are intentionally active.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Substrate profile</td>
+              <td style={{ ...td, color: '#475569' }}>What runtime surface is allowed?</td>
+              <td style={{ ...td, color: '#475569' }}>Shows what support capabilities are required and which ports are intentionally active.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Fault vocabulary</td>
-              <td style={{ ...td, color: '#5c594f' }}>What failures are meaningful?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Shows which signals are declared, what they affect, and when they propagate upward.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Fault vocabulary</td>
+              <td style={{ ...td, color: '#475569' }}>What failures are meaningful?</td>
+              <td style={{ ...td, color: '#475569' }}>Shows which signals are declared, what they affect, and when they propagate upward.</td>
             </tr>
             <tr>
-              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Audit and provenance</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Why is this running?</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Shows who compiled, signed, loaded, changed, or approved the assembly.</td>
+              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Audit and provenance</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Why is this running?</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Shows who compiled, signed, loaded, changed, or approved the assembly.</td>
             </tr>
           </tbody>
         </table>

@@ -25,7 +25,7 @@ operator intent -> Fabric validation -> updated scene`}</code>
         <p style={{ ...sectionBody, margin: 0 }}>The visual scene is a projection. Fabric and DCP remain the source of truth.</p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>The clean mental model</p>
         <p style={sectionBody}>Studio lets a person work with an assembly at the level their brain can handle:</p>
         <ul style={listStyle}>
@@ -66,7 +66,7 @@ operator intent -> Fabric validation -> updated scene`}</code>
         </p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>Studio&#8217;s core rule: visual does not mean vague</p>
         <p style={sectionBody}>Studio separates semantic truth from visual metadata.</p>
         <div style={tableWrap}>
@@ -80,23 +80,23 @@ operator intent -> Fabric validation -> updated scene`}</code>
             <tbody>
               <tr>
                 <td style={td}>Offers, dependencies, refusals, faults</td>
-                <td style={{ ...td, color: '#5c594f' }}>DCP claim</td>
+                <td style={{ ...td, color: '#475569' }}>DCP claim</td>
               </tr>
               <tr>
                 <td style={td}>Compatibility and trust</td>
-                <td style={{ ...td, color: '#5c594f' }}>Fabric/DCP validation</td>
+                <td style={{ ...td, color: '#475569' }}>Fabric/DCP validation</td>
               </tr>
               <tr>
                 <td style={td}>Substrate requirements</td>
-                <td style={{ ...td, color: '#5c594f' }}>Fabric substrate derivation</td>
+                <td style={{ ...td, color: '#475569' }}>Fabric substrate derivation</td>
               </tr>
               <tr>
                 <td style={td}>Port placement and fallback shape</td>
-                <td style={{ ...td, color: '#5c594f' }}>Visual manifest</td>
+                <td style={{ ...td, color: '#475569' }}>Visual manifest</td>
               </tr>
               <tr>
                 <td style={tdLast}>Camera, layout, labels, annotations</td>
-                <td style={{ ...tdLast, color: '#5c594f' }}>Studio UI state</td>
+                <td style={{ ...tdLast, color: '#475569' }}>Studio UI state</td>
               </tr>
             </tbody>
           </table>
@@ -125,7 +125,7 @@ operator intent -> Fabric validation -> updated scene`}</code>
         </p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>Conversational authoring</p>
         <p style={sectionBody}>Studio also supports a conversational entry point.</p>
         <p style={sectionBody}>
@@ -173,7 +173,7 @@ operator intent -> Fabric validation -> updated scene`}</code>
         </p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>How to read the repository</p>
         <p style={sectionBody}>Start here:</p>
         <ol style={{ ...listStyle, paddingLeft: 22 }}>
@@ -199,7 +199,7 @@ operator intent -> Fabric validation -> updated scene`}</code>
         </ul>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>Current open questions</p>
         <ul style={listStyle}>
           <li>How should semantic zoom expose aggregate claims without hiding child contracts?</li>
@@ -218,7 +218,7 @@ operator intent -> Fabric validation -> updated scene`}</code>
         </p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>Related research</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 16 }}>
           <RelatedResearchLink kind="DCP Journey · Part 5" title="The Human Harness" to="/research/dcp/part-5" />

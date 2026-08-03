@@ -37,7 +37,7 @@ export default function LabDetail() {
         subtitle="A way for a component to state what it can do, what it needs, and under what conditions it may be invoked — written down so an assembly can be checked rather than trusted."
         repo="UnfurlSystemsLab/dcp"
         repoDescription="Specification home for the protocol model, schema narrative, examples, and discussion threads. The Java implementation lives in UnfurlSystemsLab/unfurl-dcp."
-        secondaryHref="https://github.com/UnfurlSystemsLab/dcp/blob/main/docs/HLD-C2-dcp-schema-spec-updated.md"
+        secondaryHref="https://github.com/UnfurlSystemsLab/dcp/blob/master/docs/DCP-STANDARDS-SUPPORT.md"
         secondaryLabel="Read the draft spec"
       >
         <DcpBody />
@@ -56,7 +56,7 @@ export default function LabDetail() {
         subtitle="The design-time compiler and Studio API host: it matches needs to claims, validates the result, and produces a signed, deployable composition."
         repo="UnfurlSystemsLab/unfurl-fabric"
         repoDescription="Fabric compiler, Studio API server, catalog admission, and the Flowfoundry assembly runbook."
-        secondaryHref="https://github.com/UnfurlSystemsLab/unfurl-fabric/blob/main/docs/HLD-unfurl-fabric.md"
+        secondaryHref="https://github.com/UnfurlSystemsLab/unfurl-fabric/blob/master/docs/HLD-unfurl-fabric.md"
         secondaryLabel="Read the architecture doc"
       >
         <FabricBody />
@@ -74,7 +74,7 @@ export default function LabDetail() {
       subtitle="The human harness for DCP and Fabric assemblies: a governed authoring and inspection surface, not a decorative 3D visualizer."
       repo="UnfurlSystemsLab/unfurl-ui"
       repoDescription="Host-shell app, Fabric Studio webapp, shared UI contracts, and the conversational authoring client."
-      secondaryHref="https://github.com/UnfurlSystemsLab/unfurl-ui/blob/main/docs/LLD-unfurl-studio-visual-composition.md"
+      secondaryHref="https://github.com/UnfurlSystemsLab/unfurl-ui/blob/master/docs/LLD-unfurl-studio-visual-composition.md"
       secondaryLabel="Read the Studio design doc"
     >
       <StudioBody />

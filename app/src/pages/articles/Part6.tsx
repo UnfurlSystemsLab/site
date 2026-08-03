@@ -7,10 +7,10 @@ export default function Part6({ showAlt }: { showAlt: boolean }) {
   const zoomCard = (label: string, body: string, emphasized: boolean) => (
     <div
       style={{
-        border: emphasized ? '1px solid #1c1b19' : '1px solid #ddd9ce',
+        border: emphasized ? '1px solid #0f172a' : '1px solid #dbe3ef',
         borderRadius: 3,
         padding: '14px 12px',
-        background: emphasized ? '#f4f2ec' : '#faf9f5',
+        background: emphasized ? '#eef1f6' : '#f6f7f9',
       }}
     >
       <p
@@ -18,13 +18,13 @@ export default function Part6({ showAlt }: { showAlt: boolean }) {
           font: "500 10px/1 'IBM Plex Mono',monospace",
           letterSpacing: '.1em',
           textTransform: 'uppercase',
-          color: '#8a877f',
+          color: '#073eab',
           margin: '0 0 8px',
         }}
       >
         {label}
       </p>
-      <p style={{ font: "400 12px/1.5 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: 0 }}>{body}</p>
+      <p style={{ font: "400 12px/1.5 'IBM Plex Sans',sans-serif", color: '#64748b', margin: 0 }}>{body}</p>
     </div>
   )
 
@@ -121,7 +121,7 @@ export default function Part6({ showAlt }: { showAlt: boolean }) {
         Aggregation is the protocol-level foundation for that zoom behavior. It gives every level a claim of its own.
       </p>
       <figure style={{ margin: '36px 0', padding: 0 }}>
-        <div style={{ border: '1px solid #e5e2da', background: '#fff', borderRadius: 3, padding: '26px 22px' }}>
+        <div style={{ border: '1px solid #e1e5ec', background: '#fff', borderRadius: 3, padding: '26px 22px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(140px,1fr))', gap: 12 }}>
             {zoomCard('City', 'Smart coverage, infrastructure readiness, risk concentration', false)}
             {zoomCard('Colony', 'Shared utilities, energy coordination, emergency readiness', false)}
@@ -130,7 +130,7 @@ export default function Part6({ showAlt }: { showAlt: boolean }) {
           </div>
         </div>
         {showAlt && (
-          <figcaption style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: '12px 0 0' }}>
+          <figcaption style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#64748b', margin: '12px 0 0' }}>
             Figure 1. Semantic zoom: each level exposes different meaning, not just more or fewer objects. The same
             source of truth produces different projections at different levels.
           </figcaption>
@@ -169,37 +169,43 @@ export default function Part6({ showAlt }: { showAlt: boolean }) {
           </thead>
           <tbody>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Fully automated house</td>
-              <td style={{ ...td, color: '#5c594f' }}>Comfort, security, water, energy, automation policy</td>
-              <td style={{ ...td, color: '#5c594f' }}>Individual device modes and sensor chatter</td>
-              <td style={{ ...td, color: '#5c594f' }}>Fault, override, audit, or optimization decision</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Fully automated house</td>
+              <td style={{ ...td, color: '#475569' }}>Comfort, security, water, energy, automation policy</td>
+              <td style={{ ...td, color: '#475569' }}>Individual device modes and sensor chatter</td>
+              <td style={{ ...td, color: '#475569' }}>Fault, override, audit, or optimization decision</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Mostly automated house</td>
-              <td style={{ ...td, color: '#5c594f' }}>Automated zones plus manual dependencies</td>
-              <td style={{ ...td, color: '#5c594f' }}>Partial manual controls and device details</td>
-              <td style={{ ...td, color: '#5c594f' }}>When an automation request touches a manual boundary</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Mostly automated house</td>
+              <td style={{ ...td, color: '#475569' }}>Automated zones plus manual dependencies</td>
+              <td style={{ ...td, color: '#475569' }}>Partial manual controls and device details</td>
+              <td style={{ ...td, color: '#475569' }}>When an automation request touches a manual boundary</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Partially automated house</td>
-              <td style={{ ...td, color: '#5c594f' }}>Limited smart capabilities and unsupported areas</td>
-              <td style={{ ...td, color: '#5c594f' }}>Non-addressable devices</td>
-              <td style={{ ...td, color: '#5c594f' }}>When a capability is missing or needs human action</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Partially automated house</td>
+              <td style={{ ...td, color: '#475569' }}>Limited smart capabilities and unsupported areas</td>
+              <td style={{ ...td, color: '#475569' }}>Non-addressable devices</td>
+              <td style={{ ...td, color: '#475569' }}>When a capability is missing or needs human action</td>
             </tr>
             <tr>
-              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Manual house</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Known boundaries and human-owned decisions</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Device-level automation because it does not exist</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>When onboarding or upgrading components</td>
+              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Manual house</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Known boundaries and human-owned decisions</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Device-level automation because it does not exist</td>
+              <td style={{ ...tdLast, color: '#475569' }}>When onboarding or upgrading components</td>
             </tr>
           </tbody>
         </table>
       </div>
       {showAlt && (
-        <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: '0 0 32px' }}>
+        <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#64748b', margin: '0 0 32px' }}>
           Figure 2. An aggregate claim exposes a higher-level surface while keeping children inspectable.
         </p>
       )}
+
+      <img
+        src="/aggrregatioisabstraction.png"
+        alt="Aggregation is abstraction: the same underlying system speaks a new language at every domain, from device claims (AC, refrigerator) up through home, colony, and town claims — zoom out for meaning, zoom in for diagnosis."
+        style={{ width: '100%', height: 'auto', display: 'block', margin: '0 0 32px', borderRadius: 3, border: '1px solid #e1e5ec' }}
+      />
 
       <h2 style={h2Style}>From houses to colonies to cities</h2>
       <p style={bodyP}>
@@ -263,7 +269,7 @@ export default function Part6({ showAlt }: { showAlt: boolean }) {
         </p>
       </div>
       {showAlt && (
-        <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: '0 0 32px' }}>
+        <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#64748b', margin: '0 0 32px' }}>
           Figure 3. Aggregation should travel through claim trees, contract trees, and runtime binding trees.
         </p>
       )}
@@ -319,29 +325,29 @@ export default function Part6({ showAlt }: { showAlt: boolean }) {
           </thead>
           <tbody>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Expose a new surface</td>
-              <td style={{ ...td, color: '#5c594f' }}>The aggregate must claim higher-level meaning, not only union child capabilities.</td>
-              <td style={{ ...td, color: '#5c594f' }}>Capability sprawl</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Expose a new surface</td>
+              <td style={{ ...td, color: '#475569' }}>The aggregate must claim higher-level meaning, not only union child capabilities.</td>
+              <td style={{ ...td, color: '#475569' }}>Capability sprawl</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Preserve drill-down</td>
-              <td style={{ ...td, color: '#5c594f' }}>Details remain reachable when faults, audits, or decisions require them.</td>
-              <td style={{ ...td, color: '#5c594f' }}>Opaque black boxes</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Preserve drill-down</td>
+              <td style={{ ...td, color: '#475569' }}>Details remain reachable when faults, audits, or decisions require them.</td>
+              <td style={{ ...td, color: '#475569' }}>Opaque black boxes</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Separate containment from compatibility</td>
-              <td style={{ ...td, color: '#5c594f' }}>Contained children are not automatically replacements.</td>
-              <td style={{ ...td, color: '#5c594f' }}>Bad substitutions</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Separate containment from compatibility</td>
+              <td style={{ ...td, color: '#475569' }}>Contained children are not automatically replacements.</td>
+              <td style={{ ...td, color: '#475569' }}>Bad substitutions</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Carry aggregation through runtime</td>
-              <td style={{ ...td, color: '#5c594f' }}>Claims, contracts, and bindings should all preserve aggregate structure.</td>
-              <td style={{ ...td, color: '#5c594f' }}>Hidden planner metadata</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Carry aggregation through runtime</td>
+              <td style={{ ...td, color: '#475569' }}>Claims, contracts, and bindings should all preserve aggregate structure.</td>
+              <td style={{ ...td, color: '#475569' }}>Hidden planner metadata</td>
             </tr>
             <tr>
-              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Use semantic zoom</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Each level should use its own vocabulary and metrics.</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>One giant diagram</td>
+              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Use semantic zoom</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Each level should use its own vocabulary and metrics.</td>
+              <td style={{ ...tdLast, color: '#475569' }}>One giant diagram</td>
             </tr>
           </tbody>
         </table>

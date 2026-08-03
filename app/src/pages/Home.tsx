@@ -2,33 +2,30 @@ import { useNavigate } from 'react-router-dom'
 
 /*
  * Home — landing page ("isHome" block in the source export).
- * Sections: hero + status card, three pillar cards (Research/Labs/
- * Community), DCP Journey teaser, Labs teaser, open invitation.
+ * Sections: hero + interconnected-world illustration, three pillar cards
+ * (Research/Labs/Community), DCP Journey teaser, Labs teaser, open
+ * invitation.
  */
 export default function Home() {
   const navigate = useNavigate()
 
   return (
     <div>
-      <section style={{ borderBottom: '1px solid #e5e2da' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div
           style={{
             maxWidth: 1160,
             margin: '0 auto',
             padding: '76px 24px 64px',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))',
-            gap: '48px 64px',
-            alignItems: 'start',
           }}
         >
-          <div>
+          <div style={{ maxWidth: 640 }}>
             <p
               style={{
                 font: "500 11px/1 'IBM Plex Mono',monospace",
                 letterSpacing: '.14em',
                 textTransform: 'uppercase',
-                color: '#8a877f',
+                color: '#073eab',
                 margin: '0 0 22px',
               }}
             >
@@ -38,7 +35,7 @@ export default function Home() {
               style={{
                 font: "300 clamp(32px,4.6vw,52px)/1.1 'Source Serif 4',serif",
                 letterSpacing: '-0.02em',
-                color: '#1c1b19',
+                color: '#0f172a',
                 margin: '0 0 24px',
                 textWrap: 'pretty',
               }}
@@ -48,7 +45,7 @@ export default function Home() {
             <p
               style={{
                 font: "400 18px/1.6 'Source Serif 4',serif",
-                color: '#4a473f',
+                color: '#475569',
                 margin: '0 0 32px',
                 maxWidth: '52ch',
                 textWrap: 'pretty',
@@ -64,9 +61,9 @@ export default function Home() {
                 onClick={() => navigate('/research')}
                 className="hover-dark"
                 style={{
-                  background: '#1c1b19',
-                  color: '#faf9f5',
-                  border: '1px solid #1c1b19',
+                  background: '#0f172a',
+                  color: '#f6f7f9',
+                  border: '1px solid #0f172a',
                   borderRadius: 3,
                   padding: '12px 18px',
                   font: "500 14px/1 'IBM Plex Sans',sans-serif",
@@ -81,8 +78,8 @@ export default function Home() {
                 className="hover-border-ink"
                 style={{
                   background: 'none',
-                  color: '#1c1b19',
-                  border: '1px solid #d9d5ca',
+                  color: '#0f172a',
+                  border: '1px solid #cbd5e1',
                   borderRadius: 3,
                   padding: '12px 18px',
                   font: "500 14px/1 'IBM Plex Sans',sans-serif",
@@ -93,31 +90,15 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div style={{ border: '1px solid #e5e2da', background: '#fff', borderRadius: 3, padding: '22px 22px 18px' }}>
-            <p
-              style={{
-                font: "500 10px/1 'IBM Plex Mono',monospace",
-                letterSpacing: '.14em',
-                textTransform: 'uppercase',
-                color: '#8a877f',
-                margin: '0 0 16px',
-              }}
-            >
-              Where the work stands
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-              <StatusRow name="dcp" color="oklch(0.68 0.14 75)" label="Draft spec" border />
-              <StatusRow name="unfurl-fabric" color="oklch(0.6 0.12 155)" label="Active development" border />
-              <StatusRow name="unfurl-ui" color="oklch(0.6 0.12 275)" label="Prototype" />
-            </div>
-            <p style={{ font: "400 12px/1.5 'IBM Plex Sans',sans-serif", color: '#8a877f', margin: '16px 0 0' }}>
-              Nothing here is production-ready. Status labels are the same on the site and in each repository.
-            </p>
-          </div>
+          <img
+            src="/SoftwareAssembled.png"
+            alt="Software, assembled: DCP from catalog to deployment, in five stages — reusable substrates, components, DCP catalog, draft assembly in Fabric Studio, and signed deployment assembly."
+            style={{ width: '100%', height: 'auto', display: 'block', marginTop: 48, borderRadius: 3, border: '1px solid #e1e5ec' }}
+          />
         </div>
       </section>
 
-      <section style={{ borderBottom: '1px solid #e5e2da' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div
           style={{
             maxWidth: 1160,
@@ -152,7 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ borderBottom: '1px solid #e5e2da', background: '#f4f2ec' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec', background: '#eef1f6' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 24px' }}>
           <div
             style={{
@@ -170,13 +151,13 @@ export default function Home() {
                   font: "500 11px/1 'IBM Plex Mono',monospace",
                   letterSpacing: '.14em',
                   textTransform: 'uppercase',
-                  color: '#8a877f',
+                  color: '#073eab',
                   margin: '0 0 12px',
                 }}
               >
                 Current research
               </p>
-              <h2 style={{ font: "400 30px/1.2 'Source Serif 4',serif", color: '#1c1b19', margin: 0 }}>
+              <h2 style={{ font: "400 30px/1.2 'Source Serif 4',serif", color: '#0f172a', margin: 0 }}>
                 The DCP Journey
               </h2>
             </div>
@@ -186,11 +167,11 @@ export default function Home() {
               className="hover-border-ink"
               style={{
                 background: 'none',
-                border: '1px solid #d9d5ca',
+                border: '1px solid #cbd5e1',
                 borderRadius: 3,
                 padding: '10px 14px',
                 font: "500 13px/1 'IBM Plex Sans',sans-serif",
-                color: '#1c1b19',
+                color: '#0f172a',
                 cursor: 'pointer',
               }}
             >
@@ -200,7 +181,7 @@ export default function Home() {
           <p
             style={{
               font: "400 17px/1.65 'Source Serif 4',serif",
-              color: '#4a473f',
+              color: '#475569',
               margin: '0 0 32px',
               maxWidth: '62ch',
             }}
@@ -213,7 +194,7 @@ export default function Home() {
             {Array.from({ length: 7 }).map((_, i) => (
               <span
                 key={i}
-                style={{ flex: 1, minWidth: 24, height: 3, background: '#1c1b19', marginLeft: i ? 4 : 0 }}
+                style={{ flex: 1, minWidth: 24, height: 3, background: '#0f172a', marginLeft: i ? 4 : 0 }}
               />
             ))}
             <span
@@ -221,7 +202,7 @@ export default function Home() {
                 font: "500 10px/1 'IBM Plex Mono',monospace",
                 letterSpacing: '.1em',
                 textTransform: 'uppercase',
-                color: '#8a877f',
+                color: '#073eab',
                 marginLeft: 14,
               }}
             >
@@ -242,7 +223,7 @@ export default function Home() {
               style={{
                 textAlign: 'left',
                 gridColumn: 'span 1',
-                border: '1px solid #ddd9ce',
+                border: '1px solid #dbe3ef',
                 background: '#fff',
                 borderRadius: 3,
                 padding: 24,
@@ -255,27 +236,27 @@ export default function Home() {
                   font: "500 10px/1 'IBM Plex Mono',monospace",
                   letterSpacing: '.12em',
                   textTransform: 'uppercase',
-                  color: 'oklch(0.48 0.09 250)',
+                  color: '#2b59d4',
                   margin: '0 0 12px',
                 }}
               >
                 Latest · Part 7
               </p>
-              <h3 style={{ font: "400 21px/1.3 'Source Serif 4',serif", color: '#1c1b19', margin: '0 0 10px' }}>
+              <h3 style={{ font: "400 21px/1.3 'Source Serif 4',serif", color: '#0f172a', margin: '0 0 10px' }}>
                 The Living Assembly
               </h3>
-              <p style={{ font: "400 15px/1.6 'Source Serif 4',serif", color: '#5c594f', margin: '0 0 16px' }}>
+              <p style={{ font: "400 15px/1.6 'Source Serif 4',serif", color: '#475569', margin: '0 0 16px' }}>
                 A system is not complete when it is assembled. It becomes real when humans can load it, observe it,
                 stress it, trace it, and safely evolve it.
               </p>
-              <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#8a877f' }}>12 min read</span>
+              <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#64748b' }}>12 min read</span>
             </button>
             <div
               style={{
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 0,
-                border: '1px solid #ddd9ce',
+                border: '1px solid #dbe3ef',
                 background: '#fff',
                 borderRadius: 3,
                 padding: '8px 24px',
@@ -298,7 +279,7 @@ export default function Home() {
                     textAlign: 'left',
                     background: 'none',
                     border: 0,
-                    borderBottom: i < arr.length - 1 ? '1px solid #efece4' : undefined,
+                    borderBottom: i < arr.length - 1 ? '1px solid #eef0f3' : undefined,
                     padding: '12px 0',
                     cursor: 'pointer',
                     display: 'flex',
@@ -306,8 +287,8 @@ export default function Home() {
                     alignItems: 'baseline',
                   }}
                 >
-                  <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#8a877f' }}>{num}</span>
-                  <span style={{ font: "400 16px/1.4 'Source Serif 4',serif", color: '#1c1b19' }}>{title}</span>
+                  <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#64748b' }}>{num}</span>
+                  <span style={{ font: "400 16px/1.4 'Source Serif 4',serif", color: '#0f172a' }}>{title}</span>
                 </button>
               ))}
             </div>
@@ -315,26 +296,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ borderBottom: '1px solid #e5e2da' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 24px' }}>
           <p
             style={{
               font: "500 11px/1 'IBM Plex Mono',monospace",
               letterSpacing: '.14em',
               textTransform: 'uppercase',
-              color: '#8a877f',
+              color: '#073eab',
               margin: '0 0 12px',
             }}
           >
             Labs
           </p>
-          <h2 style={{ font: "400 30px/1.2 'Source Serif 4',serif", color: '#1c1b19', margin: '0 0 12px' }}>
+          <h2 style={{ font: "400 30px/1.2 'Source Serif 4',serif", color: '#0f172a', margin: '0 0 12px' }}>
             Research specs and implementation Labs
           </h2>
           <p
             style={{
               font: "400 17px/1.65 'Source Serif 4',serif",
-              color: '#4a473f',
+              color: '#475569',
               margin: '0 0 32px',
               maxWidth: '62ch',
             }}
@@ -344,7 +325,7 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(250px,1fr))', gap: 20 }}>
             <LabCard
               onClick={() => navigate('/labs/dcp')}
-              color="oklch(0.68 0.14 75)"
+              color="#f59e0b"
               status="Draft spec"
               title="Domain Claim Protocol"
               body="How a component states what it can do, what it needs, and under what conditions it may be used."
@@ -352,7 +333,7 @@ export default function Home() {
             />
             <LabCard
               onClick={() => navigate('/labs/fabric')}
-              color="oklch(0.6 0.12 155)"
+              color="#16a34a"
               status="Active development"
               title="Unfurl Fabric"
               body="A design-time compiler that matches needs to claims, validates the result, and produces a signed composition."
@@ -360,7 +341,7 @@ export default function Home() {
             />
             <LabCard
               onClick={() => navigate('/labs/studio')}
-              color="oklch(0.6 0.12 275)"
+              color="#7c3aed"
               status="Prototype"
               title="Unfurl Studio"
               body="The human harness: a way to see, question, and govern an assembly that a machine proposed."
@@ -377,7 +358,7 @@ export default function Home() {
               font: "500 11px/1 'IBM Plex Mono',monospace",
               letterSpacing: '.14em',
               textTransform: 'uppercase',
-              color: '#8a877f',
+              color: '#073eab',
               margin: '0 0 18px',
             }}
           >
@@ -386,7 +367,7 @@ export default function Home() {
           <p
             style={{
               font: "300 26px/1.4 'Source Serif 4',serif",
-              color: '#1c1b19',
+              color: '#0f172a',
               margin: '0 0 26px',
               textWrap: 'pretty',
             }}
@@ -399,9 +380,9 @@ export default function Home() {
               onClick={() => navigate('/community')}
               className="hover-dark"
               style={{
-                background: '#1c1b19',
-                color: '#faf9f5',
-                border: '1px solid #1c1b19',
+                background: '#0f172a',
+                color: '#f6f7f9',
+                border: '1px solid #0f172a',
                 borderRadius: 3,
                 padding: '12px 18px',
                 font: "500 14px/1 'IBM Plex Sans',sans-serif",
@@ -415,8 +396,8 @@ export default function Home() {
               className="hover-border-ink"
               style={{
                 background: 'none',
-                color: '#1c1b19',
-                border: '1px solid #d9d5ca',
+                color: '#0f172a',
+                border: '1px solid #cbd5e1',
                 borderRadius: 3,
                 padding: '12px 18px',
                 font: "500 14px/1 'IBM Plex Sans',sans-serif",
@@ -428,37 +409,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
-  )
-}
-
-function StatusRow({ name, color, label, border }: { name: string; color: string; label: string; border?: boolean }) {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        gap: 16,
-        padding: '11px 0',
-        borderBottom: border ? '1px solid #efece4' : undefined,
-      }}
-    >
-      <span style={{ font: "500 13px/1.3 'IBM Plex Mono',monospace", color: '#1c1b19' }}>{name}</span>
-      <span
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 7,
-          font: "500 10px/1 'IBM Plex Mono',monospace",
-          letterSpacing: '.1em',
-          textTransform: 'uppercase',
-          color: '#5c594f',
-        }}
-      >
-        <span style={{ width: 6, height: 6, borderRadius: '50%', background: color }} />
-        {label}
-      </span>
     </div>
   )
 }
@@ -483,7 +433,7 @@ function PillarCard({
       className="hover-border-soft"
       style={{
         textAlign: 'left',
-        border: '1px solid #e5e2da',
+        border: '1px solid #e1e5ec',
         background: '#fff',
         borderRadius: 3,
         padding: '26px 24px',
@@ -496,15 +446,15 @@ function PillarCard({
           font: "500 10px/1 'IBM Plex Mono',monospace",
           letterSpacing: '.14em',
           textTransform: 'uppercase',
-          color: '#8a877f',
+          color: '#073eab',
           margin: '0 0 14px',
         }}
       >
         {eyebrow}
       </p>
-      <h2 style={{ font: "400 22px/1.25 'Source Serif 4',serif", color: '#1c1b19', margin: '0 0 10px' }}>{title}</h2>
-      <p style={{ font: "400 15px/1.6 'Source Serif 4',serif", color: '#5c594f', margin: '0 0 16px' }}>{body}</p>
-      <span style={{ font: "500 13px/1 'IBM Plex Sans',sans-serif", color: 'oklch(0.48 0.09 250)' }}>{cta}</span>
+      <h2 style={{ font: "400 22px/1.25 'Source Serif 4',serif", color: '#0f172a', margin: '0 0 10px' }}>{title}</h2>
+      <p style={{ font: "400 15px/1.6 'Source Serif 4',serif", color: '#475569', margin: '0 0 16px' }}>{body}</p>
+      <span style={{ font: "500 13px/1 'IBM Plex Sans',sans-serif", color: '#2b59d4' }}>{cta}</span>
     </button>
   )
 }
@@ -531,7 +481,7 @@ function LabCard({
       className="hover-border-soft"
       style={{
         textAlign: 'left',
-        border: '1px solid #e5e2da',
+        border: '1px solid #e1e5ec',
         background: '#fff',
         borderRadius: 3,
         padding: 22,
@@ -550,15 +500,15 @@ function LabCard({
           font: "500 10px/1 'IBM Plex Mono',monospace",
           letterSpacing: '.1em',
           textTransform: 'uppercase',
-          color: '#5c594f',
+          color: '#475569',
         }}
       >
         <span style={{ width: 6, height: 6, borderRadius: '50%', background: color }} />
         {status}
       </span>
-      <h3 style={{ font: "400 20px/1.25 'Source Serif 4',serif", color: '#1c1b19', margin: 0 }}>{title}</h3>
-      <p style={{ font: "400 14px/1.6 'Source Serif 4',serif", color: '#5c594f', margin: 0, flex: 1 }}>{body}</p>
-      <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#8a877f' }}>{repo}</span>
+      <h3 style={{ font: "400 20px/1.25 'Source Serif 4',serif", color: '#0f172a', margin: 0 }}>{title}</h3>
+      <p style={{ font: "400 14px/1.6 'Source Serif 4',serif", color: '#475569', margin: 0, flex: 1 }}>{body}</p>
+      <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#64748b' }}>{repo}</span>
     </button>
   )
 }

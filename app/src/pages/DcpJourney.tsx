@@ -63,7 +63,7 @@ export default function DcpJourney() {
 
   return (
     <div>
-      <section style={{ borderBottom: '1px solid #e5e2da' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '36px 24px 48px' }}>
           <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 28 }}>
             <button
@@ -76,13 +76,13 @@ export default function DcpJourney() {
                 padding: 0,
                 cursor: 'pointer',
                 font: "400 12px/1 'IBM Plex Mono',monospace",
-                color: '#8a877f',
+                color: '#64748b',
               }}
             >
               Research
             </button>
-            <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#c2beb2' }}>/</span>
-            <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#3a382f' }}>DCP Journey</span>
+            <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#94a3b8' }}>/</span>
+            <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#334155' }}>DCP Journey</span>
           </nav>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(290px,1fr))', gap: 40 }}>
             <div>
@@ -91,7 +91,7 @@ export default function DcpJourney() {
                   font: "500 11px/1 'IBM Plex Mono',monospace",
                   letterSpacing: '.14em',
                   textTransform: 'uppercase',
-                  color: '#8a877f',
+                  color: '#073eab',
                   margin: '0 0 18px',
                 }}
               >
@@ -101,7 +101,7 @@ export default function DcpJourney() {
                 style={{
                   font: "300 clamp(30px,4vw,46px)/1.13 'Source Serif 4',serif",
                   letterSpacing: '-0.02em',
-                  color: '#1c1b19',
+                  color: '#0f172a',
                   margin: '0 0 20px',
                   textWrap: 'pretty',
                 }}
@@ -111,7 +111,7 @@ export default function DcpJourney() {
               <p
                 style={{
                   font: "400 18px/1.65 'Source Serif 4',serif",
-                  color: '#4a473f',
+                  color: '#475569',
                   margin: '0 0 24px',
                   maxWidth: '56ch',
                   textWrap: 'pretty',
@@ -124,7 +124,7 @@ export default function DcpJourney() {
               <p
                 style={{
                   font: "400 15px/1.6 'Source Serif 4',serif",
-                  color: '#6f6c62',
+                  color: '#64748b',
                   margin: 0,
                   maxWidth: '56ch',
                 }}
@@ -132,13 +132,13 @@ export default function DcpJourney() {
                 You can read a part on its own, but the parts build. If you only read two, read Part 1 and Part 3.
               </p>
             </div>
-            <div style={{ border: '1px solid #e5e2da', background: '#fff', borderRadius: 3, padding: 22 }}>
+            <div style={{ border: '1px solid #e1e5ec', background: '#fff', borderRadius: 3, padding: 22 }}>
               <p
                 style={{
                   font: "500 10px/1 'IBM Plex Mono',monospace",
                   letterSpacing: '.14em',
                   textTransform: 'uppercase',
-                  color: '#8a877f',
+                  color: '#073eab',
                   margin: '0 0 16px',
                 }}
               >
@@ -156,9 +156,9 @@ export default function DcpJourney() {
                 style={{
                   marginTop: 20,
                   width: '100%',
-                  background: '#1c1b19',
-                  color: '#faf9f5',
-                  border: '1px solid #1c1b19',
+                  background: '#0f172a',
+                  color: '#f6f7f9',
+                  border: '1px solid #0f172a',
                   borderRadius: 3,
                   padding: '11px 16px',
                   font: "500 13px/1 'IBM Plex Sans',sans-serif",
@@ -172,14 +172,14 @@ export default function DcpJourney() {
         </div>
       </section>
 
-      <section style={{ borderBottom: '1px solid #e5e2da', background: '#f4f2ec' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec', background: '#eef1f6' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '48px 24px' }}>
           <h2
             style={{
               font: "500 11px/1 'IBM Plex Mono',monospace",
               letterSpacing: '.14em',
               textTransform: 'uppercase',
-              color: '#8a877f',
+              color: '#073eab',
               margin: '0 0 30px',
             }}
           >
@@ -194,7 +194,7 @@ export default function DcpJourney() {
                   gridTemplateColumns: '64px 1fr',
                   gap: 20,
                   padding: i === SEQUENCE.length - 1 ? '0' : '0 0 26px',
-                  borderLeft: i === SEQUENCE.length - 1 ? '1px solid transparent' : '1px solid #ddd9ce',
+                  borderLeft: i === SEQUENCE.length - 1 ? '1px solid transparent' : '1px solid #dbe3ef',
                   marginLeft: 20,
                   paddingLeft: 28,
                 }}
@@ -214,15 +214,15 @@ export default function DcpJourney() {
                         font: "500 10px/1 'IBM Plex Mono',monospace",
                         letterSpacing: '.12em',
                         textTransform: 'uppercase',
-                        color: item.part === 7 ? 'oklch(0.48 0.09 250)' : '#8a877f',
+                        color: item.part === 7 ? '#2b59d4' : '#64748b',
                       }}
                     >
                       {item.part === 7 ? 'Part 7 · Latest' : `Part ${item.part}`}
                     </span>
-                    <h3 style={{ font: "400 22px/1.3 'Source Serif 4',serif", color: '#1c1b19', margin: '8px 0 0' }}>
+                    <h3 style={{ font: "400 22px/1.3 'Source Serif 4',serif", color: '#0f172a', margin: '8px 0 0' }}>
                       {item.title}
                     </h3>
-                    <p style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#8a877f', margin: '10px 0 0' }}>
+                    <p style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#64748b', margin: '10px 0 0' }}>
                       {item.published}
                     </p>
                     {item.leadsTo && (
@@ -232,14 +232,14 @@ export default function DcpJourney() {
                           alignItems: 'center',
                           gap: 7,
                           marginTop: 12,
-                          border: '1px solid #ddd9ce',
+                          border: '1px solid #dbe3ef',
                           background: '#fff',
                           padding: '4px 8px',
                           borderRadius: 2,
                           font: "500 10px/1 'IBM Plex Mono',monospace",
                           letterSpacing: '.1em',
                           textTransform: 'uppercase',
-                          color: '#5c594f',
+                          color: '#475569',
                         }}
                       >
                         <span
@@ -247,7 +247,7 @@ export default function DcpJourney() {
                             width: 6,
                             height: 6,
                             borderRadius: '50%',
-                            background: item.part === 3 ? 'oklch(0.68 0.14 75)' : 'oklch(0.6 0.12 275)',
+                            background: item.part === 3 ? '#f59e0b' : '#7c3aed',
                           }}
                         />
                         {item.leadsTo}
@@ -255,7 +255,7 @@ export default function DcpJourney() {
                     )}
                   </div>
                   <div>
-                    <p style={{ font: "400 15px/1.65 'Source Serif 4',serif", color: '#5c594f', margin: '0 0 12px' }}>
+                    <p style={{ font: "400 15px/1.65 'Source Serif 4',serif", color: '#475569', margin: '0 0 12px' }}>
                       {item.body}
                     </p>
                     <button
@@ -267,7 +267,7 @@ export default function DcpJourney() {
                         padding: 0,
                         cursor: 'pointer',
                         font: "500 13px/1 'IBM Plex Sans',sans-serif",
-                        color: 'oklch(0.48 0.09 250)',
+                        color: '#2b59d4',
                       }}
                     >
                       Read Part {item.part} →
@@ -280,14 +280,14 @@ export default function DcpJourney() {
         </div>
       </section>
 
-      <section style={{ borderBottom: '1px solid #e5e2da' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '48px 24px' }}>
           <h2
             style={{
               font: "500 11px/1 'IBM Plex Mono',monospace",
               letterSpacing: '.14em',
               textTransform: 'uppercase',
-              color: '#8a877f',
+              color: '#073eab',
               margin: '0 0 10px',
             }}
           >
@@ -296,7 +296,7 @@ export default function DcpJourney() {
           <p
             style={{
               font: "400 16px/1.65 'Source Serif 4',serif",
-              color: '#5c594f',
+              color: '#475569',
               margin: '0 0 28px',
               maxWidth: '60ch',
             }}
@@ -311,7 +311,7 @@ export default function DcpJourney() {
               className="hover-border-soft"
               style={{
                 textAlign: 'left',
-                border: '1px solid #e5e2da',
+                border: '1px solid #e1e5ec',
                 background: '#fff',
                 borderRadius: 3,
                 padding: 20,
@@ -319,13 +319,13 @@ export default function DcpJourney() {
                 fontFamily: "'IBM Plex Sans',sans-serif",
               }}
             >
-              <p style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#8a877f', margin: '0 0 10px' }}>
+              <p style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#64748b', margin: '0 0 10px' }}>
                 Parts 3–4 →
               </p>
-              <h3 style={{ font: "400 18px/1.3 'Source Serif 4',serif", color: '#1c1b19', margin: '0 0 8px' }}>
+              <h3 style={{ font: "400 18px/1.3 'Source Serif 4',serif", color: '#0f172a', margin: '0 0 8px' }}>
                 DCP Lab
               </h3>
-              <p style={{ font: "400 14px/1.55 'Source Serif 4',serif", color: '#5c594f', margin: 0 }}>
+              <p style={{ font: "400 14px/1.55 'Source Serif 4',serif", color: '#475569', margin: 0 }}>
                 Draft specification, schema overview, examples.
               </p>
             </button>
@@ -335,7 +335,7 @@ export default function DcpJourney() {
               className="hover-border-soft"
               style={{
                 textAlign: 'left',
-                border: '1px solid #e5e2da',
+                border: '1px solid #e1e5ec',
                 background: '#fff',
                 borderRadius: 3,
                 padding: 20,
@@ -343,13 +343,13 @@ export default function DcpJourney() {
                 fontFamily: "'IBM Plex Sans',sans-serif",
               }}
             >
-              <p style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#8a877f', margin: '0 0 10px' }}>
+              <p style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#64748b', margin: '0 0 10px' }}>
                 Parts 5, 7 →
               </p>
-              <h3 style={{ font: "400 18px/1.3 'Source Serif 4',serif", color: '#1c1b19', margin: '0 0 8px' }}>
+              <h3 style={{ font: "400 18px/1.3 'Source Serif 4',serif", color: '#0f172a', margin: '0 0 8px' }}>
                 Studio Lab
               </h3>
-              <p style={{ font: "400 14px/1.55 'Source Serif 4',serif", color: '#5c594f', margin: 0 }}>
+              <p style={{ font: "400 14px/1.55 'Source Serif 4',serif", color: '#475569', margin: 0 }}>
                 The human review and governance prototype.
               </p>
             </button>
@@ -363,8 +363,8 @@ export default function DcpJourney() {
 function GlanceRow({ label, value }: { label: string; value: string }) {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12 }}>
-      <span style={{ font: "400 13px/1.4 'IBM Plex Sans',sans-serif", color: '#5c594f' }}>{label}</span>
-      <span style={{ font: "500 13px/1.4 'IBM Plex Mono',monospace", color: '#1c1b19' }}>{value}</span>
+      <span style={{ font: "400 13px/1.4 'IBM Plex Sans',sans-serif", color: '#475569' }}>{label}</span>
+      <span style={{ font: "500 13px/1.4 'IBM Plex Mono',monospace", color: '#0f172a' }}>{value}</span>
     </div>
   )
 }

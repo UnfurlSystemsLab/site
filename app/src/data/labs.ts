@@ -15,10 +15,10 @@ export interface LabSummary {
 }
 
 export const STATUS_COLOR: Record<LabStatus, string> = {
-  research: '#9a978d',
-  'draft-spec': 'oklch(0.68 0.14 75)',
-  prototype: 'oklch(0.6 0.12 275)',
-  'active-development': 'oklch(0.6 0.12 155)',
+  research: '#94a3b8',
+  'draft-spec': '#f59e0b',
+  prototype: '#7c3aed',
+  'active-development': '#16a34a',
 }
 
 export const LABS: LabSummary[] = [

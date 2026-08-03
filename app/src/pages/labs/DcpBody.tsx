@@ -29,7 +29,7 @@ export default function DcpBody() {
         </p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>The clean mental model</p>
         <p style={sectionBody}>DCP has three planes.</p>
         <div style={tableWrap}>
@@ -44,22 +44,22 @@ export default function DcpBody() {
             </thead>
             <tbody>
               <tr>
-                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Description</td>
-                <td style={{ ...td, color: '#5c594f' }}>What does this component claim about itself?</td>
-                <td style={{ ...td, color: '#5c594f' }}>A claim</td>
-                <td style={{ ...td, color: '#5c594f' }}>Cheap and cacheable</td>
+                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Description</td>
+                <td style={{ ...td, color: '#475569' }}>What does this component claim about itself?</td>
+                <td style={{ ...td, color: '#475569' }}>A claim</td>
+                <td style={{ ...td, color: '#475569' }}>Cheap and cacheable</td>
               </tr>
               <tr>
-                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Negotiation</td>
-                <td style={{ ...td, color: '#5c594f' }}>Can these claims compose under this context and policy?</td>
-                <td style={{ ...td, color: '#5c594f' }}>A frozen composition contract</td>
-                <td style={{ ...td, color: '#5c594f' }}>Expensive but rare</td>
+                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Negotiation</td>
+                <td style={{ ...td, color: '#475569' }}>Can these claims compose under this context and policy?</td>
+                <td style={{ ...td, color: '#475569' }}>A frozen composition contract</td>
+                <td style={{ ...td, color: '#475569' }}>Expensive but rare</td>
               </tr>
               <tr>
-                <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Invocation</td>
-                <td style={{ ...tdLast, color: '#5c594f' }}>Can this call happen against the frozen contract?</td>
-                <td style={{ ...tdLast, color: '#5c594f' }}>Deterministic invocation result</td>
-                <td style={{ ...tdLast, color: '#5c594f' }}>Fast hot path</td>
+                <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Invocation</td>
+                <td style={{ ...tdLast, color: '#475569' }}>Can this call happen against the frozen contract?</td>
+                <td style={{ ...tdLast, color: '#475569' }}>Deterministic invocation result</td>
+                <td style={{ ...tdLast, color: '#475569' }}>Fast hot path</td>
               </tr>
             </tbody>
           </table>
@@ -92,7 +92,7 @@ export default function DcpBody() {
         </p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>Why this is different from an API document</p>
         <p style={sectionBody}>An API document tells a caller how to call something.</p>
         <p style={sectionBody}>DCP asks a broader question:</p>
@@ -130,7 +130,7 @@ export default function DcpBody() {
         </p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>What exists now</p>
         <p style={sectionBody}>The public DCP surface is split into two repositories:</p>
         <ul style={listStyle}>
@@ -144,7 +144,7 @@ export default function DcpBody() {
         </p>
         <p style={sectionBody}>
           Java implementation repository:{' '}
-          <a href="https://github.com/UnfurlSystemsLab/unfurl-dcp" style={{ color: 'oklch(0.48 0.09 250)', textDecoration: 'none' }}>
+          <a href="https://github.com/UnfurlSystemsLab/unfurl-dcp" style={{ color: '#2b59d4', textDecoration: 'none' }}>
             UnfurlSystemsLab/unfurl-dcp ↗
           </a>
         </p>
@@ -154,7 +154,12 @@ export default function DcpBody() {
         <p style={sectionLabel}>How to read the repository</p>
         <p style={sectionBody}>Start here:</p>
         <ol style={{ ...listStyle, paddingLeft: 22 }}>
-          <li><code style={{ font: "400 15px/1 'IBM Plex Mono',monospace" }}>dcp/README.md</code> for the specification repo role.</li>
+          <li>
+            <a href="https://github.com/UnfurlSystemsLab/dcp?tab=readme-ov-file" style={{ color: '#2b59d4', textDecoration: 'none' }}>
+              <code style={{ font: "400 15px/1 'IBM Plex Mono',monospace" }}>dcp/README.md</code>
+            </a>{' '}
+            for the specification repo role.
+          </li>
           <li><code style={{ font: "400 15px/1 'IBM Plex Mono',monospace" }}>dcp/docs/HLD-C-dcp-v0.2-internal.md</code> for the protocol model.</li>
           <li><code style={{ font: "400 15px/1 'IBM Plex Mono',monospace" }}>dcp/docs/HLD-C2-dcp-schema-spec-updated.md</code> for field-level schema shape.</li>
           <li><code style={{ font: "400 15px/1 'IBM Plex Mono',monospace" }}>unfurl-dcp/docs/use/README.md</code> for practical Java library usage.</li>
@@ -174,7 +179,7 @@ export default function DcpBody() {
         </ul>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>What to look for as a reviewer</p>
         <p style={sectionBody}>Good feedback is concrete. Bring a real component and ask:</p>
         <ul style={listStyle}>
@@ -202,7 +207,7 @@ export default function DcpBody() {
         </ul>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>Bottom line</p>
         <p style={{ ...sectionBody, margin: 0 }}>
           DCP is the capability contract layer. It turns hidden integration assumptions into explicit, reviewable

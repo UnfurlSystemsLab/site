@@ -140,31 +140,31 @@ export default function Part1() {
           <tbody>
             <tr>
               <td style={td}>What domain does this entity serve?</td>
-              <td style={{ ...td, color: '#5c594f' }}>HVAC / climate control</td>
+              <td style={{ ...td, color: '#475569' }}>HVAC / climate control</td>
             </tr>
             <tr>
               <td style={td}>What capabilities does it offer?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Cool, heat, dehumidify, fan, sleep mode</td>
+              <td style={{ ...td, color: '#475569' }}>Cool, heat, dehumidify, fan, sleep mode</td>
             </tr>
             <tr>
               <td style={td}>What are its operating constraints?</td>
-              <td style={{ ...td, color: '#5c594f' }}>1.5 ton, specific voltage range, safe temperature limits</td>
+              <td style={{ ...td, color: '#475569' }}>1.5 ton, specific voltage range, safe temperature limits</td>
             </tr>
             <tr>
               <td style={td}>What does it depend on?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Power supply, thermostat, network connectivity, room sensor</td>
+              <td style={{ ...td, color: '#475569' }}>Power supply, thermostat, network connectivity, room sensor</td>
             </tr>
             <tr>
               <td style={td}>What policies govern it?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Energy limits, occupancy rules, user permissions, safety limits</td>
+              <td style={{ ...td, color: '#475569' }}>Energy limits, occupancy rules, user permissions, safety limits</td>
             </tr>
             <tr>
               <td style={td}>What is its current state?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Mode, set point, compressor state, fault status, firmware version</td>
+              <td style={{ ...td, color: '#475569' }}>Mode, set point, compressor state, fault status, firmware version</td>
             </tr>
             <tr>
               <td style={tdLast}>What relationships does it have?</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Serves Room 204, belongs to Floor 2, part of Building A climate system</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Serves Room 204, belongs to Floor 2, part of Building A climate system</td>
             </tr>
           </tbody>
         </table>
@@ -182,7 +182,7 @@ export default function Part1() {
         acting on it.
       </p>
       <p style={bodyP}>Such a harness would not only say, &#8220;Here is how to call me.&#8221; It would also say:</p>
-      <ul style={{ margin: '0 0 24px', paddingLeft: 22, font: "400 19px/1.75 'Source Serif 4',serif", color: '#2c2a25' }}>
+      <ul style={{ margin: '0 0 24px', paddingLeft: 22, font: "400 19px/1.75 'Source Serif 4',serif", color: '#1e293b' }}>
         <li>This is what I am.</li>
         <li>This is the domain I belong to.</li>
         <li>These are the capabilities I provide.</li>
@@ -217,6 +217,12 @@ export default function Part1() {
         The future AI-native world needs entities that are self-describing, policy-aware, dependency-aware, and
         composable by design.
       </p>
+
+      <img
+        src="/interconnectedworld.png"
+        alt="A fully interconnected world: reusable substrates and components composing into an automated home, a connected society, and a smart city, governed end to end by DCP contracts."
+        style={{ width: '100%', height: 'auto', display: 'block', margin: '0 0 32px', borderRadius: 3, border: '1px solid #e1e5ec' }}
+      />
 
       <h2 style={h2Style}>Toward Domain Claim Protocol</h2>
       <p style={bodyP}>

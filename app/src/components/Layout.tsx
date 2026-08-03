@@ -60,7 +60,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         cursor: 'pointer',
         padding: '10px 12px',
         font: "500 14px/1 'IBM Plex Sans',sans-serif",
-        color: '#3a382f',
+        color: '#334155',
         textAlign: 'left',
       }}
     >
@@ -73,7 +73,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             right: 12,
             bottom: 2,
             height: 2,
-            background: '#1c1b19',
+            background: '#0f172a',
           }}
         />
       )}
@@ -84,8 +84,8 @@ export default function Layout({ children }: { children: ReactNode }) {
     <div
       style={{
         minHeight: '100vh',
-        background: '#faf9f5',
-        color: '#1c1b19',
+        background: '#f6f7f9',
+        color: '#0f172a',
         fontFamily: "'IBM Plex Sans',system-ui,sans-serif",
         display: 'flex',
         flexDirection: 'column',
@@ -97,9 +97,9 @@ export default function Layout({ children }: { children: ReactNode }) {
           position: 'sticky',
           top: 0,
           zIndex: 30,
-          background: 'rgba(250,249,245,0.94)',
+          background: 'rgba(246,247,249,0.94)',
           backdropFilter: 'blur(8px)',
-          borderBottom: '1px solid #e5e2da',
+          borderBottom: '1px solid #e1e5ec',
         }}
       >
         {/*
@@ -121,8 +121,8 @@ export default function Layout({ children }: { children: ReactNode }) {
               flex-direction: column;
               align-items: stretch;
               gap: 0;
-              background: #faf9f5;
-              border-bottom: ${menuOpen ? '1px' : '0px'} solid #e5e2da;
+              background: #f6f7f9;
+              border-bottom: ${menuOpen ? '1px' : '0px'} solid #e1e5ec;
               padding: 0 24px;
               max-height: ${menuOpen ? '320px' : '0px'};
               padding-top: ${menuOpen ? '8px' : '0px'};
@@ -159,7 +159,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               width: 36,
               height: 36,
               background: '#fff',
-              border: '1px solid #c9c4b6',
+              border: '1px solid #94a3b8',
               borderRadius: 3,
               cursor: 'pointer',
               padding: 0,
@@ -185,7 +185,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                       top,
                       width: 16,
                       height: 2,
-                      background: '#1c1b19',
+                      background: '#0f172a',
                       opacity: menuOpen && isMiddle ? 0 : 1,
                       transform,
                       transition: 'transform 220ms ease, opacity 150ms ease',
@@ -209,20 +209,12 @@ export default function Layout({ children }: { children: ReactNode }) {
               marginRight: 'auto',
             }}
           >
-            <span
-              style={{
-                width: 14,
-                height: 14,
-                background: '#1c1b19',
-                display: 'block',
-                transform: 'rotate(45deg)',
-              }}
-            />
+            <img src="/logo.svg" alt="" width={24} height={24} style={{ display: 'block' }} />
             <span
               style={{
                 font: "600 15px/1 'IBM Plex Sans',sans-serif",
                 letterSpacing: '-0.01em',
-                color: '#1c1b19',
+                color: '#073eab',
               }}
             >
               Unfurl Systems&trade;
@@ -241,15 +233,15 @@ export default function Layout({ children }: { children: ReactNode }) {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 7,
-                border: '1px solid #d9d5ca',
+                border: '1px solid #cbd5e1',
                 borderRadius: 3,
                 padding: '7px 11px',
                 font: "500 12px/1 'IBM Plex Mono',monospace",
-                color: '#3a382f',
+                color: '#334155',
                 textDecoration: 'none',
               }}
             >
-              UnfurlSystemsLab <span style={{ color: '#8a877f' }}>↗</span>
+              UnfurlSystemsLab <span style={{ color: '#64748b' }}>↗</span>
             </a>
           </nav>
         </div>
@@ -257,7 +249,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       <main style={{ flex: 1 }}>{children}</main>
 
-      <footer style={{ borderTop: '1px solid #e5e2da', background: '#f4f2ec' }}>
+      <footer style={{ borderTop: '1px solid #e1e5ec', background: '#eef1f6' }}>
         <div
           style={{
             maxWidth: 1160,
@@ -270,12 +262,10 @@ export default function Layout({ children }: { children: ReactNode }) {
         >
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-              <span
-                style={{ width: 11, height: 11, background: '#1c1b19', display: 'block', transform: 'rotate(45deg)' }}
-              />
-              <span style={{ font: "600 14px/1 'IBM Plex Sans',sans-serif", color: '#1c1b19' }}>Unfurl Systems&trade;</span>
+              <img src="/logo.svg" alt="" width={20} height={20} style={{ display: 'block' }} />
+              <span style={{ font: "600 14px/1 'IBM Plex Sans',sans-serif", color: '#073eab' }}>Unfurl Systems&trade;</span>
             </div>
-            <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: 0, maxWidth: '30ch' }}>
+            <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#64748b', margin: 0, maxWidth: '30ch' }}>
               A public research effort. Specifications and prototypes published here are not production-ready.
             </p>
           </div>
@@ -285,22 +275,22 @@ export default function Layout({ children }: { children: ReactNode }) {
                 font: "500 10px/1 'IBM Plex Mono',monospace",
                 letterSpacing: '.12em',
                 textTransform: 'uppercase',
-                color: '#8a877f',
+                color: '#073eab',
                 margin: '0 0 2px',
               }}
             >
               Site
             </p>
-            <Link to="/research" className="hover-text-ink" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#3a382f', textDecoration: 'none' }}>
+            <Link to="/research" className="hover-text-ink" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
               Research
             </Link>
-            <Link to="/labs" className="hover-text-ink" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#3a382f', textDecoration: 'none' }}>
+            <Link to="/labs" className="hover-text-ink" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
               Labs
             </Link>
-            <Link to="/community" className="hover-text-ink" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#3a382f', textDecoration: 'none' }}>
+            <Link to="/community" className="hover-text-ink" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
               Community
             </Link>
-            <Link to="/about" className="hover-text-ink" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#3a382f', textDecoration: 'none' }}>
+            <Link to="/about" className="hover-text-ink" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
               About
             </Link>
           </div>
@@ -310,25 +300,25 @@ export default function Layout({ children }: { children: ReactNode }) {
                 font: "500 10px/1 'IBM Plex Mono',monospace",
                 letterSpacing: '.12em',
                 textTransform: 'uppercase',
-                color: '#8a877f',
+                color: '#073eab',
                 margin: '0 0 2px',
               }}
             >
               Code
             </p>
-            <a href="https://github.com/UnfurlSystemsLab" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#3a382f', textDecoration: 'none' }}>
+            <a href="https://github.com/UnfurlSystemsLab" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
               GitHub organization
             </a>
-            <a href="https://github.com/UnfurlSystemsLab/dcp" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#3a382f', textDecoration: 'none' }}>
+            <a href="https://github.com/UnfurlSystemsLab/dcp?tab=contributing-ov-file" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
               Contribution guide
             </a>
             <a
               href="https://github.com/UnfurlSystemsLab/dcp/issues"
-              style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#3a382f', textDecoration: 'none' }}
+              style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}
             >
               Issues and discussions
             </a>
-            <Link to="/system" className="hover-text-ink" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#3a382f', textDecoration: 'none' }}>
+            <Link to="/system" className="hover-text-ink" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
               Visual system
             </Link>
           </div>
@@ -338,22 +328,22 @@ export default function Layout({ children }: { children: ReactNode }) {
                 font: "500 10px/1 'IBM Plex Mono',monospace",
                 letterSpacing: '.12em',
                 textTransform: 'uppercase',
-                color: '#8a877f',
+                color: '#073eab',
                 margin: '0 0 2px',
               }}
             >
               Contact
             </p>
-            <a href="mailto:research@unfurl.systems" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#3a382f', textDecoration: 'none' }}>
-              research@unfurl.systems
+            <a href="mailto:research@unfurlsystems.com" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
+              research@unfurlsystems.com
             </a>
-            <span style={{ font: "400 13px/1.5 'IBM Plex Sans',sans-serif", color: '#6f6c62' }}>
+            <span style={{ font: "400 13px/1.5 'IBM Plex Sans',sans-serif", color: '#64748b' }}>
               Privacy · Licence: CC BY 4.0 for writing, Apache 2.0 for code
             </span>
           </div>
         </div>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 24px 40px' }}>
-          <p style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#a8a49a', margin: 0 }}>
+          <p style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#94a3b8', margin: 0 }}>
             © 2026 Unfurl Systems · Last site update 1 August 2026
           </p>
         </div>

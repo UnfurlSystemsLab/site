@@ -7,21 +7,21 @@ export default function BlogAbout() {
 
   return (
     <div>
-      <header style={{ borderBottom: '1px solid #e5e2da' }}>
+      <header style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 760, margin: '0 auto', padding: '36px 24px 44px' }}>
           <nav aria-label="Breadcrumb" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8, marginBottom: 32 }}>
-            <button type="button" onClick={() => navigate('/research')} className="hover-text-ink" style={{ background: 'none', border: 0, padding: 0, cursor: 'pointer', font: "400 12px/1 'IBM Plex Mono',monospace", color: '#8a877f' }}>
+            <button type="button" onClick={() => navigate('/research')} className="hover-text-ink" style={{ background: 'none', border: 0, padding: 0, cursor: 'pointer', font: "400 12px/1 'IBM Plex Mono',monospace", color: '#64748b' }}>
               Research
             </button>
-            <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#c2beb2' }}>/</span>
-            <button type="button" onClick={() => navigate('/research/blog')} className="hover-text-ink" style={{ background: 'none', border: 0, padding: 0, cursor: 'pointer', font: "400 12px/1 'IBM Plex Mono',monospace", color: '#8a877f' }}>
+            <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#94a3b8' }}>/</span>
+            <button type="button" onClick={() => navigate('/research/blog')} className="hover-text-ink" style={{ background: 'none', border: 0, padding: 0, cursor: 'pointer', font: "400 12px/1 'IBM Plex Mono',monospace", color: '#64748b' }}>
               Blog
             </button>
-            <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#c2beb2' }}>/</span>
-            <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#3a382f' }}>About</span>
+            <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#94a3b8' }}>/</span>
+            <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#334155' }}>About</span>
           </nav>
-          <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#8a877f', margin: '0 0 18px' }}>Page</p>
-          <h1 style={{ font: "300 clamp(28px,4vw,40px)/1.2 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#1c1b19', margin: 0, textWrap: 'pretty' }}>
+          <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>Page</p>
+          <h1 style={{ font: "300 clamp(28px,4vw,40px)/1.2 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#0f172a', margin: 0, textWrap: 'pretty' }}>
             About this site
           </h1>
         </div>

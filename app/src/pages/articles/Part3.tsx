@@ -80,7 +80,7 @@ export default function Part3({ showAlt }: { showAlt: boolean }) {
         in their head. In an interconnected world, the system has to carry the boundaries with it.
       </p>
       {showAlt && (
-        <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: '0 0 32px' }}>
+        <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#64748b', margin: '0 0 32px' }}>
           Figure 1. A DCP claim makes ownership, boundaries, dependencies, offers, integration ports, and faults
           explicit.
         </p>
@@ -144,7 +144,7 @@ export default function Part3({ showAlt }: { showAlt: boolean }) {
       <p style={bodyP}>DCP separates the lifecycle into three planes.</p>
 
       <figure style={{ margin: '36px 0', padding: 0 }}>
-        <div style={{ border: '1px solid #e5e2da', background: '#fff', borderRadius: 3, padding: '28px 22px' }}>
+        <div style={{ border: '1px solid #e1e5ec', background: '#fff', borderRadius: 3, padding: '28px 22px' }}>
           <div
             style={{
               display: 'grid',
@@ -164,16 +164,16 @@ export default function Part3({ showAlt }: { showAlt: boolean }) {
               gap: 10,
               marginTop: 18,
               paddingTop: 16,
-              borderTop: '1px solid #efece4',
+              borderTop: '1px solid #eef0f3',
             }}
           >
-            <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#8a877f' }}>design time</span>
-            <span style={{ flex: 1, height: 1, background: '#ddd9ce' }} />
-            <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#8a877f' }}>runtime</span>
+            <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#64748b' }}>design time</span>
+            <span style={{ flex: 1, height: 1, background: '#dbe3ef' }} />
+            <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#64748b' }}>runtime</span>
           </div>
         </div>
         {showAlt && (
-          <figcaption style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: '12px 0 0' }}>
+          <figcaption style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#64748b', margin: '12px 0 0' }}>
             Figure 2. DCP separates description, negotiation, and invocation so intelligence does not sit in the hot
             path.
           </figcaption>
@@ -211,7 +211,7 @@ export default function Part3({ showAlt }: { showAlt: boolean }) {
         operation. Now the AI agent is no longer guessing. It is composing against declared claims.
       </p>
       {showAlt && (
-        <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: '0 0 32px' }}>
+        <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#64748b', margin: '0 0 32px' }}>
           Figure 3. A smart room becomes governable when each participant carries a self-description and composes
           through frozen contracts.
         </p>
@@ -237,7 +237,7 @@ export default function Part3({ showAlt }: { showAlt: boolean }) {
         the moment.
       </p>
       {showAlt && (
-        <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: '0 0 32px' }}>
+        <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#64748b', margin: '0 0 32px' }}>
           Figure 4. DCP governs assembly; MCP and APIs expose runtime invocation surfaces.
         </p>
       )}
@@ -273,27 +273,27 @@ export default function Part3({ showAlt }: { showAlt: boolean }) {
           <tbody>
             <tr>
               <td style={td}>Write the component</td>
-              <td style={{ ...td, color: '#5c594f' }}>Define the component and its claim</td>
+              <td style={{ ...td, color: '#475569' }}>Define the component and its claim</td>
             </tr>
             <tr>
               <td style={td}>Document the API</td>
-              <td style={{ ...td, color: '#5c594f' }}>Declare domain, offers, dependencies, and refusals</td>
+              <td style={{ ...td, color: '#475569' }}>Declare domain, offers, dependencies, and refusals</td>
             </tr>
             <tr>
               <td style={td}>Manually wire integrations</td>
-              <td style={{ ...td, color: '#5c594f' }}>Validate and bind capabilities through contracts</td>
+              <td style={{ ...td, color: '#475569' }}>Validate and bind capabilities through contracts</td>
             </tr>
             <tr>
               <td style={td}>Debug failures from logs</td>
-              <td style={{ ...td, color: '#5c594f' }}>Propagate typed faults with declared blast radius</td>
+              <td style={{ ...td, color: '#475569' }}>Propagate typed faults with declared blast radius</td>
             </tr>
             <tr>
               <td style={td}>Treat docs as external prose</td>
-              <td style={{ ...td, color: '#5c594f' }}>Generate docs from accepted, bound capabilities</td>
+              <td style={{ ...td, color: '#475569' }}>Generate docs from accepted, bound capabilities</td>
             </tr>
             <tr>
               <td style={tdLast}>Runtime improvisation by agents</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Design-time negotiation, runtime execution</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Design-time negotiation, runtime execution</td>
             </tr>
           </tbody>
         </table>
@@ -344,10 +344,10 @@ function PlaneCard({ n, title, body, emphasized }: { n: string; title: string; b
   return (
     <div
       style={{
-        border: emphasized ? '1px solid #1c1b19' : '1px solid #ddd9ce',
+        border: emphasized ? '1px solid #0f172a' : '1px solid #dbe3ef',
         borderRadius: 3,
         padding: '14px 12px',
-        background: emphasized ? '#f4f2ec' : '#faf9f5',
+        background: emphasized ? '#eef1f6' : '#f6f7f9',
       }}
     >
       <p
@@ -355,14 +355,14 @@ function PlaneCard({ n, title, body, emphasized }: { n: string; title: string; b
           font: "500 10px/1 'IBM Plex Mono',monospace",
           letterSpacing: '.1em',
           textTransform: 'uppercase',
-          color: '#8a877f',
+          color: '#073eab',
           margin: '0 0 8px',
         }}
       >
         {n}
       </p>
-      <p style={{ font: "500 14px/1.3 'IBM Plex Sans',sans-serif", color: '#1c1b19', margin: '0 0 6px' }}>{title}</p>
-      <p style={{ font: "400 12px/1.5 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: 0 }}>{body}</p>
+      <p style={{ font: "500 14px/1.3 'IBM Plex Sans',sans-serif", color: '#0f172a', margin: '0 0 6px' }}>{title}</p>
+      <p style={{ font: "400 12px/1.5 'IBM Plex Sans',sans-serif", color: '#64748b', margin: 0 }}>{body}</p>
     </div>
   )
 }

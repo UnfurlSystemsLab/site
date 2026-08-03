@@ -11,89 +11,125 @@ export default function VisualSystem() {
 
   return (
     <div>
-      <section style={{ borderBottom: '1px solid #e5e2da' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 24px 40px' }}>
-          <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#8a877f', margin: '0 0 18px' }}>
+          <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>
             Visual system
           </p>
-          <h1 style={{ font: "300 clamp(28px,3.6vw,40px)/1.18 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#1c1b19', margin: '0 0 18px', textWrap: 'pretty' }}>
+          <h1 style={{ font: "300 clamp(28px,3.6vw,40px)/1.18 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 18px', textWrap: 'pretty' }}>
             Reference for typography, color, spacing, and components.
           </h1>
-          <p style={{ font: "400 17px/1.6 'Source Serif 4',serif", color: '#4a473f', margin: 0, maxWidth: '64ch' }}>
+          <p style={{ font: "400 17px/1.6 'Source Serif 4',serif", color: '#475569', margin: 0, maxWidth: '64ch' }}>
             Restrained, editorial, print-adjacent. The goal is a site that reads like a research journal rather than
             a product page — calm color, serif for reading, mono for status and metadata.
           </p>
         </div>
       </section>
 
-      <section style={{ borderBottom: '1px solid #e5e2da' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '44px 24px' }}>
-          <h2 style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#8a877f', margin: '0 0 22px' }}>
+          <h2 style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 22px' }}>
             Typography
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 32 }}>
             <div>
-              <p style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#8a877f', margin: '0 0 10px' }}>Source Serif 4 — reading &amp; headlines</p>
-              <p style={{ font: "300 34px/1.2 'Source Serif 4',serif", color: '#1c1b19', margin: '0 0 8px' }}>Aa Bb Cc 123</p>
-              <p style={{ font: "400 16px/1.6 'Source Serif 4',serif", color: '#3a382f', margin: 0 }}>Body copy at 16–19px, 1.6–1.75 line height, max 700px measure.</p>
+              <p style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#64748b', margin: '0 0 10px' }}>Source Serif 4 — reading &amp; headlines</p>
+              <p style={{ font: "300 34px/1.2 'Source Serif 4',serif", color: '#0f172a', margin: '0 0 8px' }}>Aa Bb Cc 123</p>
+              <p style={{ font: "400 16px/1.6 'Source Serif 4',serif", color: '#334155', margin: 0 }}>Body copy at 16–19px, 1.6–1.75 line height, max 700px measure.</p>
             </div>
             <div>
-              <p style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#8a877f', margin: '0 0 10px' }}>IBM Plex Sans — interface</p>
-              <p style={{ font: "500 28px/1.2 'IBM Plex Sans',sans-serif", color: '#1c1b19', margin: '0 0 8px' }}>Aa Bb Cc 123</p>
-              <p style={{ font: "400 15px/1.6 'IBM Plex Sans',sans-serif", color: '#3a382f', margin: 0 }}>Buttons, nav, labels, card titles that need to sit tight.</p>
+              <p style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#64748b', margin: '0 0 10px' }}>IBM Plex Sans — interface</p>
+              <p style={{ font: "500 28px/1.2 'IBM Plex Sans',sans-serif", color: '#0f172a', margin: '0 0 8px' }}>Aa Bb Cc 123</p>
+              <p style={{ font: "400 15px/1.6 'IBM Plex Sans',sans-serif", color: '#334155', margin: 0 }}>Buttons, nav, labels, card titles that need to sit tight.</p>
             </div>
             <div>
-              <p style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#8a877f', margin: '0 0 10px' }}>IBM Plex Mono — status &amp; metadata</p>
-              <p style={{ font: "500 24px/1.2 'IBM Plex Mono',monospace", color: '#1c1b19', margin: '0 0 8px' }}>Aa Bb Cc 123</p>
-              <p style={{ font: "400 13px/1.6 'IBM Plex Mono',monospace", color: '#3a382f', margin: 0 }}>Eyebrows, dates, status pills, code, repository paths.</p>
+              <p style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#64748b', margin: '0 0 10px' }}>IBM Plex Mono — status &amp; metadata</p>
+              <p style={{ font: "500 24px/1.2 'IBM Plex Mono',monospace", color: '#0f172a', margin: '0 0 8px' }}>Aa Bb Cc 123</p>
+              <p style={{ font: "400 13px/1.6 'IBM Plex Mono',monospace", color: '#334155', margin: 0 }}>Eyebrows, dates, status pills, code, repository paths.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section style={{ borderBottom: '1px solid #e5e2da', background: '#f4f2ec' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec', background: '#eef1f6' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '44px 24px' }}>
-          <h2 style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#8a877f', margin: '0 0 22px' }}>
-            Color
+          <h2 style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 8px' }}>
+            Brand Colours
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 14 }}>
-            <Swatch bg="#faf9f5" hex="#faf9f5" label="page background" bordered />
-            <Swatch bg="#f4f2ec" hex="#f4f2ec" label="section alt" bordered />
-            <Swatch bg="#1c1b19" hex="#1c1b19" label="ink / primary text" />
-            <Swatch bg="oklch(0.48 0.09 250)" hex="oklch(.48 .09 250)" label="link accent" />
-          </div>
-          <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#6f6c62', margin: '20px 0 0' }}>
-            Status hues share lightness/chroma, vary only in hue: research (neutral grey), draft spec (amber, 75°),
-            prototype (violet, 275°), active development (green, 155°).
+          <p style={{ font: "400 15px/1.6 'Source Serif 4',serif", color: '#475569', margin: '0 0 26px', maxWidth: '70ch' }}>
+            Shared with Unfurl Studio (<code style={{ font: "400 13px/1 'IBM Plex Mono',monospace" }}>unfurl-ui</code>): a
+            cool neutral base, a deep brand blue (#073eab) carrying the wordmark and every eyebrow/label, a lighter
+            indigo for links and focus states, plus a four-color status vocabulary carried over from Studio&#8217;s
+            claim/port/pipe coloring (green · valid, amber · pending, red · refused, purple · offered).
           </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 14 }}>
-            <StatusDot color="#9a978d" label="Research" />
-            <StatusDot color="oklch(0.68 0.14 75)" label="Draft spec" />
-            <StatusDot color="oklch(0.6 0.12 275)" label="Prototype" />
-            <StatusDot color="oklch(0.6 0.12 155)" label="Active development" />
+
+          <p style={{ font: "500 10px/1 'IBM Plex Mono',monospace", letterSpacing: '.12em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 12px' }}>
+            Neutral base
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 14, marginBottom: 28 }}>
+            <Swatch bg="#f6f7f9" hex="#f6f7f9" label="page background" bordered />
+            <Swatch bg="#eef1f6" hex="#eef1f6" label="section alt" bordered />
+            <Swatch bg="#fff" hex="#ffffff" label="card surface" bordered />
+            <Swatch bg="#e1e5ec" hex="#e1e5ec" label="hairline border" bordered />
+            <Swatch bg="#0f172a" hex="#0f172a" label="ink / primary text" />
+          </div>
+
+          <p style={{ font: "500 10px/1 'IBM Plex Mono',monospace", letterSpacing: '.12em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 12px' }}>
+            Text hierarchy
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 14, marginBottom: 28 }}>
+            <Swatch bg="#334155" hex="#334155" label="nav / heading-adjacent" />
+            <Swatch bg="#475569" hex="#475569" label="body / secondary" />
+            <Swatch bg="#64748b" hex="#64748b" label="muted / eyebrow" />
+            <Swatch bg="#94a3b8" hex="#94a3b8" label="faint / dividers" bordered />
+          </div>
+
+          <p style={{ font: "500 10px/1 'IBM Plex Mono',monospace", letterSpacing: '.12em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 12px' }}>
+            Accent
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 14, marginBottom: 28 }}>
+            <Swatch bg="#073eab" hex="#073eab" label="wordmark / label text" />
+            <Swatch bg="#2b59d4" hex="#2b59d4" label="link / focus / accent" />
+            <Swatch bg="#1d4ed8" hex="#1d4ed8" label="accent, hover/darken" />
+            <Swatch bg="#93c5fd" hex="#93c5fd" label="underline / light accent" bordered />
+            <Swatch bg="#dbeafe" hex="#dbeafe" label="selection background" bordered />
+          </div>
+
+          <p style={{ font: "500 10px/1 'IBM Plex Mono',monospace", letterSpacing: '.12em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 12px' }}>
+            Status vocabulary
+          </p>
+          <p style={{ font: "400 13px/1.6 'IBM Plex Sans',sans-serif", color: '#64748b', margin: '0 0 14px' }}>
+            Research (neutral grey), draft spec (amber), prototype (violet), active development (green) — the same
+            four hues Studio uses for offer/dependency/refusal/substrate ports.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16 }}>
+            <StatusDot color="#94a3b8" label="Research" />
+            <StatusDot color="#f59e0b" label="Draft spec" />
+            <StatusDot color="#7c3aed" label="Prototype" />
+            <StatusDot color="#16a34a" label="Active development" />
           </div>
         </div>
       </section>
 
-      <section style={{ borderBottom: '1px solid #e5e2da' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '44px 24px' }}>
-          <h2 style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#8a877f', margin: '0 0 22px' }}>
+          <h2 style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 22px' }}>
             Spacing &amp; structure
           </h2>
-          <p style={{ font: "400 15px/1.65 'Source Serif 4',serif", color: '#3a382f', margin: '0 0 14px', maxWidth: '70ch' }}>
+          <p style={{ font: "400 15px/1.65 'Source Serif 4',serif", color: '#334155', margin: '0 0 14px', maxWidth: '70ch' }}>
             8px base unit. Section vertical padding 44–64px. Card padding 18–28px. Content max-width 1160px for
-            grids, 700px for reading. 1px hairline borders (#e5e2da) separate sections instead of shadows; cards use
+            grids, 700px for reading. 1px hairline borders (#e1e5ec) separate sections instead of shadows; cards use
             a 1px border and 3px radius, never a drop shadow or gradient.
           </p>
         </div>
       </section>
 
-      <section style={{ borderBottom: '1px solid #e5e2da', background: '#f4f2ec' }}>
+      <section style={{ borderBottom: '1px solid #e1e5ec', background: '#eef1f6' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '44px 24px' }}>
-          <h2 style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#8a877f', margin: '0 0 22px' }}>
+          <h2 style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 22px' }}>
             Mobile behavior notes
           </h2>
-          <ul style={{ margin: 0, paddingLeft: 20, font: "400 16px/1.75 'Source Serif 4',serif", color: '#3a382f', maxWidth: '72ch' }}>
+          <ul style={{ margin: 0, paddingLeft: 20, font: "400 16px/1.75 'Source Serif 4',serif", color: '#334155', maxWidth: '72ch' }}>
             <li>Header nav wraps to a second row under ~560px rather than collapsing to a hamburger; four labels plus the GitHub pill fit two lines comfortably and stay keyboard/tab visible.</li>
             <li>
               All grids are{' '}
@@ -111,10 +147,10 @@ export default function VisualSystem() {
 
       <section>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '44px 24px 64px' }}>
-          <h2 style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#8a877f', margin: '0 0 22px' }}>
+          <h2 style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 22px' }}>
             Components shown across the site
           </h2>
-          <p style={{ font: "400 15px/1.6 'Source Serif 4',serif", color: '#5c594f', margin: '0 0 20px', maxWidth: '70ch' }}>
+          <p style={{ font: "400 15px/1.6 'Source Serif 4',serif", color: '#475569', margin: '0 0 20px', maxWidth: '70ch' }}>
             Status strip, one-sentence definition, problem, architecture diagram + text alternative, scope table
             (implemented/specified/experimental/deferred), key concepts, examples, related research links,
             repository callout, participate block — see the DCP Lab page for the full pattern in context.
@@ -123,7 +159,7 @@ export default function VisualSystem() {
             type="button"
             onClick={() => navigate('/labs/dcp')}
             className="hover-border-ink"
-            style={{ background: 'none', border: '1px solid #d9d5ca', borderRadius: 3, padding: '11px 16px', font: "500 13px/1 'IBM Plex Sans',sans-serif", color: '#1c1b19', cursor: 'pointer' }}
+            style={{ background: 'none', border: '1px solid #cbd5e1', borderRadius: 3, padding: '11px 16px', font: "500 13px/1 'IBM Plex Sans',sans-serif", color: '#0f172a', cursor: 'pointer' }}
           >
             View the Lab template →
           </button>
@@ -136,16 +172,16 @@ export default function VisualSystem() {
 function Swatch({ bg, hex, label, bordered }: { bg: string; hex: string; label: string; bordered?: boolean }) {
   return (
     <div>
-      <div style={{ height: 64, borderRadius: 3, background: bg, border: bordered ? '1px solid #e5e2da' : undefined, marginBottom: 8 }} />
-      <p style={{ font: "500 12px/1.3 'IBM Plex Mono',monospace", color: '#1c1b19', margin: 0 }}>{hex}</p>
-      <p style={{ font: "400 12px/1.3 'IBM Plex Sans',sans-serif", color: '#8a877f', margin: 0 }}>{label}</p>
+      <div style={{ height: 64, borderRadius: 3, background: bg, border: bordered ? '1px solid #e1e5ec' : undefined, marginBottom: 8 }} />
+      <p style={{ font: "500 12px/1.3 'IBM Plex Mono',monospace", color: '#0f172a', margin: 0 }}>{hex}</p>
+      <p style={{ font: "400 12px/1.3 'IBM Plex Sans',sans-serif", color: '#64748b', margin: 0 }}>{label}</p>
     </div>
   )
 }
 
 function StatusDot({ color, label }: { color: string; label: string }) {
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, font: "500 11px/1 'IBM Plex Mono',monospace", color: '#5c594f' }}>
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, font: "500 11px/1 'IBM Plex Mono',monospace", color: '#475569' }}>
       <span style={{ width: 8, height: 8, borderRadius: '50%', background: color }} />
       {label}
     </span>

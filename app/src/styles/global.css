@@ -13,7 +13,7 @@ html {
 
 body {
   margin: 0;
-  background: #faf9f5;
+  background: #f6f7f9;
 }
 
 * {
@@ -21,31 +21,31 @@ body {
 }
 
 a {
-  color: oklch(0.48 0.09 250);
-  text-decoration-color: oklch(0.82 0.04 250);
+  color: #2b59d4;
+  text-decoration-color: #93c5fd;
   text-underline-offset: 3px;
 }
 
 a:hover {
-  color: oklch(0.38 0.1 250);
+  color: #1d4ed8;
   text-decoration-color: currentColor;
 }
 
 ::selection {
-  background: oklch(0.9 0.05 250);
+  background: #dbeafe;
 }
 
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid oklch(0.55 0.12 250);
+  outline: 2px solid #2b59d4;
   outline-offset: 3px;
 }
 
 /* --- style-hover translations ------------------------------------------ */
 
-/* Solid dark CTA buttons: background:#1c1b19 -> #33302a on hover */
+/* Solid dark CTA buttons: background:#0f172a -> #1e293b on hover */
 .hover-dark:hover {
-  background: #33302a !important;
+  background: #1e293b !important;
 }
 
 /* Outlined buttons / cards whose border lightens to full ink on hover.
@@ -54,21 +54,21 @@ a:focus-visible {
    buttons against the paper/tint page backgrounds they sit on. */
 .hover-border-ink {
   background: #fff !important;
-  border-color: #c9c4b6 !important;
+  border-color: #94a3b8 !important;
 }
 
 .hover-border-ink:hover {
-  border-color: #1c1b19 !important;
+  border-color: #0f172a !important;
 }
 
 /* Outlined cards that use a softer highlight border on hover */
 .hover-border-soft:hover {
-  border-color: #c9c4b6 !important;
+  border-color: #94a3b8 !important;
 }
 
 /* Quiet text links (breadcrumbs, footer, github pill) that darken to ink */
 .hover-text-ink:hover {
-  color: #1c1b19 !important;
+  color: #0f172a !important;
 }
 
 /* Numbered part-list rows that fade slightly on hover */
@@ -78,7 +78,7 @@ a:focus-visible {
 
 /* Full-row list buttons that get a wash of background on hover */
 .hover-bg-wash:hover {
-  background: #f4f2ec !important;
+  background: #eef1f6 !important;
 }
 
 /* Reset for native button elements used as layout containers */

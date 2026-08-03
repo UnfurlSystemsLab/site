@@ -9,10 +9,10 @@ import { bodyP, h2Style, calloutBox, calloutLabel, calloutBody, listStyle, table
 export default function Part4() {
   const codeTag: CSSProperties = {
     font: "400 12px/1 'IBM Plex Mono',monospace",
-    background: '#f4f2ec',
+    background: '#eef1f6',
     padding: '2px 5px',
     borderRadius: 2,
-    color: '#3a382f',
+    color: '#334155',
   }
 
   return (
@@ -84,37 +84,37 @@ export default function Part4() {
           </thead>
           <tbody>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Claim</td>
-              <td style={{ ...td, color: '#5c594f' }}>What is this component, what domain does it own, and what does it refuse?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Prevents AI from guessing what a component is responsible for.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Claim</td>
+              <td style={{ ...td, color: '#475569' }}>What is this component, what domain does it own, and what does it refuse?</td>
+              <td style={{ ...td, color: '#475569' }}>Prevents AI from guessing what a component is responsible for.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Negotiation</td>
-              <td style={{ ...td, color: '#5c594f' }}>Can two claims compose under this context, policy, tenant, and environment?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Moves intelligence to design time, where reasoning is allowed and reviewable.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Negotiation</td>
+              <td style={{ ...td, color: '#475569' }}>Can two claims compose under this context, policy, tenant, and environment?</td>
+              <td style={{ ...td, color: '#475569' }}>Moves intelligence to design time, where reasoning is allowed and reviewable.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Composition contract</td>
-              <td style={{ ...td, color: '#5c594f' }}>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Composition contract</td>
+              <td style={{ ...td, color: '#475569' }}>
                 What exact need binds to what exact offer, with what transport, mapping, expectations, provenance,
                 trust, and invalidation rules?
               </td>
-              <td style={{ ...td, color: '#5c594f' }}>Freezes the agreement so runtime can execute without rethinking it.</td>
+              <td style={{ ...td, color: '#475569' }}>Freezes the agreement so runtime can execute without rethinking it.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Runtime binding</td>
-              <td style={{ ...td, color: '#5c594f' }}>Where and how is the frozen contract wired in a specific environment or tenant?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Keeps endpoints, secret refs, scaling, telemetry, and runtime policy out of the claim.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Runtime binding</td>
+              <td style={{ ...td, color: '#475569' }}>Where and how is the frozen contract wired in a specific environment or tenant?</td>
+              <td style={{ ...td, color: '#475569' }}>Keeps endpoints, secret refs, scaling, telemetry, and runtime policy out of the claim.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Aggregate component</td>
-              <td style={{ ...td, color: '#5c594f' }}>How can a parent capability contain and govern child components, contracts, and bindings?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Makes assembly first-class instead of private planner metadata.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Aggregate component</td>
+              <td style={{ ...td, color: '#475569' }}>How can a parent capability contain and govern child components, contracts, and bindings?</td>
+              <td style={{ ...td, color: '#475569' }}>Makes assembly first-class instead of private planner metadata.</td>
             </tr>
             <tr>
-              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Fault vocabulary</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>How can a component fail, what does the failure affect, and when may it propagate?</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Makes failures machine-readable without turning every runtime incident into AI reasoning.</td>
+              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Fault vocabulary</td>
+              <td style={{ ...tdLast, color: '#475569' }}>How can a component fail, what does the failure affect, and when may it propagate?</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Makes failures machine-readable without turning every runtime incident into AI reasoning.</td>
             </tr>
           </tbody>
         </table>
@@ -138,19 +138,19 @@ export default function Part4() {
           </thead>
           <tbody>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Claims</td>
-              <td style={{ ...td, color: '#5c594f' }}>Parent claim references child claims.</td>
-              <td style={{ ...td, color: '#5c594f' }}>Larger capabilities remain explainable without erasing child ownership boundaries.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Claims</td>
+              <td style={{ ...td, color: '#475569' }}>Parent claim references child claims.</td>
+              <td style={{ ...td, color: '#475569' }}>Larger capabilities remain explainable without erasing child ownership boundaries.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Contracts</td>
-              <td style={{ ...td, color: '#5c594f' }}>Parent contract references child contracts.</td>
-              <td style={{ ...td, color: '#5c594f' }}>Multi-component agreements travel as DCP contract trees, not private planner metadata.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Contracts</td>
+              <td style={{ ...td, color: '#475569' }}>Parent contract references child contracts.</td>
+              <td style={{ ...td, color: '#475569' }}>Multi-component agreements travel as DCP contract trees, not private planner metadata.</td>
             </tr>
             <tr>
-              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Runtime bindings</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Parent binding references child bindings.</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Deployment wiring remains inspectable across environments, tenants, and child components.</td>
+              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Runtime bindings</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Parent binding references child bindings.</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Deployment wiring remains inspectable across environments, tenants, and child components.</td>
             </tr>
           </tbody>
         </table>
@@ -182,8 +182,8 @@ export default function Part4() {
         <strong>Illustrative claim fragment.</strong> The full schema is larger, but even a small claim fragment
         shows the shape DCP wants to make explicit:
       </p>
-      <div style={{ border: '1px solid #e5e2da', background: '#1c1b19', borderRadius: 3, padding: '20px 22px', margin: '0 0 12px', overflowX: 'auto' }}>
-        <pre style={{ margin: 0, font: "400 13px/1.7 'IBM Plex Mono',monospace", color: '#e8e5dd' }}>
+      <div style={{ border: '1px solid #e1e5ec', background: '#0f172a', borderRadius: 3, padding: '20px 22px', margin: '0 0 12px', overflowX: 'auto' }}>
+        <pre style={{ margin: 0, font: "400 13px/1.7 'IBM Plex Mono',monospace", color: '#e2e8f0' }}>
           <code>{`identity:
   uri: dcp://components/smart-room/hvac
   name: Room HVAC Adapter
@@ -220,43 +220,43 @@ faults:
           <tbody>
             <tr>
               <td style={td}><code style={codeTag}>identity</code></td>
-              <td style={{ ...td, color: '#5c594f' }}>Stable URI, name, kind, version, publisher.</td>
+              <td style={{ ...td, color: '#475569' }}>Stable URI, name, kind, version, publisher.</td>
             </tr>
             <tr>
               <td style={td}><code style={codeTag}>domain</code></td>
-              <td style={{ ...td, color: '#5c594f' }}>Plain-language summary, concerns, owned state, owned decisions, and boundary principles.</td>
+              <td style={{ ...td, color: '#475569' }}>Plain-language summary, concerns, owned state, owned decisions, and boundary principles.</td>
             </tr>
             <tr>
               <td style={td}><code style={codeTag}>refusals</code></td>
-              <td style={{ ...td, color: '#5c594f' }}>Specific things the component does not own, with rationale and ideally who should own them instead.</td>
+              <td style={{ ...td, color: '#475569' }}>Specific things the component does not own, with rationale and ideally who should own them instead.</td>
             </tr>
             <tr>
               <td style={td}><code style={codeTag}>dependencies</code></td>
-              <td style={{ ...td, color: '#5c594f' }}>Required, recommended, and forbidden dependencies.</td>
+              <td style={{ ...td, color: '#475569' }}>Required, recommended, and forbidden dependencies.</td>
             </tr>
             <tr>
               <td style={td}><code style={codeTag}>offers</code></td>
-              <td style={{ ...td, color: '#5c594f' }}>Capabilities exposed for others to consume, with interface, stability, version, and cost implications when relevant.</td>
+              <td style={{ ...td, color: '#475569' }}>Capabilities exposed for others to consume, with interface, stability, version, and cost implications when relevant.</td>
             </tr>
             <tr>
               <td style={td}><code style={codeTag}>conflict_resolution</code></td>
-              <td style={{ ...td, color: '#5c594f' }}>How overlapping concerns should be handled: exclusive, negotiable, deferring, or consulted.</td>
+              <td style={{ ...td, color: '#475569' }}>How overlapping concerns should be handled: exclusive, negotiable, deferring, or consulted.</td>
             </tr>
             <tr>
               <td style={td}><code style={codeTag}>negotiation_surface</code></td>
-              <td style={{ ...td, color: '#5c594f' }}>Required when the component is intelligent; defines bounded design-time negotiation capability.</td>
+              <td style={{ ...td, color: '#475569' }}>Required when the component is intelligent; defines bounded design-time negotiation capability.</td>
             </tr>
             <tr>
               <td style={td}><code style={codeTag}>integration_ports</code></td>
-              <td style={{ ...td, color: '#5c594f' }}>Authentication, authorization, telemetry, monitoring, and AI integration surfaces.</td>
+              <td style={{ ...td, color: '#475569' }}>Authentication, authorization, telemetry, monitoring, and AI integration surfaces.</td>
             </tr>
             <tr>
               <td style={td}><code style={codeTag}>faults</code></td>
-              <td style={{ ...td, color: '#5c594f' }}>Declared operational-fault vocabulary and propagation policy.</td>
+              <td style={{ ...td, color: '#475569' }}>Declared operational-fault vocabulary and propagation policy.</td>
             </tr>
             <tr>
               <td style={tdLast}><code style={codeTag}>metadata</code></td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>DCP version, claim version, effective date, references, and related metadata.</td>
+              <td style={{ ...tdLast, color: '#475569' }}>DCP version, claim version, effective date, references, and related metadata.</td>
             </tr>
           </tbody>
         </table>
@@ -282,36 +282,36 @@ faults:
           </thead>
           <tbody>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>parties</td>
-              <td style={{ ...td, color: '#5c594f' }}>The consumer and provider claims and their pinned versions.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>parties</td>
+              <td style={{ ...td, color: '#475569' }}>The consumer and provider claims and their pinned versions.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>binding</td>
-              <td style={{ ...td, color: '#5c594f' }}>The consumer need and provider capability being connected.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>binding</td>
+              <td style={{ ...td, color: '#475569' }}>The consumer need and provider capability being connected.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>data_mapping</td>
-              <td style={{ ...td, color: '#5c594f' }}>How inputs and outputs map across the boundary.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>data_mapping</td>
+              <td style={{ ...td, color: '#475569' }}>How inputs and outputs map across the boundary.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>transport</td>
-              <td style={{ ...td, color: '#5c594f' }}>How invocation occurs: in-process, HTTP/JSON, or gRPC, depending on valid packaging and support.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>transport</td>
+              <td style={{ ...td, color: '#475569' }}>How invocation occurs: in-process, HTTP/JSON, or gRPC, depending on valid packaging and support.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>expectations</td>
-              <td style={{ ...td, color: '#5c594f' }}>Timeouts, idempotency, async behavior, and correlation requirements.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>expectations</td>
+              <td style={{ ...td, color: '#475569' }}>Timeouts, idempotency, async behavior, and correlation requirements.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>provenance</td>
-              <td style={{ ...td, color: '#5c594f' }}>How the contract was authored: by Fabric, a model, human-in-the-loop, or embedded self.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>provenance</td>
+              <td style={{ ...td, color: '#475569' }}>How the contract was authored: by Fabric, a model, human-in-the-loop, or embedded self.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>trust</td>
-              <td style={{ ...td, color: '#5c594f' }}>The recorded trust tier; policy decides what to do with it.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>trust</td>
+              <td style={{ ...td, color: '#475569' }}>The recorded trust tier; policy decides what to do with it.</td>
             </tr>
             <tr>
-              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>invalidation</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>When the contract must be re-negotiated; runtime violation hard-fails rather than self-heals.</td>
+              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>invalidation</td>
+              <td style={{ ...tdLast, color: '#475569' }}>When the contract must be re-negotiated; runtime violation hard-fails rather than self-heals.</td>
             </tr>
           </tbody>
         </table>
@@ -346,19 +346,19 @@ faults:
           </thead>
           <tbody>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>C2C</td>
-              <td style={{ ...td, color: '#5c594f' }}>Component to component, or a model on behalf of components.</td>
-              <td style={{ ...td, color: '#5c594f' }}>The thesis-pure case for autonomous composition.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>C2C</td>
+              <td style={{ ...td, color: '#475569' }}>Component to component, or a model on behalf of components.</td>
+              <td style={{ ...td, color: '#475569' }}>The thesis-pure case for autonomous composition.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>H2C</td>
-              <td style={{ ...td, color: '#5c594f' }}>A human represents a non-intelligent side.</td>
-              <td style={{ ...td, color: '#5c594f' }}>Useful early on, and produces structured examples for future automation.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>H2C</td>
+              <td style={{ ...td, color: '#475569' }}>A human represents a non-intelligent side.</td>
+              <td style={{ ...td, color: '#475569' }}>Useful early on, and produces structured examples for future automation.</td>
             </tr>
             <tr>
-              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>H2H</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Humans drive composition manually, with structure supplied by the authoring environment.</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Keeps the model inclusive for today&#8217;s non-intelligent components.</td>
+              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>H2H</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Humans drive composition manually, with structure supplied by the authoring environment.</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Keeps the model inclusive for today&#8217;s non-intelligent components.</td>
             </tr>
           </tbody>
         </table>
@@ -454,49 +454,49 @@ faults:
           </thead>
           <tbody>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Component</td>
-              <td style={{ ...td, color: '#5c594f' }}>What specific thing are you describing?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Keeps feedback grounded.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Component</td>
+              <td style={{ ...td, color: '#475569' }}>What specific thing are you describing?</td>
+              <td style={{ ...td, color: '#475569' }}>Keeps feedback grounded.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Domain</td>
-              <td style={{ ...td, color: '#5c594f' }}>What does it own, and where does that domain end?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Tests domain and boundary language.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Domain</td>
+              <td style={{ ...td, color: '#475569' }}>What does it own, and where does that domain end?</td>
+              <td style={{ ...td, color: '#475569' }}>Tests domain and boundary language.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Refusals</td>
-              <td style={{ ...td, color: '#5c594f' }}>What must it explicitly not own?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Reveals unsafe or ambiguous claims.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Refusals</td>
+              <td style={{ ...td, color: '#475569' }}>What must it explicitly not own?</td>
+              <td style={{ ...td, color: '#475569' }}>Reveals unsafe or ambiguous claims.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Dependencies</td>
-              <td style={{ ...td, color: '#5c594f' }}>What must exist for it to operate safely?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Tests required, recommended, and forbidden dependencies.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Dependencies</td>
+              <td style={{ ...td, color: '#475569' }}>What must exist for it to operate safely?</td>
+              <td style={{ ...td, color: '#475569' }}>Tests required, recommended, and forbidden dependencies.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Offers</td>
-              <td style={{ ...td, color: '#5c594f' }}>What capabilities can others consume?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Tests capability versioning and access shape.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Offers</td>
+              <td style={{ ...td, color: '#475569' }}>What capabilities can others consume?</td>
+              <td style={{ ...td, color: '#475569' }}>Tests capability versioning and access shape.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Conflicts</td>
-              <td style={{ ...td, color: '#5c594f' }}>Where does ownership overlap with another component?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Tests negotiation and conflict resolution.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Conflicts</td>
+              <td style={{ ...td, color: '#475569' }}>Where does ownership overlap with another component?</td>
+              <td style={{ ...td, color: '#475569' }}>Tests negotiation and conflict resolution.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Faults</td>
-              <td style={{ ...td, color: '#5c594f' }}>How can it fail, what does that affect, and what remediation is allowed?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Tests operational vocabulary and propagation.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Faults</td>
+              <td style={{ ...td, color: '#475569' }}>How can it fail, what does that affect, and what remediation is allowed?</td>
+              <td style={{ ...td, color: '#475569' }}>Tests operational vocabulary and propagation.</td>
             </tr>
             <tr>
-              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Aggregation</td>
-              <td style={{ ...td, color: '#5c594f' }}>Does this component belong inside a larger parent component or capability?</td>
-              <td style={{ ...td, color: '#5c594f' }}>Tests whether parent and child boundaries remain clear.</td>
+              <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Aggregation</td>
+              <td style={{ ...td, color: '#475569' }}>Does this component belong inside a larger parent component or capability?</td>
+              <td style={{ ...td, color: '#475569' }}>Tests whether parent and child boundaries remain clear.</td>
             </tr>
             <tr>
-              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Human role</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Where should a human decide, approve, or override?</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>Tests governance and escalation boundaries.</td>
+              <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Human role</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Where should a human decide, approve, or override?</td>
+              <td style={{ ...tdLast, color: '#475569' }}>Tests governance and escalation boundaries.</td>
             </tr>
           </tbody>
         </table>

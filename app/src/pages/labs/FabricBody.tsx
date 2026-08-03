@@ -32,7 +32,7 @@ export default function FabricBody() {
         </p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>The simplest explanation</p>
         <p style={sectionBody}>Fabric answers this question:</p>
         <blockquote style={calloutQuote}>
@@ -63,36 +63,36 @@ export default function FabricBody() {
             </thead>
             <tbody>
               <tr>
-                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Catalog</td>
-                <td style={{ ...td, color: '#5c594f' }}>Admits component artifacts and extracts DCP-backed catalog entries.</td>
+                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Catalog</td>
+                <td style={{ ...td, color: '#475569' }}>Admits component artifacts and extracts DCP-backed catalog entries.</td>
               </tr>
               <tr>
-                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Needs</td>
-                <td style={{ ...td, color: '#5c594f' }}>Reads or derives required capabilities and constraints.</td>
+                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Needs</td>
+                <td style={{ ...td, color: '#475569' }}>Reads or derives required capabilities and constraints.</td>
               </tr>
               <tr>
-                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Matching</td>
-                <td style={{ ...td, color: '#5c594f' }}>Scores candidates and validates dependency bindings.</td>
+                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Matching</td>
+                <td style={{ ...td, color: '#475569' }}>Scores candidates and validates dependency bindings.</td>
               </tr>
               <tr>
-                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Deployment resolution</td>
-                <td style={{ ...td, color: '#5c594f' }}>Chooses physical shapes using component claims, substrate support, and deployment policy.</td>
+                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Deployment resolution</td>
+                <td style={{ ...td, color: '#475569' }}>Chooses physical shapes using component claims, substrate support, and deployment policy.</td>
               </tr>
               <tr>
-                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Substrate profile</td>
-                <td style={{ ...td, color: '#5c594f' }}>Derives the runtime ports and capabilities required by the selected composition.</td>
+                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Substrate profile</td>
+                <td style={{ ...td, color: '#475569' }}>Derives the runtime ports and capabilities required by the selected composition.</td>
               </tr>
               <tr>
-                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Contract compile</td>
-                <td style={{ ...td, color: '#5c594f' }}>Produces a root DCP composition contract plus support and diagnostic artifacts.</td>
+                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Contract compile</td>
+                <td style={{ ...td, color: '#475569' }}>Produces a root DCP composition contract plus support and diagnostic artifacts.</td>
               </tr>
               <tr>
-                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Signing and verification</td>
-                <td style={{ ...td, color: '#5c594f' }}>Freezes the handoff artifact and checks trust, drift, and signatures.</td>
+                <td style={{ ...td, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Signing and verification</td>
+                <td style={{ ...td, color: '#475569' }}>Freezes the handoff artifact and checks trust, drift, and signatures.</td>
               </tr>
               <tr>
-                <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#1c1b19' }}>Studio API</td>
-                <td style={{ ...tdLast, color: '#5c594f' }}>Provides tenant-scoped routes for catalog, sessions, intents, dynamic DCP, compile, and export.</td>
+                <td style={{ ...tdLast, font: "500 13px/1.5 'IBM Plex Mono',monospace", color: '#0f172a' }}>Studio API</td>
+                <td style={{ ...tdLast, color: '#475569' }}>Provides tenant-scoped routes for catalog, sessions, intents, dynamic DCP, compile, and export.</td>
               </tr>
             </tbody>
           </table>
@@ -105,7 +105,7 @@ export default function FabricBody() {
         </p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>How the compile path works</p>
         <p style={sectionBody}>The current Fabric flow is intentionally staged:</p>
         <ol style={{ ...listStyle, paddingLeft: 22 }}>
@@ -148,7 +148,7 @@ export default function FabricBody() {
         </p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>Studio state and file history</p>
         <p style={sectionBody}>
           Fabric Studio routes are tenant and assembly scoped. The current design treats catalogs, drafts, compiled
@@ -188,7 +188,7 @@ export default function FabricBody() {
         </p>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>What exists now</p>
         <p style={sectionBody}>The active implementation includes:</p>
         <ul style={listStyle}>
@@ -221,7 +221,7 @@ export default function FabricBody() {
         </ol>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>What to look for as a reviewer</p>
         <p style={sectionBody}>Good Fabric feedback usually asks:</p>
         <ul style={listStyle}>
@@ -244,7 +244,7 @@ export default function FabricBody() {
         </ul>
       </LabSection>
 
-      <LabSection background="#f4f2ec">
+      <LabSection background="#eef1f6">
         <p style={sectionLabel}>Bottom line</p>
         <p style={{ ...sectionBody, margin: 0 }}>
           Fabric is the assembly authority. It turns DCP claims and operator needs into a signed, explainable,

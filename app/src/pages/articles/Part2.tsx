@@ -239,15 +239,15 @@ export default function Part2() {
           <tbody>
             <tr>
               <td style={td}>Integration era</td>
-              <td style={{ ...td, color: '#5c594f' }}>Moving from app development to capability assembly</td>
+              <td style={{ ...td, color: '#475569' }}>Moving from app development to capability assembly</td>
             </tr>
             <tr>
               <td style={td}>Early agent era</td>
-              <td style={{ ...td, color: '#5c594f' }}>Moving from integration by glue code to integration by declared boundaries</td>
+              <td style={{ ...td, color: '#475569' }}>Moving from integration by glue code to integration by declared boundaries</td>
             </tr>
             <tr>
               <td style={tdLast}>Emerging baseline</td>
-              <td style={{ ...tdLast, color: '#5c594f' }}>
+              <td style={{ ...tdLast, color: '#475569' }}>
                 Moving from device automation to governable environments; from &#8220;what API can I call?&#8221; to
                 &#8220;what domain does this thing serve, what authority does it have, and what contract makes it
                 safe to compose?&#8221;
