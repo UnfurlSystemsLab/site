@@ -52,6 +52,12 @@ export default function Part4() {
         runtime interpretation.
       </p>
 
+      <img
+        src="/dcpsoftwareassemblylifecycle.png"
+        alt="DCP software assembly lifecycle: reusable substrate modules and deployable components feed a design-time control plane (DCP catalog, draft assembly in Fabric Studio, deterministic resolution, compiled artifacts) owned by Fabric Studio, which produces the runtime data plane's bound services, and DCP governs claims, contracts, bindings, and invocation across every stage."
+        style={{ width: '100%', height: 'auto', display: 'block', margin: '0 0 32px', borderRadius: 3, border: '1px solid #e1e5ec' }}
+      />
+
       <h2 style={h2Style}>1. Purpose and scope</h2>
       <p style={bodyP}>
         DCP is designed for late-bound enterprise composition. Instead of hardcoding every application topology,
