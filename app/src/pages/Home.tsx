@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router-dom'
 
 /*
  * Home — landing page ("isHome" block in the source export).
- * Sections: hero + interconnected-world illustration, three pillar cards
- * (Research/Labs/Community), DCP Journey teaser, Labs teaser, open
- * invitation.
+ * Sections: hero (text + status card) with a full-width "Software,
+ * Assembled" illustration beneath it, three pillar cards (Research/Labs/
+ * Community), DCP Journey teaser, Labs teaser, open invitation.
  */
 export default function Home() {
   const navigate = useNavigate()
@@ -19,7 +19,15 @@ export default function Home() {
             padding: '76px 24px 64px',
           }}
         >
-          <div style={{ maxWidth: 640 }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))',
+              gap: '48px 64px',
+              alignItems: 'start',
+            }}
+          >
+          <div>
             <p
               style={{
                 font: "500 11px/1 'IBM Plex Mono',monospace",
@@ -89,6 +97,45 @@ export default function Home() {
                 View the Labs
               </button>
             </div>
+          </div>
+          <div style={{ border: '1px solid #e1e5ec', background: '#fff', borderRadius: 3, padding: '22px 22px 18px' }}>
+            <p
+              style={{
+                font: "500 10px/1 'IBM Plex Mono',monospace",
+                letterSpacing: '.14em',
+                textTransform: 'uppercase',
+                color: '#073eab',
+                margin: '0 0 16px',
+              }}
+            >
+              Where the work stands
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+              <StatusRow
+                name="dcp"
+                color="#f59e0b"
+                label="Draft spec"
+                border
+                href="https://github.com/UnfurlSystemsLab/dcp/blob/master/docs/DCP-STANDARDS-SUPPORT.md"
+              />
+              <StatusRow
+                name="unfurl-fabric"
+                color="#16a34a"
+                label="Active development"
+                border
+                href="https://github.com/UnfurlSystemsLab/unfurl-fabric"
+              />
+              <StatusRow
+                name="unfurl-ui"
+                color="#7c3aed"
+                label="Prototype"
+                href="https://github.com/UnfurlSystemsLab/unfurl-ui"
+              />
+            </div>
+            <p style={{ font: "400 12px/1.5 'IBM Plex Sans',sans-serif", color: '#64748b', margin: '16px 0 0' }}>
+              Nothing here is production-ready. Status labels are the same on the site and in each repository.
+            </p>
+          </div>
           </div>
           <img
             src="/SoftwareAssembled.png"
@@ -410,6 +457,45 @@ export default function Home() {
         </div>
       </section>
     </div>
+  )
+}
+
+function StatusRow({ name, color, label, border, href }: { name: string; color: string; label: string; border?: boolean; href?: string }) {
+  const row = (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        gap: 16,
+        padding: '11px 0',
+        borderBottom: border ? '1px solid #eef0f3' : undefined,
+      }}
+    >
+      <span style={{ font: "500 13px/1.3 'IBM Plex Mono',monospace", color: '#0f172a' }}>{name}</span>
+      <span
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 7,
+          font: "500 10px/1 'IBM Plex Mono',monospace",
+          letterSpacing: '.1em',
+          textTransform: 'uppercase',
+          color: '#475569',
+        }}
+      >
+        <span style={{ width: 6, height: 6, borderRadius: '50%', background: color }} />
+        {label}
+      </span>
+    </div>
+  )
+
+  if (!href) return row
+
+  return (
+    <a href={href} className="hover-text-ink" style={{ color: 'inherit', textDecoration: 'none' }}>
+      {row}
+    </a>
   )
 }
 

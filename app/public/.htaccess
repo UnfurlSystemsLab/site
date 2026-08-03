@@ -1,0 +1,10 @@
+# SPA fallback for react-router-dom's BrowserRouter: serve index.html for
+# any request that isn't an existing file/directory, so client-side routes
+# (e.g. /labs/dcp) don't 404 on direct load or refresh.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
