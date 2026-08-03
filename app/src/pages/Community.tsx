@@ -12,7 +12,7 @@ export default function Community() {
           <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>
             Community
           </p>
-          <h1 style={{ font: "300 clamp(30px,4vw,44px)/1.15 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 20px', maxWidth: '22ch', textWrap: 'pretty' }}>
+          <h1 style={{ font: "600 clamp(30px,4vw,44px)/1.15 'Poppins',sans-serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 20px', maxWidth: '22ch', textWrap: 'pretty' }}>
             Question it, break it, or help build it.
           </h1>
           <p style={{ font: "400 18px/1.65 'Source Serif 4',serif", color: '#475569', margin: 0, maxWidth: '64ch', textWrap: 'pretty' }}>
@@ -78,6 +78,8 @@ export default function Community() {
             </div>
             <a
               href="https://github.com/UnfurlSystemsLab/dcp?tab=coc-ov-file"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover-border-ink"
               style={{ justifySelf: 'start', border: '1px solid #cbd5e1', borderRadius: 3, padding: '11px 16px', font: "500 13px/1 'IBM Plex Sans',sans-serif", color: '#0f172a', textDecoration: 'none' }}
             >
@@ -95,7 +97,7 @@ function ParticipateCard({ title, body, href, cta }: { title: string; body: stri
     <div style={{ border: '1px solid #dbe3ef', background: '#fff', borderRadius: 3, padding: 24 }}>
       <h2 style={{ font: "400 19px/1.3 'Source Serif 4',serif", color: '#0f172a', margin: '0 0 10px' }}>{title}</h2>
       <p style={{ font: "400 14px/1.6 'Source Serif 4',serif", color: '#475569', margin: '0 0 16px' }}>{body}</p>
-      <a href={href} style={{ font: "500 13px/1 'IBM Plex Sans',sans-serif", color: '#2b59d4', textDecoration: 'none' }}>
+      <a href={href} target="_blank" rel="noopener noreferrer" style={{ font: "500 13px/1 'IBM Plex Sans',sans-serif", color: '#2b59d4', textDecoration: 'none' }}>
         {cta}
       </a>
     </div>

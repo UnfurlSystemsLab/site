@@ -32,7 +32,7 @@ export default function BlogHome() {
           <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>
             {publication.title} · {publication.positioning}
           </p>
-          <h1 style={{ font: "300 clamp(30px,4.4vw,46px)/1.15 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 20px', maxWidth: '22ch', textWrap: 'pretty' }}>
+          <h1 style={{ font: "600 clamp(30px,4.4vw,46px)/1.15 'Poppins',sans-serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 20px', maxWidth: '22ch', textWrap: 'pretty' }}>
             Beyond <em style={{ fontStyle: 'italic' }}>AI prototypes</em>.
           </h1>
           <p style={{ font: "400 18px/1.65 'Source Serif 4',serif", color: '#475569', margin: '0 0 28px', maxWidth: '62ch', textWrap: 'pretty' }}>

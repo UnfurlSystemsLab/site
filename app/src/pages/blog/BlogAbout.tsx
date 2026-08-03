@@ -21,7 +21,7 @@ export default function BlogAbout() {
             <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#334155' }}>About</span>
           </nav>
           <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>Page</p>
-          <h1 style={{ font: "300 clamp(28px,4vw,40px)/1.2 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#0f172a', margin: 0, textWrap: 'pretty' }}>
+          <h1 style={{ font: "600 clamp(28px,4vw,40px)/1.2 'Poppins',sans-serif", letterSpacing: '-0.02em', color: '#0f172a', margin: 0, textWrap: 'pretty' }}>
             About this site
           </h1>
         </div>

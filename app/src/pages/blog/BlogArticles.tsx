@@ -42,7 +42,7 @@ export default function BlogArticles() {
           <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>
             {activeTag ? 'Filtered index' : 'Index · 12 essays'}
           </p>
-          <h1 style={{ font: "300 clamp(28px,4vw,40px)/1.15 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 20px', textWrap: 'pretty' }}>
+          <h1 style={{ font: "600 clamp(28px,4vw,40px)/1.15 'Poppins',sans-serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 20px', textWrap: 'pretty' }}>
             {activeTag ?? 'Articles'}
           </h1>
           <p style={{ font: "400 17px/1.6 'Source Serif 4',serif", color: '#475569', margin: 0, maxWidth: '64ch' }}>

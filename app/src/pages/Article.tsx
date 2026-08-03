@@ -65,7 +65,7 @@ export default function Article() {
             <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>
               Part {meta.part} of {ARTICLE_COUNT}
             </p>
-            <h1 style={{ font: "300 clamp(30px,4.2vw,44px)/1.15 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 18px', textWrap: 'pretty' }}>
+            <h1 style={{ font: "600 clamp(30px,4.2vw,44px)/1.15 'Poppins',sans-serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 18px', textWrap: 'pretty' }}>
               {meta.title}
             </h1>
             <p style={{ font: "400 20px/1.55 'Source Serif 4',serif", color: '#475569', margin: '0 0 28px', textWrap: 'pretty' }}>
@@ -166,6 +166,8 @@ export default function Article() {
                 </button>
                 <a
                   href="https://github.com/UnfurlSystemsLab/dcp?tab=readme-ov-file"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover-text-ink"
                   style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#64748b', textDecoration: 'none' }}
                 >
@@ -212,6 +214,8 @@ export default function Article() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               <a
                 href="https://github.com/UnfurlSystemsLab/dcp/discussions"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover-border-ink"
                 style={{ border: '1px solid #cbd5e1', borderRadius: 3, padding: '10px 14px', font: "500 13px/1 'IBM Plex Sans',sans-serif", color: '#0f172a', textDecoration: 'none' }}
               >

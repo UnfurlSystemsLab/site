@@ -41,7 +41,7 @@ export default function Home() {
             </p>
             <h1
               style={{
-                font: "300 clamp(32px,4.6vw,52px)/1.1 'Source Serif 4',serif",
+                font: "600 clamp(32px,4.6vw,52px)/1.1 'Poppins',sans-serif",
                 letterSpacing: '-0.02em',
                 color: '#0f172a',
                 margin: '0 0 24px',
@@ -265,7 +265,7 @@ export default function Home() {
           >
             <button
               type="button"
-              onClick={() => navigate('/research/dcp/part-7')}
+              onClick={() => navigate('/research/dcp/part-1')}
               className="hover-border-ink"
               style={{
                 textAlign: 'left',
@@ -287,16 +287,16 @@ export default function Home() {
                   margin: '0 0 12px',
                 }}
               >
-                Latest · Part 7
+                Start here · Part 1
               </p>
               <h3 style={{ font: "400 21px/1.3 'Source Serif 4',serif", color: '#0f172a', margin: '0 0 10px' }}>
-                The Living Assembly
+                The Missing Harness
               </h3>
               <p style={{ font: "400 15px/1.6 'Source Serif 4',serif", color: '#475569', margin: '0 0 16px' }}>
-                A system is not complete when it is assembled. It becomes real when humans can load it, observe it,
-                stress it, trace it, and safely evolve it.
+                Every era had a harness; AI is becoming a new kind of consumer of capabilities, and the harness we
+                give it today is still fragmented.
               </p>
-              <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#64748b' }}>12 min read</span>
+              <span style={{ font: "400 11px/1 'IBM Plex Mono',monospace", color: '#64748b' }}>10 min read</span>
             </button>
             <div
               style={{
@@ -310,12 +310,12 @@ export default function Home() {
               }}
             >
               {[
-                ['01', 'The Missing Harness', 1],
                 ['02', 'The Baseline Shift', 2],
                 ['03', 'The Capability Contract', 3],
                 ['04', 'Draft Spec and Discussion', 4],
                 ['05', 'The Human Harness', 5],
                 ['06', 'Aggregation Is Abstraction', 6],
+                ['07', 'The Living Assembly', 7],
               ].map(([num, title, part], i, arr) => (
                 <button
                   key={part as number}
@@ -440,6 +440,8 @@ export default function Home() {
             </button>
             <a
               href="https://github.com/UnfurlSystemsLab"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover-border-ink"
               style={{
                 background: 'none',
@@ -493,7 +495,7 @@ function StatusRow({ name, color, label, border, href }: { name: string; color: 
   if (!href) return row
 
   return (
-    <a href={href} className="hover-text-ink" style={{ color: 'inherit', textDecoration: 'none' }}>
+    <a href={href} target="_blank" rel="noopener noreferrer" className="hover-text-ink" style={{ color: 'inherit', textDecoration: 'none' }}>
       {row}
     </a>
   )

@@ -24,7 +24,7 @@ export default function Research() {
           </p>
           <h1
             style={{
-              font: "300 clamp(30px,4vw,44px)/1.15 'Source Serif 4',serif",
+              font: "600 clamp(30px,4vw,44px)/1.15 'Poppins',sans-serif",
               letterSpacing: '-0.02em',
               color: '#0f172a',
               margin: '0 0 20px',

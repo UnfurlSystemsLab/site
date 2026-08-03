@@ -12,7 +12,7 @@ export default function NotFound() {
       <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>
         404
       </p>
-      <h1 style={{ font: "300 clamp(28px,4vw,40px)/1.2 'Source Serif 4',serif", color: '#0f172a', margin: '0 0 20px' }}>
+      <h1 style={{ font: "600 clamp(28px,4vw,40px)/1.2 'Poppins',sans-serif", color: '#0f172a', margin: '0 0 20px' }}>
         This page does not exist.
       </h1>
       <button

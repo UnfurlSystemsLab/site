@@ -144,7 +144,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             flexWrap: 'wrap',
             alignItems: 'center',
             gap: '8px 28px',
-            minHeight: 62,
+            minHeight: 76,
           }}
         >
           <button
@@ -209,10 +209,10 @@ export default function Layout({ children }: { children: ReactNode }) {
               marginRight: 'auto',
             }}
           >
-            <img src="/logo.svg" alt="" width={24} height={24} style={{ display: 'block' }} />
+            <img src="/logo.svg" alt="" width={44} height={44} style={{ display: 'block' }} />
             <span
               style={{
-                font: "600 15px/1 'IBM Plex Sans',sans-serif",
+                font: "700 20px/1 'Poppins',sans-serif",
                 letterSpacing: '-0.01em',
                 color: '#073eab',
               }}
@@ -227,6 +227,8 @@ export default function Layout({ children }: { children: ReactNode }) {
             {navItem('About', '/about', atAbout)}
             <a
               href="https://github.com/UnfurlSystemsLab"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover-border-ink"
               style={{
                 marginLeft: 8,
@@ -306,14 +308,16 @@ export default function Layout({ children }: { children: ReactNode }) {
             >
               Code
             </p>
-            <a href="https://github.com/UnfurlSystemsLab" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
+            <a href="https://github.com/UnfurlSystemsLab" target="_blank" rel="noopener noreferrer" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
               GitHub organization
             </a>
-            <a href="https://github.com/UnfurlSystemsLab/dcp?tab=contributing-ov-file" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
+            <a href="https://github.com/UnfurlSystemsLab/dcp?tab=contributing-ov-file" target="_blank" rel="noopener noreferrer" style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}>
               Contribution guide
             </a>
             <a
               href="https://github.com/UnfurlSystemsLab/dcp/issues"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ font: "400 13px/1 'IBM Plex Sans',sans-serif", color: '#334155', textDecoration: 'none' }}
             >
               Issues and discussions

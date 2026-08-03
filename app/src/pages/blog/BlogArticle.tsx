@@ -37,7 +37,7 @@ export default function BlogArticle() {
           <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>
             Essay {String(post.number).padStart(2, '0')} · {post.track} · {post.displayDate} · {post.readingTime}
           </p>
-          <h1 style={{ font: "300 clamp(28px,4.2vw,40px)/1.2 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 18px', textWrap: 'pretty' }}>
+          <h1 style={{ font: "600 clamp(28px,4.2vw,40px)/1.2 'Poppins',sans-serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 18px', textWrap: 'pretty' }}>
             {post.title}
           </h1>
           <p style={{ font: "400 18px/1.55 'Source Serif 4',serif", color: '#475569', margin: '0 0 24px', textWrap: 'pretty' }}>{post.description}</p>

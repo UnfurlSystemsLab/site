@@ -144,7 +144,7 @@ export default function DcpBody() {
         </p>
         <p style={sectionBody}>
           Java implementation repository:{' '}
-          <a href="https://github.com/UnfurlSystemsLab/unfurl-dcp" style={{ color: '#2b59d4', textDecoration: 'none' }}>
+          <a href="https://github.com/UnfurlSystemsLab/unfurl-dcp" target="_blank" rel="noopener noreferrer" style={{ color: '#2b59d4', textDecoration: 'none' }}>
             UnfurlSystemsLab/unfurl-dcp ↗
           </a>
         </p>
@@ -155,7 +155,7 @@ export default function DcpBody() {
         <p style={sectionBody}>Start here:</p>
         <ol style={{ ...listStyle, paddingLeft: 22 }}>
           <li>
-            <a href="https://github.com/UnfurlSystemsLab/dcp?tab=readme-ov-file" style={{ color: '#2b59d4', textDecoration: 'none' }}>
+            <a href="https://github.com/UnfurlSystemsLab/dcp?tab=readme-ov-file" target="_blank" rel="noopener noreferrer" style={{ color: '#2b59d4', textDecoration: 'none' }}>
               <code style={{ font: "400 15px/1 'IBM Plex Mono',monospace" }}>dcp/README.md</code>
             </a>{' '}
             for the specification repo role.

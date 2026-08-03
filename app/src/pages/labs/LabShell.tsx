@@ -75,7 +75,7 @@ export default function LabShell({
             </span>
             <span style={{ font: "400 12px/1 'IBM Plex Mono',monospace", color: '#94a3b8' }}>{updated}</span>
           </div>
-          <h1 style={{ font: "300 clamp(30px,4vw,44px)/1.15 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 20px', textWrap: 'pretty' }}>
+          <h1 style={{ font: "600 clamp(30px,4vw,44px)/1.15 'Poppins',sans-serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 20px', textWrap: 'pretty' }}>
             {title}
           </h1>
           <p style={{ font: "400 20px/1.6 'Source Serif 4',serif", color: '#475569', margin: '0 0 28px', maxWidth: '60ch', textWrap: 'pretty' }}>
@@ -84,6 +84,8 @@ export default function LabShell({
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
             <a
               href={repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover-dark"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#0f172a', color: '#f6f7f9', border: '1px solid #0f172a', borderRadius: 3, padding: '12px 18px', font: "500 14px/1 'IBM Plex Sans',sans-serif", textDecoration: 'none' }}
             >
@@ -92,6 +94,8 @@ export default function LabShell({
             {secondaryHref && secondaryLabel && (
               <a
                 href={secondaryHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover-border-ink"
                 style={{ background: 'none', color: '#0f172a', border: '1px solid #cbd5e1', borderRadius: 3, padding: '12px 18px', font: "500 14px/1 'IBM Plex Sans',sans-serif", textDecoration: 'none' }}
               >
@@ -113,6 +117,8 @@ export default function LabShell({
           </div>
           <a
             href={repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ justifySelf: 'start', display: 'inline-flex', alignItems: 'center', gap: 8, background: '#f6f7f9', color: '#0f172a', border: '1px solid #f6f7f9', borderRadius: 3, padding: '13px 20px', font: "500 14px/1 'IBM Plex Sans',sans-serif", textDecoration: 'none' }}
           >
             Open on GitHub ↗
@@ -129,10 +135,10 @@ export default function LabShell({
             </p>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'flex-end' }}>
-            <a href={`${repoUrl}/issues`} className="hover-border-ink" style={{ border: '1px solid #cbd5e1', borderRadius: 3, padding: '11px 16px', font: "500 13px/1 'IBM Plex Sans',sans-serif", color: '#0f172a', textDecoration: 'none' }}>
+            <a href={`${repoUrl}/issues`} target="_blank" rel="noopener noreferrer" className="hover-border-ink" style={{ border: '1px solid #cbd5e1', borderRadius: 3, padding: '11px 16px', font: "500 13px/1 'IBM Plex Sans',sans-serif", color: '#0f172a', textDecoration: 'none' }}>
               Open an issue
             </a>
-            <a href={`${repoUrl}/discussions`} className="hover-border-ink" style={{ border: '1px solid #cbd5e1', borderRadius: 3, padding: '11px 16px', font: "500 13px/1 'IBM Plex Sans',sans-serif", color: '#0f172a', textDecoration: 'none' }}>
+            <a href={`${repoUrl}/discussions`} target="_blank" rel="noopener noreferrer" className="hover-border-ink" style={{ border: '1px solid #cbd5e1', borderRadius: 3, padding: '11px 16px', font: "500 13px/1 'IBM Plex Sans',sans-serif", color: '#0f172a', textDecoration: 'none' }}>
               Join the discussion
             </a>
             <button

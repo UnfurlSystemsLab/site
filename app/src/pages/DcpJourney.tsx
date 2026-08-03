@@ -99,7 +99,7 @@ export default function DcpJourney() {
               </p>
               <h1
                 style={{
-                  font: "300 clamp(30px,4vw,46px)/1.13 'Source Serif 4',serif",
+                  font: "600 clamp(30px,4vw,46px)/1.13 'Poppins',sans-serif",
                   letterSpacing: '-0.02em',
                   color: '#0f172a',
                   margin: '0 0 20px',

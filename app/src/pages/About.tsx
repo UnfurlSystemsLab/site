@@ -16,7 +16,7 @@ export default function About() {
           <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>
             About
           </p>
-          <h1 style={{ font: "300 clamp(30px,4vw,42px)/1.18 'Source Serif 4',serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 22px', textWrap: 'pretty' }}>
+          <h1 style={{ font: "600 clamp(30px,4vw,42px)/1.18 'Poppins',sans-serif", letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 22px', textWrap: 'pretty' }}>
             A research posture, not a product roadmap.
           </h1>
           <p style={{ font: "400 19px/1.7 'Source Serif 4',serif", color: '#334155', margin: '0 0 24px', textWrap: 'pretty' }}>
