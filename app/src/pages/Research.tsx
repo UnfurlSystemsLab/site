@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import Seo from '../components/Seo'
 
 /*
  * Research — research index ("isResearch" block in the source export).
@@ -9,6 +10,10 @@ export default function Research() {
 
   return (
     <div>
+      <Seo
+        title="AI Research | Unfurl Systems"
+        description="Unfurl Systems publishes AI research on agent orchestration platforms, model-agnostic architecture, and production-grade engineering."
+      />
       <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 24px 44px' }}>
           <p

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import Seo from '../components/Seo'
 
 /*
  * About — research posture ("isAbout" block in the source export):
@@ -11,6 +12,10 @@ export default function About() {
 
   return (
     <div>
+      <Seo
+        title="About Unfurl Systems | AI Research Group"
+        description="Unfurl Systems is an independent research group building the human and AI harness for intelligent systems, from research to product."
+      />
       <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: width, margin: '0 auto', padding: '56px 24px 40px' }}>
           <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>

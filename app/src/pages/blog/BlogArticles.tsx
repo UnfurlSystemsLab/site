@@ -1,10 +1,13 @@
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { getAllPosts, slugify } from '../../data/blog'
 import BlogArticleCard from './BlogArticleCard'
+import Seo from '../../components/Seo'
 
 // BlogArticles — full essay index, ported from blog/app/articles/page.tsx,
 // including the `?tag=` filter (tag chips link here via BlogArticle's
-// TagList-equivalent).
+// TagList-equivalent). Canonicalizes to /research/blog when untagged, since
+// the two pages otherwise list the same 12 posts (flagged as a duplicate-hub
+// risk in the SEO audit).
 export default function BlogArticles() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
@@ -16,6 +19,11 @@ export default function BlogArticles() {
 
   return (
     <div>
+      <Seo
+        title="All Research Blog Articles | Unfurl Systems"
+        description="Browse every article from Unfurl Systems' AI research blog on agent orchestration platforms and production-grade AI engineering."
+        canonical={tag ? undefined : 'https://unfurlsystems.com/research/blog'}
+      />
       <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '36px 24px 44px' }}>
           <nav aria-label="Breadcrumb" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8, marginBottom: 28 }}>

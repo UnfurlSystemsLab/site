@@ -1,16 +1,21 @@
 import { useNavigate } from 'react-router-dom'
+import Seo from '../components/Seo'
 
 /*
  * Home — landing page ("isHome" block in the source export).
- * Sections: hero (text + status card) with a full-width "Software,
- * Assembled" illustration beneath it, three pillar cards (Research/Labs/
- * Community), DCP Journey teaser, Labs teaser, open invitation.
+ * Sections: hero (vision statement + status card), three pillar cards
+ * (Research/Labs/Community), the "Software, Assembled" illustration, DCP
+ * Journey teaser, Labs teaser, open invitation.
  */
 export default function Home() {
   const navigate = useNavigate()
 
   return (
     <div>
+      <Seo
+        title="AI Agent Orchestration Platform | Unfurl Systems"
+        description="Unfurl Systems builds an AI agent orchestration platform for model-agnostic, production-grade engineering workflows and research."
+      />
       <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div
           style={{
@@ -37,7 +42,7 @@ export default function Home() {
                 margin: '0 0 22px',
               }}
             >
-              Independent research group · Working in the open
+              Our Vision
             </p>
             <h1
               style={{
@@ -48,21 +53,31 @@ export default function Home() {
                 textWrap: 'pretty',
               }}
             >
-              Building the human and AI harness for intelligent systems.
+              Our Vision
             </h1>
             <p
               style={{
                 font: "400 18px/1.6 'Source Serif 4',serif",
                 color: '#475569',
-                margin: '0 0 32px',
-                maxWidth: '52ch',
+                margin: '0 0 16px',
+                maxWidth: '58ch',
                 textWrap: 'pretty',
               }}
             >
-              We are studying how software components can describe themselves, compose safely under contract, and
-              stay understandable to the people accountable for them. The work is early: some of it is a draft
-              specification, some of it is running code, and much of it is still an open question.
+              At Unfurl Systems, we are researching AI-ready intelligent components for a future where code becomes
+              easier to produce, but assembling the right components becomes the real engineering challenge. As
+              software evolves from microservices to interconnected platforms of platforms, we believe components
+              must be able to describe their capabilities, dependencies, boundaries, and faults so that humans and
+              AI can safely understand, compose, and govern larger systems.
             </p>
+            <button
+              type="button"
+              onClick={() => navigate('/vision')}
+              className="hover-text-ink"
+              style={{ display: 'block', background: 'none', border: 0, padding: 0, margin: '0 0 32px', cursor: 'pointer', font: "500 14px/1 'IBM Plex Sans',sans-serif", color: '#2b59d4' }}
+            >
+              Read the full vision statement →
+            </button>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
               <button
                 type="button"
@@ -137,11 +152,6 @@ export default function Home() {
             </p>
           </div>
           </div>
-          <img
-            src="/SoftwareAssembled.png"
-            alt="Software, assembled: DCP from catalog to deployment, in five stages — reusable substrates, components, DCP catalog, draft assembly in Fabric Studio, and signed deployment assembly."
-            style={{ width: '100%', height: 'auto', display: 'block', marginTop: 48, borderRadius: 3, border: '1px solid #e1e5ec' }}
-          />
         </div>
       </section>
 
@@ -176,6 +186,16 @@ export default function Home() {
             title="Open questions"
             body="Where to disagree, bring a domain example, report a gap in the model, or contribute an implementation."
             cta="Take part →"
+          />
+        </div>
+      </section>
+
+      <section style={{ borderBottom: '1px solid #e1e5ec' }}>
+        <div style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 24px' }}>
+          <img
+            src="/SoftwareAssembled.png"
+            alt="Software, assembled: DCP from catalog to deployment, in five stages — reusable substrates, components, DCP catalog, draft assembly in Fabric Studio, and signed deployment assembly."
+            style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 3, border: '1px solid #e1e5ec' }}
           />
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import Seo from '../components/Seo'
 
 /*
  * DcpJourney — series overview ("isDcp" block in the source export).
@@ -63,6 +64,10 @@ export default function DcpJourney() {
 
   return (
     <div>
+      <Seo
+        title="The Domain Claim Protocol (DCP) | Unfurl Systems Research"
+        description="The DCP Journey from Unfurl Systems: a seven-part research series on the Domain Claim Protocol, a capability contract for AI-native software engineering."
+      />
       <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '36px 24px 48px' }}>
           <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 28 }}>

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
+import VisionStatement from './pages/VisionStatement'
 import Research from './pages/Research'
 import DcpJourney from './pages/DcpJourney'
 import Article from './pages/Article'
@@ -30,6 +31,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/vision" element={<VisionStatement />} />
           <Route path="/research" element={<Research />} />
           <Route path="/research/dcp" element={<DcpJourney />} />
           <Route path="/research/dcp/:partSlug" element={<Article />} />

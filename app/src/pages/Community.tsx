@@ -1,3 +1,5 @@
+import Seo from '../components/Seo'
+
 /*
  * Community — ways to participate ("isCommunity" block in the source
  * export): four participation cards, open questions list, roadmap, and a
@@ -7,6 +9,10 @@
 export default function Community() {
   return (
     <div>
+      <Seo
+        title="AI Agent Developer Community | Unfurl Systems"
+        description="Join the Unfurl Systems AI agent developer community building the next generation of AI agent orchestration platform tools together."
+      />
       <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 24px 44px' }}>
           <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>

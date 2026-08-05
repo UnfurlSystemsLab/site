@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import Seo from '../components/Seo'
 
 /*
  * NotFound — catch-all route for paths outside the source export's page
@@ -9,6 +10,7 @@ export default function NotFound() {
   const navigate = useNavigate()
   return (
     <div style={{ maxWidth: 700, margin: '0 auto', padding: '96px 24px', textAlign: 'center' }}>
+      <Seo title="Page Not Found | Unfurl Systems" description="The page you're looking for doesn't exist. Return to the Unfurl Systems homepage to continue." />
       <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>
         404
       </p>

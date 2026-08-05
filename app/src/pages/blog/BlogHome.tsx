@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { getAllPosts, publication, tracks } from '../../data/blog'
 import BlogArticleCard from './BlogArticleCard'
+import Seo from '../../components/Seo'
 
 /*
  * BlogHome — "Beyond AI Prototypes" series landing page, ported from the
@@ -15,6 +16,10 @@ export default function BlogHome() {
 
   return (
     <div>
+      <Seo
+        title="AI Engineering Research Blog | Unfurl Systems"
+        description="Unfurl Systems' AI research blog covers agent orchestration platforms, release planning, and production-grade AI engineering."
+      />
       <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '36px 24px 48px' }}>
           <nav aria-label="Breadcrumb" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8, marginBottom: 28 }}>

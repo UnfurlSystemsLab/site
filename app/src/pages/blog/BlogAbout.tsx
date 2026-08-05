@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { bodyP, h2Style } from '../articles/shared'
+import Seo from '../../components/Seo'
 
 // BlogAbout — ported verbatim from blog/app/about/page.tsx.
 export default function BlogAbout() {
@@ -7,6 +8,10 @@ export default function BlogAbout() {
 
   return (
     <div>
+      <Seo
+        title="About the Unfurl Systems Research Team"
+        description="Meet the Unfurl Systems research team — the researchers and engineers behind the company's published AI-first engineering research."
+      />
       <header style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 760, margin: '0 auto', padding: '36px 24px 44px' }}>
           <nav aria-label="Breadcrumb" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8, marginBottom: 32 }}>

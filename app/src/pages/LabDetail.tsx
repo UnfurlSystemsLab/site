@@ -4,6 +4,7 @@ import LabShell from './labs/LabShell'
 import DcpBody from './labs/DcpBody'
 import FabricBody from './labs/FabricBody'
 import StudioBody from './labs/StudioBody'
+import Seo from '../components/Seo'
 
 /*
  * LabDetail — Lab detail page, parameterized by slug.
@@ -28,6 +29,11 @@ export default function LabDetail() {
 
   if (lab.slug === 'dcp') {
     return (
+      <>
+      <Seo
+        title="Domain Claim Protocol (DCP) | Unfurl Labs"
+        description="DCP is the specification behind Unfurl Systems' AI agent orchestration platform — how a component states what it can do, what it needs, and under what conditions it may be invoked."
+      />
       <LabShell
         breadcrumbLabel="DCP"
         statusLabel="Draft specification"
@@ -42,11 +48,17 @@ export default function LabDetail() {
       >
         <DcpBody />
       </LabShell>
+      </>
     )
   }
 
   if (lab.slug === 'fabric') {
     return (
+      <>
+      <Seo
+        title="Fabric: AI Workflow Automation Platform | Unfurl Labs"
+        description="Unfurl Fabric is the design-time compiler behind Unfurl Labs' AI workflow automation platform — it matches needs to claims, validates the result, and produces a signed composition."
+      />
       <LabShell
         breadcrumbLabel="Fabric"
         statusLabel={lab.statusLabel}
@@ -61,10 +73,16 @@ export default function LabDetail() {
       >
         <FabricBody />
       </LabShell>
+      </>
     )
   }
 
   return (
+    <>
+    <Seo
+      title="Studio: AI Agent Governance Interface | Unfurl Labs"
+      description="Unfurl Studio is the human harness for Unfurl Labs' AI development platform — a governed interface to see, question, and govern an assembly a machine proposed."
+    />
     <LabShell
       breadcrumbLabel="Studio"
       statusLabel={lab.statusLabel}
@@ -79,5 +97,6 @@ export default function LabDetail() {
     >
       <StudioBody />
     </LabShell>
+    </>
   )
 }

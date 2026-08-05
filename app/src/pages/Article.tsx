@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { useNavigate, useParams, Navigate } from 'react-router-dom'
 import { ARTICLES, ARTICLE_COUNT } from '../data/articles'
+import Seo from '../components/Seo'
 import Part1 from './articles/Part1'
 import Part2 from './articles/Part2'
 import Part3 from './articles/Part3'
@@ -38,6 +39,7 @@ export default function Article() {
 
   return (
     <div>
+      <Seo title={meta.seoTitle} description={meta.seoDescription} />
       <article>
         <header style={{ borderBottom: '1px solid #e1e5ec' }}>
           <div style={{ maxWidth: 760, margin: '0 auto', padding: '36px 24px 44px' }}>

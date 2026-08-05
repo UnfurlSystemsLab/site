@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { LABS } from '../data/labs'
+import Seo from '../components/Seo'
 
 /*
  * Labs — Labs index ("isLabs" block in the source export). Legend of the
@@ -11,6 +12,10 @@ export default function Labs() {
 
   return (
     <div>
+      <Seo
+        title="Unfurl Labs: An AI Development Platform"
+        description="Unfurl Labs is the AI development platform behind Unfurl Systems' research: DCP, Fabric, and Studio, built for AI-first engineering teams."
+      />
       <section style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 24px 44px' }}>
           <p style={{ font: "500 11px/1 'IBM Plex Mono',monospace", letterSpacing: '.14em', textTransform: 'uppercase', color: '#073eab', margin: '0 0 18px' }}>

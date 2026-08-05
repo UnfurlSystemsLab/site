@@ -1,7 +1,8 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import type { ContentBlock } from '../../data/blog'
-import { getAdjacentPosts, getPostBySlug, publication, slugify } from '../../data/blog'
+import { getAdjacentPosts, getPostBySlug, getSeoForSlug, publication, slugify } from '../../data/blog'
 import { bodyP, h2Style, quoteWrap, quoteText, listStyle } from '../articles/shared'
+import Seo from '../../components/Seo'
 
 // BlogArticle — essay detail page, ported from blog/app/articles/[slug]/page.tsx
 // and components/ArticleLayout.tsx, TagList.tsx, Pagination.tsx. Body blocks
@@ -18,9 +19,11 @@ export default function BlogArticle() {
 
   const { previous, next } = getAdjacentPosts(post.slug)
   const READING_WIDTH = '700px'
+  const seo = getSeoForSlug(post.slug)
 
   return (
     <div>
+      <Seo title={seo ? `${seo.title} | Unfurl Systems` : `${post.title} | Unfurl Systems`} description={seo?.description ?? post.description} />
       <header style={{ borderBottom: '1px solid #e1e5ec' }}>
         <div style={{ maxWidth: 760, margin: '0 auto', padding: '36px 24px 44px' }}>
           <nav aria-label="Breadcrumb" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8, marginBottom: 32 }}>

@@ -349,6 +349,77 @@ export const posts: Post[] = essaySeeds.map(({ focus, exampleTitle, exampleBefor
   body: buildBody({ ...post, focus, exampleTitle, exampleBefore, exampleAfter, practicalMoves }),
 }))
 
+// SEO title/description per post, from the SEO keyword audit
+// (unfurl-systems-seo-keyword data.csv) — each maps a real ranking
+// opportunity onto its best-fit article rather than reusing one generic
+// title site-wide.
+export const SEO_BY_SLUG: Record<string, { title: string; description: string }> = {
+  'ai-changed-release-planning-more-than-coding': {
+    title: 'Why AI Changed Release Planning, Not Just Coding',
+    description:
+      "AI changed release planning, not just coding, and most teams haven't caught up. Unfurl Systems on what AI-first teams get wrong about shipping.",
+  },
+  'ai-first-teams-need-testing-based-development': {
+    title: 'Test Driven Development AI-First Teams Need',
+    description:
+      'Test driven development AI teams actually need looks different from the textbook version. Unfurl Systems explains the real bottleneck.',
+  },
+  'repository-ai-readiness-missing-input-estimation': {
+    title: "Repository AI Readiness Assessment: What's Missing",
+    description:
+      "Most checklists skip the repository itself. Unfurl Systems' AI readiness assessment framework starts with what's already in your codebase.",
+  },
+  'hidden-problem-ai-design-applications-model-lock-in': {
+    title: 'AI Model Lock-In: The Hidden Design Problem',
+    description:
+      'AI model lock-in is a hidden cost of most application designs. Unfurl Systems on why architecture choices now limit your options later.',
+  },
+  'designing-model-agnostic-ai-architecture': {
+    title: 'Designing Model-Agnostic AI Architecture',
+    description:
+      "A practical framework for model-agnostic AI architecture that isn't locked to one model provider, from Unfurl Systems' research team.",
+  },
+  'multi-agent-design-workflows-need-more-than-agents': {
+    title: 'Multi-Agent Systems Need More Than Agents',
+    description:
+      "Well-designed multi-agent systems need real workflow design, not just more agents. Unfurl Systems on what's actually missing today.",
+  },
+  'dag-based-orchestration-enterprise-ai-workflows': {
+    title: 'DAG Orchestration for Enterprise AI Workflows',
+    description:
+      'Why DAG orchestration outperforms ad hoc agent chaining for enterprise AI workflows. Unfurl Systems shares its research findings here.',
+  },
+  'workflow-drafts-not-autonomous-chaos': {
+    title: 'A Human in the Loop AI Workflow, Not Chaos',
+    description:
+      'A human in the loop AI workflow beats fully autonomous chaos. Unfurl Systems on designing agent output as a reviewable draft, not a verdict.',
+  },
+  'tenant-boundaries-ai-agent-platforms': {
+    title: 'Tenant Boundaries and AI Agent Governance',
+    description:
+      'Real AI agent governance starts with enforced tenant boundaries, not naming conventions. Unfurl Systems on multi-tenant platform design.',
+  },
+  'ai-first-release-planning-framework': {
+    title: 'A Framework for AI Release Planning',
+    description:
+      "A concrete AI release planning framework for AI-first teams, drawn from Unfurl Systems' production engineering research and case studies.",
+  },
+  'observability-auditability-ai-first-workflows': {
+    title: 'AI Agent Observability & Auditability, Explained',
+    description:
+      'AI agent observability is more than logs. Unfurl Systems on building auditability into AI-first workflows from day one, not bolting it on.',
+  },
+  'beyond-ai-prototypes-production-grade-ai-engineering': {
+    title: 'Beyond AI Prototypes: An AI Development Platform',
+    description:
+      "Most AI prototypes never reach production. An AI development platform built for that gap is what Unfurl Systems' research addresses.",
+  },
+}
+
+export function getSeoForSlug(slug: string) {
+  return SEO_BY_SLUG[slug]
+}
+
 export const tracks = [
   {
     label: 'Track 1',
