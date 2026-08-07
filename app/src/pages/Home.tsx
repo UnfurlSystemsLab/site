@@ -24,133 +24,111 @@ export default function Home() {
             padding: '76px 24px 64px',
           }}
         >
+          <p
+            style={{
+              font: "500 11px/1 'IBM Plex Mono',monospace",
+              letterSpacing: '.14em',
+              textTransform: 'uppercase',
+              color: '#073eab',
+              margin: '0 0 22px',
+            }}
+          >
+            Our Vision
+          </p>
+          <h1
+            style={{
+              font: "600 clamp(32px,4.6vw,52px)/1.1 'Poppins',sans-serif",
+              letterSpacing: '-0.02em',
+              color: '#0f172a',
+              margin: '0 0 32px',
+              textWrap: 'pretty',
+            }}
+          >
+            Our Vision
+          </h1>
           <div
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))',
               gap: '48px 64px',
-              alignItems: 'start',
+              alignItems: 'stretch',
             }}
           >
-          <div>
-            <p
-              style={{
-                font: "500 11px/1 'IBM Plex Mono',monospace",
-                letterSpacing: '.14em',
-                textTransform: 'uppercase',
-                color: '#073eab',
-                margin: '0 0 22px',
-              }}
+          <p
+            style={{
+              font: "400 18px/1.6 'Source Serif 4',serif",
+              color: '#475569',
+              margin: 0,
+              maxWidth: '58ch',
+              textWrap: 'pretty',
+            }}
+          >
+            At Unfurl Systems, we are researching AI-ready intelligent components for a future where code becomes
+            easier to produce, but assembling the right components becomes the real engineering challenge. As
+            software evolves from microservices to interconnected platforms of platforms, we believe components
+            must be able to describe their capabilities, dependencies, boundaries, and faults so that humans and
+            AI can safely understand, compose, and govern larger systems.
+          </p>
+          <div style={{ position: 'relative', border: '1px solid #e1e5ec', borderRadius: 3, overflow: 'hidden', background: '#0f172a' }}>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/UnfurlSystems_poster.webp"
+              aria-describedby="vision-demo-description"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             >
-              Our Vision
-            </p>
-            <h1
-              style={{
-                font: "600 clamp(32px,4.6vw,52px)/1.1 'Poppins',sans-serif",
-                letterSpacing: '-0.02em',
-                color: '#0f172a',
-                margin: '0 0 24px',
-                textWrap: 'pretty',
-              }}
-            >
-              Our Vision
-            </h1>
-            <p
-              style={{
-                font: "400 18px/1.6 'Source Serif 4',serif",
-                color: '#475569',
-                margin: '0 0 16px',
-                maxWidth: '58ch',
-                textWrap: 'pretty',
-              }}
-            >
-              At Unfurl Systems, we are researching AI-ready intelligent components for a future where code becomes
-              easier to produce, but assembling the right components becomes the real engineering challenge. As
-              software evolves from microservices to interconnected platforms of platforms, we believe components
-              must be able to describe their capabilities, dependencies, boundaries, and faults so that humans and
-              AI can safely understand, compose, and govern larger systems.
-            </p>
+              <source src="/UnfurlSystems.mp4" type="video/mp4" />
+            </video>
+            <span id="vision-demo-description" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)' }}>
+              Animated visualization of the Unfurl System: a holographic assembly board showing components, ports,
+              identity, validation, and telemetry connecting into a governed system.
+            </span>
+          </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => navigate('/vision')}
+            className="hover-text-ink"
+            style={{ display: 'block', background: 'none', border: 0, padding: 0, margin: '16px 0 32px', cursor: 'pointer', font: "500 14px/1 'IBM Plex Sans',sans-serif", color: '#2b59d4' }}
+          >
+            Read the full vision statement →
+          </button>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
             <button
               type="button"
-              onClick={() => navigate('/vision')}
-              className="hover-text-ink"
-              style={{ display: 'block', background: 'none', border: 0, padding: 0, margin: '0 0 32px', cursor: 'pointer', font: "500 14px/1 'IBM Plex Sans',sans-serif", color: '#2b59d4' }}
-            >
-              Read the full vision statement →
-            </button>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
-              <button
-                type="button"
-                onClick={() => navigate('/research')}
-                className="hover-dark"
-                style={{
-                  background: '#0f172a',
-                  color: '#f6f7f9',
-                  border: '1px solid #0f172a',
-                  borderRadius: 3,
-                  padding: '12px 18px',
-                  font: "500 14px/1 'IBM Plex Sans',sans-serif",
-                  cursor: 'pointer',
-                }}
-              >
-                Explore the research
-              </button>
-              <button
-                type="button"
-                onClick={() => navigate('/labs')}
-                className="hover-border-ink"
-                style={{
-                  background: 'none',
-                  color: '#0f172a',
-                  border: '1px solid #cbd5e1',
-                  borderRadius: 3,
-                  padding: '12px 18px',
-                  font: "500 14px/1 'IBM Plex Sans',sans-serif",
-                  cursor: 'pointer',
-                }}
-              >
-                View the Labs
-              </button>
-            </div>
-          </div>
-          <div style={{ border: '1px solid #e1e5ec', background: '#fff', borderRadius: 3, padding: '22px 22px 18px' }}>
-            <p
+              onClick={() => navigate('/research')}
+              className="hover-dark"
               style={{
-                font: "500 10px/1 'IBM Plex Mono',monospace",
-                letterSpacing: '.14em',
-                textTransform: 'uppercase',
-                color: '#073eab',
-                margin: '0 0 16px',
+                background: '#0f172a',
+                color: '#f6f7f9',
+                border: '1px solid #0f172a',
+                borderRadius: 3,
+                padding: '12px 18px',
+                font: "500 14px/1 'IBM Plex Sans',sans-serif",
+                cursor: 'pointer',
               }}
             >
-              Where the work stands
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-              <StatusRow
-                name="dcp"
-                color="#f59e0b"
-                label="Draft spec"
-                border
-                href="https://github.com/UnfurlSystemsLab/dcp/blob/master/docs/DCP-STANDARDS-SUPPORT.md"
-              />
-              <StatusRow
-                name="unfurl-fabric"
-                color="#16a34a"
-                label="Active development"
-                border
-                href="https://github.com/UnfurlSystemsLab/unfurl-fabric"
-              />
-              <StatusRow
-                name="unfurl-ui"
-                color="#7c3aed"
-                label="Prototype"
-                href="https://github.com/UnfurlSystemsLab/unfurl-ui"
-              />
-            </div>
-            <p style={{ font: "400 12px/1.5 'IBM Plex Sans',sans-serif", color: '#64748b', margin: '16px 0 0' }}>
-              Nothing here is production-ready. Status labels are the same on the site and in each repository.
-            </p>
-          </div>
+              Explore the research
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate('/labs')}
+              className="hover-border-ink"
+              style={{
+                background: 'none',
+                color: '#0f172a',
+                border: '1px solid #cbd5e1',
+                borderRadius: 3,
+                padding: '12px 18px',
+                font: "500 14px/1 'IBM Plex Sans',sans-serif",
+                cursor: 'pointer',
+              }}
+            >
+              View the Labs
+            </button>
           </div>
         </div>
       </section>
@@ -479,45 +457,6 @@ export default function Home() {
         </div>
       </section>
     </div>
-  )
-}
-
-function StatusRow({ name, color, label, border, href }: { name: string; color: string; label: string; border?: boolean; href?: string }) {
-  const row = (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        gap: 16,
-        padding: '11px 0',
-        borderBottom: border ? '1px solid #eef0f3' : undefined,
-      }}
-    >
-      <span style={{ font: "500 13px/1.3 'IBM Plex Mono',monospace", color: '#0f172a' }}>{name}</span>
-      <span
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 7,
-          font: "500 10px/1 'IBM Plex Mono',monospace",
-          letterSpacing: '.1em',
-          textTransform: 'uppercase',
-          color: '#475569',
-        }}
-      >
-        <span style={{ width: 6, height: 6, borderRadius: '50%', background: color }} />
-        {label}
-      </span>
-    </div>
-  )
-
-  if (!href) return row
-
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="hover-text-ink" style={{ color: 'inherit', textDecoration: 'none' }}>
-      {row}
-    </a>
   )
 }
 
